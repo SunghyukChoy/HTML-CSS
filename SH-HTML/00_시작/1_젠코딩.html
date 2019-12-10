@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>젠코딩</title>
+</head>
+
+<body>
+  <h2>브라켓에서 주석 넣기</h2>
+  <p>주석은 ctrl+/ 로 작성합니다.</p>
+  <!--  여기는 주석 영역. 무조건 화살표를 맨 앞으로 땡겨서 만드는 주석 -->
+  <p>또 다른 주석은 crtl + shift + / 로 작성</p>
+  <!--여기도 주석 영역. 현재 커서를 기준으로 해서 만드는 주석. -->
+  <p>브라켓의 사이드바를 보여주거나 숨기려면 ctrl + alt + h</p>
+  <p>콘텐츠 복제는 ctrl + d</p>
+  <p>콘텐츠 이동은 ctrl + shift + 상하화살표키</p>
+  <hr>
+  <h2>동일한 태그를 여러 개 작성하는 방식 (*)</h2>
+  <!--p*3. p태그 세 개 만들어짐.-->
+  <p>p*3을 쓰면 p태그가 3개 만들어진다.</p>
+  <p></p>
+  <p></p>
+
+  <h2>자식 태그 만들기</h2>
+  <!--div>p-->
+  <div>
+    <p>div>p를 쓰면 div의 자식인 p가 만들어진다.</p>
+  </div>
+  <h2>아이디 속성 만들기</h2>
+  <!--div#loge-->
+  <div id="loge">태그명#아이디값</div>
+  <h2>클래스 속성 만들기</h2>
+  <!--div.loge-->
+  <div class="logo">태그명.클래스명</div>
+
+  <h2>일반 속성 만들기</h2>
+  <!--p[title=타이틀속성]-->
+  <p title="타이틀속성">태그명[속성명=속성값]</p>
+  <h2>번호 붙이기</h2>
+  <!--p.num$*5-->
+  <p class="num1">$는 일련번호를 붙여준다.</p>
+  <p class="num2">시작값은 $서식 뒤에 @시작값으로 지정한다.(ex. $@2)</p>
+  <p class="num3"></p>
+  <p class="num4"></p>
+  <p class="num5"></p>
+  <!--p.num$@2*5-->
+  <p class="num2"></p>
+  <p class="num3"></p>
+  <p class="num4"></p>
+  <p class="num5"></p>
+  <p class="num6"></p>
+  <h2>콘텐츠 삽입</h2>
+  <!--p{콘텐츠$}*3-->
+  <p>콘텐츠1</p>
+  <p>콘텐츠2</p>
+  <p>콘텐츠3</p>
+  <!--p>lorem-->
+  <h2>대체 텍스트 (임시 콘텐츠)</h2>
+  <p>Lorem ipsumdolor sit amet, consectetur adipisicing elit. Possimus natus, rem voluptatem aspernatur cum culpa ab neque alias mollitia maiores iusto sint sapiente veritatis odio quae tempora. Commodi quo, asperiores?</p>
+
+
+
+
+
+
+
+
+
+</body></html>

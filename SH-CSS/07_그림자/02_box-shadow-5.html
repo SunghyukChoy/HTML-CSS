@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>박스 그림자(box-shadow)</title>
+  <style>
+    div {
+      width: 200px; height: 100px;
+      background-color: gold;
+      text-align: center;
+      line-height: 100px;
+      color: red;
+    }
+  </style>
+  <style>
+    div {
+      box-shadow: 5px 5px 8px 10px #444 inset;
+      /* inset : 내부 그림자; 안쪽에 그림자를 주는 방법. 그림자의 방향이 반전됨. */
+    }
+  </style>
+</head>
+<body>
+  <div>DIV BOX</div>
+</body>
+</html>

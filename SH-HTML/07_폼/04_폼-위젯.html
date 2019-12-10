@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>폼</title>
+  <style>
+    input,
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    lable {
+      margin-top: 10px;
+    }
+
+    input[type='radio'],
+    input[type='checkbox'] {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <label for="">슬라이드</label>
+  <input type="range">
+  <input type="range" min="0" max="100">
+  <hr>
+  <!---->
+  <label for="">스핀 단추 - 기본형</label>
+  <input type="number">
+  <!--number : 박스의 숫자를 증감시킬 수 있는 화살표 활성화-->
+  <label for="">스핀 단추 - 최소/최대 지정</label>
+  <input type="number" min="1" max="5">
+  <!--최소값, 최대값 지정-->
+  <label for="">스핀 단추 - 단계 지정</label>
+  <input type="number" min="0" max="100" step="10">
+  <!--숫자의 증감폭 지정-->
+  <label for="">스핀 단추 - 기본값 지정</label>
+  <input type="number" min="0" max="100" step="10" value="40">
+  <hr>
+  <!--value : 기본값 지정-->
+  <label for="">색상 선택</label>
+  <input type="color">
+  <hr>
+
+  <label for="">달력 - 기본형</label>
+  <input type="date">
+  <label for="">달력 - 월</label>
+  <input type="month">
+  <!--월까지만 출력-->
+  <label for="">달력 - 주차</label>
+  <input type="week">
+  <!--주차까지 출력-->
+</body></html>

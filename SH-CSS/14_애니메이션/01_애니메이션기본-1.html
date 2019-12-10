@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>애니메이션</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;      
+    }
+  </style>
+  <style>
+    /* 애니메이션 제작 */
+    /* 애니메이션은 트랜지션, 트랜스폼과 달리 중간과정에 개입하여 제작할 수 있음. */
+    /* (1) 키프레임 생성
+        @keyframes 애니메이션이름 {
+          전체진행시간에 대한 비율 {변경내용}
+          단위는 기본적으로 %
+          애니메이션 길이가 10초라면 50%는 5초.
+          시간과 시간 사이에서 변함.
+        } */
+    @keyframes bgchange {
+      0% {        
+        background-color: red;
+        /* 시작 때의 배경색 */        
+      }
+      100% {
+        background-color: blue;
+        /* 마지막 때의 배경색 */
+      }   
+    }
+    /* (2) 애니메이션 생성과 적용 */
+    .box {
+      animation-name: bgchange;
+      animation-duration: 6s;
+    }
+  </style>
+</head>
+<body>
+ <div class="box"></div>
+</body>
+</html>

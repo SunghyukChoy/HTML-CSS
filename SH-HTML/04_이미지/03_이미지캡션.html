@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이미지</title>
+</head>
+
+<body>
+  <h2>이미지 캡션 추가하기</h2>
+  <hr>
+
+  <h4>img 태그</h4>
+
+  <!--(1)이미지만 추가 : 비표준 / 너비: 400px-->
+  <figure>
+    <img src="http://wooreeweb.com/img/h01.jpg" width="400">
+  </figure>
+
+  <!--(2)이미지와 설명: 웹 표준 및 접근성 충족 / 높이 : 300px-->
+  <figure>
+    <img src="http://wooreeweb.com/img/h02.jpg" alt="설명" height="300">
+    <figcaption>이미지 캡션</figcaption>
+  </figure>
+
+  <!--(3)이미지와 설명, 제목(도움말)-->
+  <figure>
+    <figcaption>이미지 캡션</figcaption>
+    <img src="http://wooreeweb.com/img/h03.jpg" alt="설명" title="도움말" width="300" height="300">
+  </figure>
+</body></html>

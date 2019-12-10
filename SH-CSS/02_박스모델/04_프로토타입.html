@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>프로토타입</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-image: url(http://wooreeweb.com/img/grid.gif);
+    }
+  </style>
+  <style>
+    .wrap {
+      width: 100%;
+    }
+    header,
+    .container,
+    footer {
+      width: 960px; margin: 0 auto;
+      height: 100px;
+      border: 1px solid gray;
+      background-color: #adc6ec;
+    }
+    #headerWarp,
+    #footerWrap {
+      background-color: #adc6ec;
+    }
+    .container {
+      margin: 20px auto;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!--(1) 헤더-->
+    <div id="headerWrap">
+      <header>헤더 영역</header>
+    </div>
+    
+    <!--(2) 컨텐츠-->
+    <div class="container">
+      <main>메인 컨텐츠</main>
+    </div>
+    
+    <!--(3) 푸터-->
+    <div id="footerWrap">
+      <footer>푸터 영역</footer>
+    </div>
+    <!--헤더영역, 메인컨텐츠, 푸터영역 : 전통적인 3단 구조.-->
+  </div>
+  
+</body>
+</html>

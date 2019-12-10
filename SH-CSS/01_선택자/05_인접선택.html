@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>인접선택</title>
+  <style>
+    h2 + p {
+      /* + : h2의 동생 중에 바로 밑 p 태그 하나*/
+      color: red;
+    }
+    h2 ~ p {
+      /* + : h2의 동생들 중에 p 태그*/
+      background-color: gold;
+    }    
+  </style>
+</head>
+<body>
+  <h2>h2 태그</h2>
+  <p>p 태그</p>
+  <p>p 태그</p>
+  <p>p 태그</p>
+  
+  <h2>h2 태그</h2>
+  <h3>h3 태그</h3>
+  <p>p 태그</p>
+</body>
+</html>

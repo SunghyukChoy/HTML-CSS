@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index</title>
+  <style>
+    .frame {
+      width: 600px;
+      position: relative;
+      border: 5px solid;
+      overflow: hidden;
+    }
+    .frame img {
+      width: 100%;
+    }
+  </style>
+  <style>
+    .frame img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      /* z-index: 10; */
+      /* z-index는 순서를 따짐. */
+      /* 양수 값이면 블록의 위쪽의 위치처럼 쌓임. */
+      /* 또한 보통 10단위의 값을 가짐. 요소 중간에 다른 요소가 들어갈 수 있게 하기 위해. */
+    }
+    .frame {
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <img src="http://wooreeweb.com/img/h05.jpg" alt="">
+    <h2>h2 TEXT</h2>
+  </div>
+</body>
+</html>

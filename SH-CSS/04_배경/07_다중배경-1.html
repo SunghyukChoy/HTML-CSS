@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>다중 배경</title>
+  <style>
+    body {
+      background-image:
+        url('http://wooreeweb.com/img/yogib.png'), 
+        /*배경이 겹쳐 보이게 하려면 배경이 투명한 png 이미지 사용.*/
+        url('http://wooreeweb.com/img/forest.jpg');
+      /*url을 이어줄 떈 반드시 , 로 연결함.*/
+      background-repeat: no-repeat;
+      /*첫번쨰, 두번째 이미지 모두 반복 안 함.*/
+      background-position: left bottom, right bottom;
+      /*left bottom : 첫번째 이미지에 대한 거
+        right bottom : 두번쨰 이미지에 대한 거*/
+      /*이미지가 위치하는 기준점을 의미
+       브라우저의 크기에 변화를 줄 때 이미지가 고정되는 위치.*/
+      background-size: auto, cover;
+      
+    }
+
+    html {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+</body></html>

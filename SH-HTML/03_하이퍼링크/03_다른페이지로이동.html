@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>다른 페이지로 이동</title>
+  <style>
+    a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      width: 100%;
+      /* %가 나오면 부모 크기 확인. */
+      height: 50px;
+      background-color: yellow;
+    }
+
+    ul {
+      width: 1000px;
+      height: 50px;
+      background-color: brown;
+    }
+
+    li {
+      width: 195px;
+      display: inline-block;
+      background-color: aqua;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    ul {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>5대 모던 브라우저</h2>
+  <hr>
+
+  <!--nav>ul>(li>a)*5-->
+  <!--기본적인 네비게이션의 디자인 패턴-->
+  <nav>
+    <ul>
+      <li><a href="http://www.google.com/chrome" target="bew">구글 크롬</a></li>
+      <li><a href="http://www.mozilla.org/ko" target="new">모질라 파이어폭스</a></li>
+      <li><a href="http://www.opera.com/ko" target="new">오페라</a></li>
+      <li><a href="http://www.apple.com/kr/safari" target="new">애플 사파리</a></li>
+      <li><a href="http://windows.microsoft.com/ko-kr" target="new">MS 익스플로러</a></li>
+    </ul>
+  </nav>
+  <hr>
+  <p><a href="https://browsehappy.com" target="new">모던 브라우저 모음</a></p>
+</body></html>

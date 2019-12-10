@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선형그라디언트(linear-gradient)</title>
+  <style>
+    div {
+      width: 600px;
+      height: 400px;
+      background-color: orange;      
+    }
+  </style>
+  <style>
+    .direction1 {
+      background-image: linear-gradient(0deg, red, gold);
+      /* deg : degree(각도) 0deg : 아래에서 위로, 아래가 기준 각도. */
+    }
+    .direction2 {
+      background-image: linear-gradient(90deg, red, gold);
+      /* 90deg : 좌에서 우로. */
+    }
+    .direction3 {
+      background-image: linear-gradient(180deg, red, gold);
+      /* 180deg : 위에서 아래로 */
+    }
+    .direction4 {
+      background-image: linear-gradient(270deg, red, gold);
+      /* 270deg : 우에서 좌로 */
+    }
+  </style>
+</head>
+<body>
+  <div class="direction1"></div>
+  <div class="direction2"></div>
+  <div class="direction3"></div>
+  <div class="direction4"></div>
+</body>
+</html>

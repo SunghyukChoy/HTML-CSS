@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>폼</title>
+  <style>
+    input, label {
+      display:  block; margin-bottom: 10px;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+    label {
+      margin-top: 10px;
+    }
+    input[type='radio'], 
+    input[type='checkbox']{display: inline-block;}
+  </style>
+</head>
+<body>
+  <label for="">전송버튼 - 기본형</label>
+  <input type="submit">
+  <label for="">전송버튼 - 이름 지정</label>
+  <input type="submit" value="보내기">
+  <!--vlaue에 값을 지정해주면 제출이란 글자 대신 들어감.-->
+  <hr>
+  <label for="">라디오버튼</label>
+  <input type="radio">HTML
+  <input type="radio">CSS
+  <hr>
+  <!--name 속성 없음. -->
+  <label for="">라디오버튼 - 그룹</label>
+  <input type="radio" name="grp">HTML
+  <input type="radio" name="grp">CSS
+  <hr>
+  <!--name 속성을 만들고 같은 값을 넣어주면 그룹으로 묶임.그룹 내에서는 하나만 선택 가능함.-->
+  <label for="">체크박스</label>
+  <input type="checkbox" checked>HTML
+  <input type="checkbox">CSS
+  <hr>
+  <!--checked 옵션을 주면 기본 선택이 되어있음.현행법 상 기본 체크 하게 되어 있지 않음.-->
+  <!--라디오 박스는 하나만 선택 가능하지만 체크박스는 다중 선택 가능함.-->
+  <label for="">업로드</label>
+  <input type="file">
+  <hr>
+  
+  <label for="">이미지 버튼</label>
+  <input type="image" src="http://wooreeweb.com/img/button.jpg" width="100" height="42">
+</body>
+</html>

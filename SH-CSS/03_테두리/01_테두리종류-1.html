@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>테두리 종류</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url(http://wooreeweb.com/img/grid.gif);
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+      margin: 20px;
+      border-width: 10px;
+      text-align: center;
+      line-height: 100px;
+      /*테두리의 색상은 글자색을 따라감.
+        지정하지 않은 글자색은 검정. 
+        따라서 글자색과 테두리색을 지정하지 않은면 둘 다 블랙*/
+    }
+  </style>
+  <style>
+    .solid {
+      border-style: solid;
+    }
+
+    .dotted {
+      border-style: dotted;
+    }
+
+    .dashed {
+      border-style: dashed;
+    }
+
+    .double {
+      border-style: double;
+    }
+      /*위의 4개 스타일 많이 씀.*/
+    .groove {
+      border-style: groove;
+    }
+
+    .ridge {
+      border-style: ridge;
+    }
+
+    .inset {
+      border-style: inset;
+    }
+
+    .outset {
+      border-style: outset;
+    }
+
+    .none {
+      border-style: none;
+    }
+
+    .hidden {
+      border-style: hidden;
+    }
+    /*none과 hidden은 같음.*/
+    .mixed {
+      border-style: solid dotted dashed double;
+      /*위를 기준으로 시계방향으로 적용.*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="solid">solid</div>
+  <div class="dotted">dotted</div>
+  <div class="dashed">dashed</div>
+  <div class="double">double</div>
+  <div class="groove">groove</div>
+  <div class="ridge">ridge</div>
+  <div class="inset">inset</div>
+  <div class="outset">outset</div>
+  <div class="none">none</div>
+  <div class="hidden">hidden</div>
+  <div class="mixed">혼합형</div>
+</body></html>

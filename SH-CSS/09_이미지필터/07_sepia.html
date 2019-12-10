@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이미지 필터</title>
+  <style>
+    img {
+      width: 300px;
+    }
+    figcaption {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .ft {
+      filter: sepia(100%);
+      /*기본값 : 0*/
+      /* 모노톤 필터. 숫자를 높일수록 갈색빛이 남 */
+    }
+  </style>
+</head>
+<body>
+  <figure>
+    <figcaption>원본</figcaption>
+    <img src="http://wooreeweb.com/img/s14.jpg" alt="">
+  </figure>
+  <figure>
+    <figcaption>sepia(100%)</figcaption>
+    <img src="http://wooreeweb.com/img/s14.jpg" alt="" class="ft">
+  </figure>
+</body>
+</html>

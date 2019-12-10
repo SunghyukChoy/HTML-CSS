@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포지션</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-image: url(http://wooreeweb.com/img/grid.gif);
+    }
+    .parent {
+      width: 300px;
+      height: 300px;
+      border: 3px solid #09f;
+      box-sizing: border-box;
+      margin: 50px auto;
+      /* position 속성값이 기재되어 있지 않으므로 기본값인 static */
+    }
+    p {
+      height: 50px;
+      background-color: rgba(220, 210, 60, 0.3);
+    }
+    .child {
+      width: 200px;
+      height: 150px;
+      background-color: rgba(220, 20, 60, 0.3);
+    }
+  </style>
+  <style>
+    .child {
+      position: absolute;
+      /* parent 클래스가 static 속성값을 가지므로 마지막인 body까지 올라가서  body의 position 속성값인 static의 속성값을 갖게 됨.*/
+      /* float과 absolute는 같이 쓸 수 없음. */
+      /* float은 떠있는 것. absolute는 포스트잇처럼 떼었다 붙이는 것 */
+      top: 10px;
+      left: 50px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <p>블록 요소 p</p>
+    <div class="child">.child</div>
+  </div>
+</body>
+</html>

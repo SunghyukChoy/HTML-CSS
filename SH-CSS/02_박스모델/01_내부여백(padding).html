@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>내부여백(padding)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /*자체적으로 생성되는 값들 초기화*/
+    /*모든 브라우저의 초기값을 초기화 해준다.*/
+
+    body {
+      background-image: url(http://wooreeweb.com/img/grid.gif);
+    }
+
+    div {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(230, 115, 230, 0.4);
+      position: absolute;
+    }
+    #box1 {
+      top: 0;
+    }
+    #box2 {
+      top: 100px;
+    }
+    #box3 {
+      top : 200px;
+    }
+    #box4 {
+      top : 300px;
+    }
+    #box5 {
+      top : 400px;
+    }
+
+    #box1 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      /*여백 주기 위,아래,좌,우*/
+      /*원래 지정한 박스에 지정한 여백을 주어 크기가 더 늘어남*/
+    }
+
+    #box2 {
+      padding: 10px;
+      /*상하좌우 10px*/
+    }
+
+    #box3 {
+      padding: 10px 20px;
+      /*상,하 10px/ 좌,우 20px*/
+      /*많이 쓰임*/
+    }
+
+    #box4 {
+      padding: 10px 20px 30px;
+      /*상 10px 좌,우 20px 하 30px*/
+      /*잘 안 쓰임*/
+      
+    }
+
+    #box5 {
+      padding: 10px 20px 30px 20px;
+      /*위를 기준으로 시계방향
+      상 10px 우 20px 하 30px 좌 20px*/
+      /*많이 쓰임*/
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box1">box1</div>
+  <div id="box2">box2</div>
+  <div id="box3">box2</div>
+  <div id="box4">box4</div>
+  <div id="box5">box5</div>
+</body></html>

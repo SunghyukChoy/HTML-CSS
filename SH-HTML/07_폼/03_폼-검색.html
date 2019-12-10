@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>폼</title>
+  <style>
+    input, label{display: block; margin-bottom: 10px;}
+    input { margin-bottom: 10px;}
+    lable { margin-top: 10px;}
+    input[type='radio'],
+    input[type='checkbox']{display: inline-block;}
+  </style>
+</head>
+<body>
+  <label for="">검색 - 기본형</label>
+  <input type="search">
+  <!--텍스트 입력 시 x 버튼(지우기) 활성화-->
+  
+  <label for="">검색 - placeholder</label>
+  <input type="search" placeholder="검색어를 입력하세요">
+  <hr>
+  <!--박스에 설명 입력 되어있음.-->
+  
+  <div><label for="">콤보 상자(드롭다운)</label>
+  <select name="" id="">
+    <option value="ht">HTML</option>
+    <option value="cs">CSS</option>
+    <!--option 하나당 선택항목 한 개-->
+    <!--value : 전송되는 값. -->
+  </select>
+  </div>
+  <div><label for="">목록 상자</label>
+  <select name="" id="" multiple>
+   <!--multiple 옵션 입력 시 여러개가 보이는 목록 상자 생성. 
+     목록에서 여러개 선택 가능.-->
+    <option value="ht">HTML</option>
+    <option value="cs">CSS</option>
+  </select>
+  </div>  
+  
+</body>
+</html>

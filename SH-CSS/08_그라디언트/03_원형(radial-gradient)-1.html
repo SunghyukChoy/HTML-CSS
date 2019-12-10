@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원형 그라디언트(radial-gradient)</title>
+  <style>
+    div {
+      width: 600px;
+      height: 300px;
+
+    }
+  </style>
+  <style>
+    .radial1 {
+      background-image: radial-gradient(yellow, green);
+      /* 중앙에서 바깥으로. yellow에서 greent으로 */
+      
+    }
+    .radial2 {
+
+      background-image: radial-gradient(yellow, green 50%);
+      /* 원형의 50%부터는 greent */
+    }
+  </style>
+</head>
+<body>
+  <div class="radial1"></div>
+  <div class="radial2"></div>
+</body>
+</html>

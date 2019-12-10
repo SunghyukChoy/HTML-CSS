@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이미지 필터</title>
+  <style>
+    img {
+      width: 300px;
+    }
+    figcaption {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  </style>
+  <style>
+    .ft {
+      filter: brightness(200%);
+      /*r기본값 : 100%*/
+      /* 밝기 필터. 퍼센트 단위 */
+    }
+  </style>
+</head>
+<body>
+  <figure>
+    <figcaption>원본</figcaption>
+    <img src="http://wooreeweb.com/img/s14.jpg" alt="">
+  </figure>
+  <figure>
+    <figcaption>brightness(200%)</figcaption>
+    <img src="http://wooreeweb.com/img/s14.jpg" alt="" class="ft">
+  </figure>
+</body>
+</html>

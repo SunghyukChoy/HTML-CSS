@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>가상(의사)선택</title>
+  <style>
+    p {
+      border: 1px solid #333;
+    }
+    p::before { /*p 태그 안으로 들어가서 맨 앞에*/
+      content: ''; /*필수 속성. 값의 유무 상관 없이 무조건 써줌*/
+      border-left: 5px solid crimson;
+    }
+    p::after { /* p 태그 안으로 들어가서 맨 뒤에*/
+      content: ' 뒤에 삽입';
+      color: crimson;
+    }
+    /*가상 선택 시에는 상자가 생성되지 않음.*/
+  </style>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam at fuga, fugiat alias sint saepe vero deserunt accusamus voluptatem tenetur pariatur repellendus sed maxime maiores assumenda similique, quia quam obcaecati.</p>
+</body>
+</html>

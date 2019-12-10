@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>박스 그림자(box-shadow)</title>
+  <style>
+    div {
+      width: 200px; height: 100px;
+      background-color: gold;
+      text-align: center;
+      line-height: 100px;
+      color: red;
+    }
+  </style>
+  <style>
+    div {
+      box-shadow: 5px 5px 8px 10px #444;
+      /* 네 번째 값 : spread 10px만큼 그림자를 키우겠다. 펼치겠다. 10px 때문에 그림자가 펴발라져서 좌상단 쪽으로도 그림자가 나타남. */
+    }
+  </style>
+</head>
+<body>
+  <div>DIV BOX</div>
+</body>
+</html>

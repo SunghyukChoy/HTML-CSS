@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트랜지션</title>
+  <link rel="stylesheet" href="css/common.css">
+  <style>
+    .wrap {
+      width: 400px;
+      height: 600px;
+      border: 1px solid silver;
+    }
+    .wrap:hover > div {
+      width: 400px;
+      background-color: crimson;      
+    }
+    div {
+      transition: all 3s;
+    }
+  </style>
+  <style>
+    .box1 {
+      transition-timing-function: linear;
+      /* 가속도 효과 : 가속도를 달리함. */
+      /* linear : 등속 */
+    }
+    .box2 {      
+      transition-timing-function: ease;      
+      /* ease : 기본값. 표기 안 하면 ease*/
+    }
+    .box3 {
+      transition-timing-function: ease-in;
+      /* ease in : 천천히 출발. */
+    }
+    .box4 {
+      transition-timing-function: ease-out;
+      /* ease out : 천천히 도착 */
+    }
+    .box5 {
+      transition-timing-function: ease-in-out;
+      /* 천천히 출발했다 천천히 도착 */
+    }
+    .box6 {
+      transition-timing-function: cubic-bezier(.74, .23, .87, .67);
+      /* cubic-bezier : 사용자 정의값 */
+    }
+  </style>
+</head>
+<body>
+  <!-- section.wrap>(.box$)*6 -->
+  <section class="wrap">
+    
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+  </section>
+</body>
+</html>

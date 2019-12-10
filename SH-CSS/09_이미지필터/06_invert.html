@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이미지 필터</title>
+  <style>
+    img {
+      width: 300px;
+
+    }
+
+    figcaption {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .ft {
+      filter: invert(100%);
+      /*기본값 : 0 */
+      /* 반전 필터 */
+    }
+  </style>
+</head>
+
+<body>
+  <figure>
+    <figcaption>원본</figcaption>
+    <img src="http://wooreeweb.com/img/s14.jpg" alt="">
+  </figure>
+  <figure>
+    <figcaption>invert(100%)</figcaption>
+    <img src="http://wooreeweb.com/img/s14.jpg" alt="" class="ft">
+  </figure>
+</body></html>

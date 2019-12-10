@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포지션</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-image: url(http://wooreeweb.com/img/grid.gif);
+    }
+  </style>
+  <style>
+    p {
+      height: 50px;
+      background-color: rgba(255, 215, 0, 0.3);
+    }
+    .box {
+      width: 200px;
+      height: 150px;
+      background-color: rgba(220, 20, 60, 0.4);
+    }
+  </style>
+  <style>
+    .box {
+      top: 50px;
+      left: 100px;
+      position: static;
+      /* 기본 속성이 static. 안 써도 static
+      position 속성값이 static이면 위치 이동 속성은 적용되지 않는다. */
+    }
+    /* 위치 이동 속성
+    top : 위쪽을 기준으로 아래로 이동
+    bottom : 아래쪽을 기준으로 위로 이동
+    right : 오른쪽을 기준으로 왼쪽으로 이동
+    left : 왼쪽을 기준으로 오른쪾으로 이동
+     즉 중앙쪽으로 움직임. 속성 값이 음수면 바깥쪽으로 이동.*/
+  </style>
+</head>
+<body>
+  <p>블록 요소 p</p>
+  <div class="box">.box</div>
+</body>
+</html>
