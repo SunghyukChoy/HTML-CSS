@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지슬라이더</title>
+  <style>
+    /* 초기화 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+
+    /* 이미지 슬라이드 영역 */
+    .slide-wrap {
+      position: relative;
+      height: 600px;
+
+    }
+
+    /* 이미지 - 배경 */
+    .slide-img1 {
+      background-image: url(http://wooreeweb.com/img/bg-1.jpg);
+    }
+    .slide-img2 {
+      background-image: url(http://wooreeweb.com/img/bg-2.jpg);
+    }
+    .slide-img3 {
+      background-image: url(http://wooreeweb.com/img/bg-3.jpg);
+    }
+    .slide-img4 {
+      background-image: url(http://wooreeweb.com/img/bg-4.jpg);
+    }
+
+    /* 배경 이미지가 보이도록 li 설정 */
+    .slide-wrap ul li {
+      height: 500px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    /* 인디케이터 */
+    .slide-wrap input,
+    .slide-wrap label {
+      position: relative;
+      top: 520px;
+
+    }
+
+    /* 인디케이터 - 레이블 디자인 */
+    .slide-wrap label {
+      width: 20px;
+      height: 20px;
+      background-color: #ddd;
+      display: inline-block;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* 라디오 버튼 숨기기 */
+    .slide-wrap input[type="radio"]{
+      display: none;
+    }
+
+    /* 모든 슬라이드 이미지 숨기기 */
+    .slide-wrap ul li {
+      display: none;
+    }
+
+    /* 인디케이터 선택(체크)시 해당 이미지 보이기 */
+    #btn1:checked ~ .slide li:nth-child(1) {
+      display: block;
+    }
+    #btn2:checked ~ .slide li:nth-child(2) {
+      display: block;
+    }
+    #btn3:checked ~ .slide li:nth-child(3) {
+      display: block;
+    }
+    #btn4:checked ~ .slide li:nth-child(4) {
+      display: block;
+    }
+
+  </style>
+  <style>
+    /* 선택된 인디케이터(label) */
+    #btn1:checked ~ #in1 {
+      background-color: #29d;
+    }
+    #btn2:checked ~ #in2 {
+      background-color: #29d;
+    }
+    #btn3:checked ~ #in3 {
+      background-color: #29d;
+    }
+    #btn4:checked ~ #in4 {
+      background-color: #29d;
+    }
+
+    /* 인디케이터 템플릿(.wide) */
+    #btn1:checked ~ #in1.wide {
+      width: 40px;
+    }
+    #btn2:checked ~ #in2.wide {
+      width: 40px;
+    }
+    #btn3:checked ~ #in3.wide {
+      width: 40px;
+    }
+    #btn4:checked ~ #in4.wide {
+      width: 40px;
+    }
+
+    /* 모션 */
+    .slide-wrap label {
+      transition: all 0.6s;
+    }
+  </style>
+  <style>
+    /* 슬라이드 모션 테마 - .fade */
+    #btn1 ~ ul li.fade,
+    #btn2 ~ ul li.fade,
+    #btn3 ~ ul li.fade,
+    #btn4 ~ ul li.fade {
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.6s;
+    }
+
+    #btn1:checked ~ ul li.fade:nth-child(1),
+    #btn2:checked ~ ul li.fade:nth-child(2),
+    #btn3:checked ~ ul li.fade:nth-child(3),
+    #btn4:checked ~ ul li.fade:nth-child(4) {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <style>
+    /* 슬라이드 모션 테마 - .to-right */
+    @keyframes slideInFromLeft {
+      0% {
+        left: -100%;
+        visibility: hidden;
+      }
+      100% {
+        left: 0;
+        visibility: visible;
+      }
+    }
+
+    #btn1:checked ~ ul li.to-right:nth-child(1),
+    #btn2:checked ~ ul li.to-right:nth-child(2),
+    #btn3:checked ~ ul li.to-right:nth-child(3),
+    #btn4:checked ~ ul li.to-right:nth-child(4) {
+      animation: slideInFromLeft 1s forwards;
+    }
+
+    @keyframes slideOutToRight {
+      0% {
+        left: 0;
+        visibility: visible;
+      }
+      100% {
+        left: 100%;
+        visibility: hidden;
+      }
+    }
+
+    #btn1 ~ ul li.to-right,
+    #btn2 ~ ul li.to-right,
+    #btn3 ~ ul li.to-right,
+    #btn4 ~ ul li.to-right {
+      animation: slideOutToRight 1s forwards;
+      display: block;
+    }
+
+    /* 가로 스크롤바 제거 */
+    .slide-wrap {
+      overflow-x: hidden;
+    }
+  </style>
+  <style>
+      /* 슬라이드 모션 테마 - .to-left */
+      @keyframes slideInFromRight {
+        0% {
+          left: 100%;
+          visibility: hidden;
+        }
+        100% {
+          left: 0;
+          visibility: visible;
+        }
+      }
+  
+      #btn1:checked ~ ul li.to-left:nth-child(1),
+      #btn2:checked ~ ul li.to-left:nth-child(2),
+      #btn3:checked ~ ul li.to-left:nth-child(3),
+      #btn4:checked ~ ul li.to-left:nth-child(4) {
+        animation: slideInFromRight 1s forwards;
+      }
+  
+      @keyframes slideOutToLeft {
+        0% {
+          left: 0;
+          visibility: visible;
+        }
+        100% {
+          left: -100%;
+          visibility: hidden;
+        }
+      }
+  
+      #btn1 ~ ul li.to-left,
+      #btn2 ~ ul li.to-left,
+      #btn3 ~ ul li.to-left,
+      #btn4 ~ ul li.to-left {
+        animation: slideOutToLeft 1s forwards;
+        display: block;
+      }
+  
+      /* 가로 스크롤바 제거 */
+      .slide-wrap {
+        overflow-x: hidden;
+      }
+    </style>
+    <style>
+      /* 인디케이터 위치 조정(가운데) */
+      .slide-wrap label {
+        top: 460px;
+        z-index: 9999;
+        /* 관례적인 값. 맨 앞으로 빼내겠다. */
+        left: calc(50% - 56px);
+        /* 연산자 좌우로 무조건 띄어쓰기 함 */
+        /* = left : 50% margin-left : -56px */
+
+      }
+    </style>
+    <style>
+      /* 슬라이드 모션 테마 - .to-bottom */
+      @keyframes slideInFromTop {
+        0% {
+          top: -100%;
+          visibility: hidden;
+        }
+        100% {
+          top: 0;
+          visibility: visible;
+        }
+      }
+
+      #btn1:checked ~ ul li.to-bottom:nth-child(1),
+      #btn2:checked ~ ul li.to-bottom:nth-child(2),
+      #btn3:checked ~ ul li.to-bottom:nth-child(3),
+      #btn4:checked ~ ul li.to-bottom:nth-child(4) {
+        animation: slideInFromTop 1s forwards;
+      }
+
+      @keyframes slideOutToBottom {
+        0% {
+          top: 0;
+          visibility: visible;
+        }
+        100% {
+          top: 100%;
+          visibility: hidden;
+        }
+      }
+  
+      #btn1 ~ ul li.to-bottom,
+      #btn2 ~ ul li.to-bottom,
+      #btn3 ~ ul li.to-bottom,
+      #btn4 ~ ul li.to-bottom {
+        animation: slideOutToBottom 1s forwards;
+        display: block;
+      }
+  
+      /* 세로 스크롤바 제거 */
+      .slide-wrap {
+        overflow-y: hidden;
+        height: 500px;
+      }
+  
+    </style>
+</head>
+<body>
+ <!-- 이미지슬라이드 영역 -->
+ <div class="slide-wrap">
+   <!-- (1) 인디케이터 -->
+   <input type="radio" name="dot" id="btn1" checked>
+   <label for="btn1" id="in1" class="wide"></label>
+   <input type="radio" name="dot" id="btn2">
+   <label for="btn2" id="in2" class="wide"></label>
+   <input type="radio" name="dot" id="btn3">
+   <label for="btn3" id="in3" class="wide"></label>
+   <input type="radio" name="dot" id="btn4">
+   <label for="btn4" id="in4" class="wide"></label>
+
+   <!-- (2) 슬라이드 이미지 -->
+   <!-- ul.slide>(li.slide-img$)*4 -->
+   <ul class="slide">
+     <li class="slide-img1 to-bottom"></li>
+     <li class="slide-img2 to-bottom"></li>
+     <li class="slide-img3 to-bottom"></li>
+     <li class="slide-img4 to-bottom"></li>
+   </ul>
+ </div>
+</body>
+</html>

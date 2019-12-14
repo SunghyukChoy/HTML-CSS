@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션</title>
+    <style>
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #444;
+        }
+
+        body {
+            /* 배경 그리드 - 나중에 제거 */
+            background-image: url(http://wooreeweb.com/img/grid.gif);
+        }
+
+        body * {
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        nav {
+            width: 150px;
+            height: 100%;
+            /* 전체 높이 사용 - 세로형 */
+
+            /* 영역 확인용 테두리와 배경 - 나중에 제거 */
+            border: 1px solid red;
+            background-color: rgba(255, 200, 0, 0.3);
+        }
+
+        #gnb li {
+            height: 50px;
+            background-color: #09f;
+            border-bottom: 1px solid #eee;
+            /* 메뉴구분선 */
+        }
+        #gnb li:last-child {
+            border-bottom: none;
+        }
+        #gnb li a {
+            color: #fff;
+        }
+
+        #gnb > li > a {
+            display: block;
+            height: 100%;
+            font-size: 25px;
+            line-height: 2;
+            text-indent: 10px;            
+        }
+        
+        #gnb li:hover {
+            background-color: #06f;
+        }
+        #gnb li {
+            transition: all 0.6s;
+        }
+        </style>
+</head>
+<body>
+    <!-- nav>ul#gnb>(li>a[href=#]{메뉴$})*5 -->
+    <nav>
+        <ul id="gnb">
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+        </ul>        
+    </nav>
+</body>
+</html>

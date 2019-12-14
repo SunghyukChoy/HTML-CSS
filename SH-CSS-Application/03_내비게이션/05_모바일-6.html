@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션</title>
+    <!-- 웹 폰트 아이콘 라이브러리 -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'/>
+    <style>
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #444;
+        }
+
+        body {
+            /* 배경 그리드 - 나중에 제거 */
+            background-image: url(http://wooreeweb.com/img/grid.gif);
+        }
+
+        body * {
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        nav {
+            width: 150px;
+            height: 100%;
+            /* 전체 높이 사용 - 세로형 */
+
+            /* 영역 확인용 테두리와 배경 - 나중에 제거 */
+            border: 1px solid red;
+            background-color: rgba(255, 200, 0, 0.3);
+        }
+
+        #gnb li {
+            height: 50px;
+            background-color: #09f;
+            border-bottom: 1px solid #eee;
+            /* 메뉴구분선 */
+        }
+        #gnb li:last-child {
+            border-bottom: none;
+        }
+        #gnb li a {
+            color: #fff;
+        }
+
+        #gnb > li > a {
+            display: block;
+            height: 100%;
+            font-size: 25px;
+            line-height: 2;
+            text-indent: 10px;            
+        }
+        
+        #gnb li:hover {
+            background-color: #06f;
+        }
+        #gnb li {
+            transition: all 0.6s;
+        }
+        </style>
+        <style>
+            #gnb li {
+                position: relative;
+            }
+            #gnb > li > a {
+                text-align: center;
+            }
+
+            #gnb a span,
+            #gnb a i {
+                text-indent: 0;
+                display: block;
+                position: absolute;
+                width: 100%;
+                font-size: 40px;
+                line-height: 1.2;
+                padding-top: 1px;
+            }
+            #gnb a span {
+                opacity: 0;
+
+            }
+            nav {
+                width: 50px;
+            }
+        </style>
+        <style>
+            /* :after 스타일 대체 */
+            nav {
+                position: relative;
+            }
+            #btn, 
+            #btn + label {
+                position: absolute;
+                display: block;
+            }
+            #gnb {
+                position: relative;
+                left: -50px;
+            }
+
+            #btn {
+                display: none;
+            }
+            #btn + label {
+                width: 50px;
+                height: 50px;
+                background-color: #09f;
+                top: 0;
+                left: 0;
+                cursor: pointer;
+                text-align: center;
+            }
+            #btn + label i {
+                font-size: 32px;
+                color: #fff;
+                line-height: 50px;
+            }
+
+            /* 클릭(체크) 기능 구현 */
+
+            /* 버튼 클릭시 레이블만 메뉴의 너비만큼 이동 */
+            #btn:checked + label {
+                left: 50px;
+            }
+
+            /* 버튼 클릭시 #gnb를 원래 위치로 이동 */
+            #btn:checked ~ #gnb {
+                left: 0;
+            }
+
+            /* 버튼 이동 모션 */
+            #btn,
+            #btn + label,
+            #gnb {
+                transition: all 0.6s;
+            }
+        </style>
+        <style>
+            /* 버큰 내부 모션 아이콘 구현 */
+            #btn + label span,
+            #btn + label span:before,
+            #btn + label span:after {
+                display: block;
+                width: 32px;
+                background-color: #fff;
+                height: 8px;
+                position: absolute;
+                left: 9px;
+                top: 21px;
+            }
+            #btn + label span:before {
+                content: '';
+                left: 0;
+                top: -12px;
+            }
+            #btn + label span:after {
+                content: '';
+                left: 0;
+                top: 10px;
+            }
+
+            /* 메뉴 버튼 클릭시 효과 */
+            #btn:checked + label span {
+                visibility: hidden;
+                width: 0;
+                height: 0;
+            }
+            #btn:checked + label span::before {
+                visibility: visible;
+                transform: rotate(45deg);
+                transform-origin: 2px 8px;
+            }
+            #btn:checked + label span:after {
+                visibility: visible;
+                transform: rotate(-45deg);
+                transform-origin: 0px -1px;
+            }
+
+            #btn + label span,
+            #btn + label span:before,
+            #btn + label span:after {
+                transition: all 0.6s;
+            }
+        </style>
+</head>
+<body>
+    <!-- nav>ul#gnb>(li>a[href=#]{메뉴$})*5 -->
+    <nav>
+        <!-- 버튼형 구현 -->
+        <input type="checkbox" name="btn" id="btn">
+        <label for="btn">
+            <!-- <i class="fa fa-navicon" id="open"></i>
+            <i class="fa fa-close" id="close"></i> -->
+            <span></span>
+        </label>
+
+        <ul id="gnb">
+            <li><a href="#"><span>메뉴1</span><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><span>메뉴2</span><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#"><span>메뉴3</span><i class="fa fa-pinterest"></i></a></li>
+            <li><a href="#"><span>메뉴4</span><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><span>메뉴5</span><i class="fa fa-vimeo"></i></a></li>
+        </ul>        
+    </nav>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>호버 오버레이</title>
+  <style>
+   .box {
+     position: relative;
+     width: 300px;
+   }
+   .box img {
+     width: 100%;
+     display: block;
+   }
+  </style>
+  <style>
+    .over {
+      background-color: #5c6;
+      position: absolute;
+      width: 100%;
+      top: 0;
+    }
+    .caption {
+      color: #fff;
+      overflow: hidden;
+      transition: all 0.6s;
+    }
+   
+    .box:hover .over {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+ <div class="box">
+   <img src="http://wooreeweb.com/img/s07.jpg" alt="">
+   <div class="over">
+     <div class="caption">오버레이</div>
+   </div>
+ </div>
+</body>
+</html>

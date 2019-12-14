@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>글자 그림자(text-shadow)</title>
   <style>
+    html {
+      background-image: url(http://wooreeweb.com/img/grid.gif);
+    }
     h2 {
       color: #09f; margin: 20px;      
     }
     .ts1 {
-      text-shadow: 2px 15px;      
+      text-shadow: 2px 15px;   
+      /* 우측으로 2px 하단으로 15px */
+      /* 그림자의 색은 글자색을 따라감 */   
     }
     .ts2 {
       text-shadow: -15px -10px;
@@ -21,3 +26,4 @@
   <h2 class="ts2">Text Shadow Effect</h2>
 </body>
 </html>
+

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지슬라이더</title>
+  <style>
+    /* 초기화 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+
+    /* 이미지 슬라이드 영역 */
+    .slide-wrap {
+      position: relative;
+      height: 600px;
+
+    }
+
+    /* 이미지 - 배경 */
+    .slide-img1 {
+      background-image: url(http://wooreeweb.com/img/bg-1.jpg);
+    }
+    .slide-img2 {
+      background-image: url(http://wooreeweb.com/img/bg-2.jpg);
+    }
+    .slide-img3 {
+      background-image: url(http://wooreeweb.com/img/bg-3.jpg);
+    }
+    .slide-img4 {
+      background-image: url(http://wooreeweb.com/img/bg-4.jpg);
+    }
+
+    /* 배경 이미지가 보이도록 li 설정 */
+    .slide-wrap ul li {
+      height: 500px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    /* 인디케이터 */
+    .slide-wrap input,
+    .slide-wrap label {
+      position: relative;
+      top: 520px;
+
+    }
+
+    /* 인디케이터 - 레이블 디자인 */
+    .slide-wrap label {
+      width: 20px;
+      height: 20px;
+      background-color: #ddd;
+      display: inline-block;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* 라디오 버튼 숨기기 */
+    .slide-wrap input[type="radio"]{
+      display: none;
+    }
+
+    /* 모든 슬라이드 이미지 숨기기 */
+    .slide-wrap ul li {
+      display: none;
+    }
+
+    /* 인디케이터 선택(체크)시 해당 이미지 보이기 */
+    #btn1:checked ~ .slide li:nth-child(1) {
+      display: block;
+    }
+    #btn2:checked ~ .slide li:nth-child(2) {
+      display: block;
+    }
+    #btn3:checked ~ .slide li:nth-child(3) {
+      display: block;
+    }
+    #btn4:checked ~ .slide li:nth-child(4) {
+      display: block;
+    }
+
+  </style>
+  <style>
+    /* 선택된 인디케이터(label) */
+    #btn1:checked ~ #in1 {
+      background-color: #29d;
+    }
+    #btn2:checked ~ #in2 {
+      background-color: #29d;
+    }
+    #btn3:checked ~ #in3 {
+      background-color: #29d;
+    }
+    #btn4:checked ~ #in4 {
+      background-color: #29d;
+    }
+
+    /* 인디케이터 템플릿(.wide) */
+    #btn1:checked ~ #in1.wide {
+      width: 40px;
+    }
+    #btn2:checked ~ #in2.wide {
+      width: 40px;
+    }
+    #btn3:checked ~ #in3.wide {
+      width: 40px;
+    }
+    #btn4:checked ~ #in4.wide {
+      width: 40px;
+    }
+
+    /* 모션 */
+    .slide-wrap label {
+      transition: all 0.6s;
+    }
+  </style>
+  <style>
+    /* 슬라이드 모션 테마 - .fade */
+    #btn1 ~ ul li.fade,
+    #btn2 ~ ul li.fade,
+    #btn3 ~ ul li.fade,
+    #btn4 ~ ul li.fade {
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.6s;
+    }
+
+    #btn1:checked ~ ul li.fade:nth-child(1),
+    #btn2:checked ~ ul li.fade:nth-child(2),
+    #btn3:checked ~ ul li.fade:nth-child(3),
+    #btn4:checked ~ ul li.fade:nth-child(4) {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+ <!-- 이미지슬라이드 영역 -->
+ <div class="slide-wrap">
+   <!-- (1) 인디케이터 -->
+   <input type="radio" name="dot" id="btn1" checked>
+   <label for="btn1" id="in1" class="wide"></label>
+   <input type="radio" name="dot" id="btn2">
+   <label for="btn2" id="in2" class="wide"></label>
+   <input type="radio" name="dot" id="btn3">
+   <label for="btn3" id="in3" class="wide"></label>
+   <input type="radio" name="dot" id="btn4">
+   <label for="btn4" id="in4" class="wide"></label>
+
+   <!-- (2) 슬라이드 이미지 -->
+   <!-- ul.slide>(li.slide-img$)*4 -->
+   <ul class="slide">
+     <li class="slide-img1 fade"></li>
+     <!-- 클래스 속성값에 띄어스기가 있으면 멀티클래스
+    slide-img1이면서 fade인 클래스 -->
+     <li class="slide-img2 fade"></li>
+     <li class="slide-img3 fade"></li>
+     <li class="slide-img4 fade"></li>
+   </ul>
+ </div>
+</body>
+</html>

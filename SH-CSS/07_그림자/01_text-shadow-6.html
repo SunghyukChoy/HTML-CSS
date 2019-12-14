@@ -7,20 +7,30 @@
   <style>
     h1 {
       font-family: impact;
+      /* 시스템 기본 글꼴이며 영문 표기에 좋음. 많이 쓰임. */
       text-transform: uppercase;
+      /* 글자를 대문자로 바꿔줌. */
       letter-spacing: 2px;
+      /* 글자의 간격. 글자와 글자 사이의 간격 */
       text-align: center;
       display: table-cell;
+      /* h1을 표의 셀 하나로 만들어 줌. */
       vertical-align: middle;
+      /* 표 안에서의 위치 지정. 전체 높이 중에 가운데에 위치 */
       font-size: 20vmin;
+      /* vmin : viewport minimum; viewport는 화면 그 자체의 영역 . 그 화면 크기의 해상도를 생각해야 함. 가로와 세로의 크기 중 더 작은 값에 대한 비율. 상대값 vmax : 더 큰 값에 대한 비율. 20vmin : 더 작은 값의 20% 값. */
+      /* 해상도에 따라 크기가 달라짐. 해상도가 클 수록 커짐.  */
     }
     body {
       display: table;
+      /* 부모 요소를 table로 만들면 자식 요소도 table의 속성을 가짐. 가상의 표를 만듦 */
       background-color: #000;
     }
     html, body, h1 {
       height: 100%;
       width: 100%;
+
+      /*  */
     }
   </style>
   <style>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NH Homepage</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function () {
+            $('.gnbMenu li a').hover(function () {
+                $('.snbMenu').show();
+            })
+
+            $('.snbMenu').hover(function () {
+
+            }, function () {
+                $('.snbMenu').hide();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <a class="home-title" href="#">NH오픈플랫폼</a>
+            <ul class="gnbMenu">
+                <li><a href="#">NH오픈플랫폼</a></li>
+                <li><a href="#">오픈API</a></li>
+                <li><a href="#">활용예시</a></li>
+                <li><a href="#">개발자센터</a></li>
+            </ul>
+        </div>
+        <div class="snbMenu">
+            <ul>
+                <li>
+                    <ul>
+                        <li><a href="#">CEO인사말</a></li>
+                        <li><a href="#">NH오픈플랫폼 소개</a></li>
+                        <li><a href="#">NH오픈플랫폼 오픈API</a></li>
+                        <li><a href="#">NH오픈플랫폼의 차별점</a></li>
+                        <li><a href="#">NH오픈플랫폼 보안</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li class="etc"><a href="#">공통</a>
+                            <ul class="gnbDept2">
+                                <li><a href="#">핀-어카운트-핀카드</a></li>
+                                <li><a href="#">출금이체</a></li>
+                                <li><a href="#">입금이체</a></li>
+                                <li><a href="#">예금주조회</a></li>
+                                <li><a href="#">금융정보</a></li>
+                                <li><a href="#">가상계좌</a></li>
+                                <li><a href="#">자금출처관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="etc"><a href="#">간편결제</a>
+                            <ul class="gnbDept2">
+                                <li><a href="#">신용카드</a></li>
+                                <li><a href="#">지로공과금 납부</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">카드 조회</a></li>
+                        <li class="etc"><a href="#">P2P</a>
+                            <ul class="gnbDept2">
+                                <li><a href="#">P2P자금관리</a></li>
+                                <li><a href="#">소상공인 외상매출 담보</a></li>
+                            </ul>
+                        </li>
+                        <li class="etc"><a href="#">기타</a>
+                            <ul class="gnbDept2">
+                                <li><a href="#">예치금 자금관리</a></li>
+                                <li><a href="#">환전</a></li>
+                                <li><a href="#">관리/모니터링</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><a href="#">활용예시</a></li>
+                        <li><a href="#">적용사례</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <section class="content_1">
+            <h1>TITLE</h1>
+        </section>
+        <section class="content_2">
+            <h2>Open API</h2>
+        </section>
+        <section class="content_3">
+            <h2>NH OpenFlatform</h2>
+        </section>
+        <section class="content_4">
+            <h2>NH Devleoper</h2>
+        </section>
+        <section class="content_5">
+            <h2>with NH</h2>
+        </section>
+    </div>
+    <footer>
+        <div class="PCfooter">
+            <div class="inner">
+                <div class="footLogo">NH 농협은행</div>
+                <div class="footerAbout">
+
+                    <address>
+                        대표전화 02-2059-3216, 주소 (04516) 서울특별시 중구 새문안로 16
+                    </address>
+                    <p>Copyright 2019. Nonghyup All rights reserved.</p>
+                </div>
+                <select>
+                    <option>Family site</option>
+                    <option value="http://www.nonghyup.com/Main/main.aspx">농협중앙회</option>
+                    <option value="http://www.nhbank.com/nhmn/KO_NHMN_01.do">NH농협은행</option>
+                    <option value="http://www.nhfngroup.com/">NH농협금융지주</option>
+                    <option value="https://www.nhlife.co.kr/">NH농협생명</option>
+                    <option value="https://www.nhfire.co.kr/">NH농협손해보험</option>
+                    <option value="https://www.nhqv.com/">NH투자증권</option>
+                    <option value="http://www.nh-amundi.com/">NH-Amundi자산운용</option>
+                    <option value="https://www.nhcapital.co.kr/">NH농협캐피탈</option>
+                    <option value="https://www.futures.co.kr/">NH선물</option>
+                    <option value="http://www.nhsavingsbank.co.kr/">NH저축은행</option>
+                    <option value="http://www.nonghyupmall.com/BC31010R/main.nh">NH몰</option>
+                    <option value="http://nongshinbo.nonghyup.com/">농림수산업자신용보증기금</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

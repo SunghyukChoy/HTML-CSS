@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내비게이션</title>
+  <style>
+    /* 초기화 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    /* 내비게이션 구조 */
+    nav {
+      width: 200px;      
+    }
+    nav ul {
+      width: 100%;
+      background-color: #eee;
+    }
+    nav ul li {
+      width: 100%;
+    }
+    nav ul li a {
+      display: block;
+      padding: 10px;
+    }
+  </style>
+  <style>
+    /* 인터랙티브 스타일 */
+    nav ul li a:hover:not(.on) {
+      background-color: #555;
+      color: #fff;
+    }
+    nav ul li a.on {
+      background-color: #4c8;
+      color: #fff;
+    }
+    
+  </style>
+</head>
+<body>
+ <nav>
+   <ul>
+     <li><a href="#" class="on">메뉴1</a></li>
+     <li><a href="#">메뉴2</a></li>
+     <li><a href="#">메뉴3</a></li>
+     <li><a href="#">메뉴4</a></li>
+   </ul>
+ </nav>
+ <!-- JQuery -->
+ <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+ <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+ <script>
+   $( function () {
+     $('a').click(function () {
+       $('a').removeClass('on');
+       $(this).addClass('on');
+     });
+   });
+ </script>
+</body>
+</html>
