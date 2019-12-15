@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃 프로토타입</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    a { text-decoration: none; color: #333; }
+    li { list-style: none; }
+    html {
+      font-size: 16px; line-height: 1.5;
+    }    
+    .clear {
+      content: ''; display: block; clear: both;
+    }
+  </style>
+  <style>
+    .header { background-color: #ddd; }
+    .logo { background-color: #222; }
+    nav { background-color: #eee; }
+    nav li { background-color: #888; }
+    .container { background-color: #ccc; }
+    .footer { background-color: #bbb;}
+
+  </style>
+  <style>
+    /* 헤더 */
+    .header { height: 80px; }
+    .header .logo { width: 10%; }
+    .header nav { width: 90%; height: 100%;}
+    .logo, nav { float: left; }
+    .header nav ul { width: 80%; padding-left: 20%; height: 100%; }
+    .header nav li { float: left; width: 20%; height: 100%; }
+    .header nav li a {
+      display: block; text-align: center;
+      padding-top: 32px;
+    }
+    
+    /* 컨텐츠 */
+    .container { }
+
+    /* 푸터 */
+    .footer { height: 80px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- 헤더 -->
+    <div class="header clear">
+      <!-- 로고 -->
+      <div class="logo">
+        <a href="#">
+          <img src="" alt="로고">
+        </a>
+      </div>
+
+      <!-- 내비게이션 -->
+      <nav>
+        <ul class="clear">
+          <li><a href="#">회사소개</a></li>
+          <li><a href="#">사회책임경영</a></li>
+          <li><a href="#">투자정보</a></li>
+          <li><a href="#">미디어센터</a></li>
+          <li><a href="#">채용</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- 컨텐츠 컨테이너 -->
+    <div class="container">
+      컨텐츠 영역
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+      푸터영역
+    </div>
+  </div>
+</body>
+</html>
