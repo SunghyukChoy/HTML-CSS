@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent, #other, #grandparent {
+      border: 5px solid tomato;
+    }
+
+    #grandparent {
+      position: relative;
+    }
+    #me {
+      background-color: black;      
+      color: white;      
+      left: 0px;
+      top: 0px;
+      position: absolute;  
+      /* HTML태그를 기준으로 해서 위치를 잡고 싶다면?  */
+      /* position 값을 absolute로 주고 left, top 값을 각각 0 */
+      /* 만약 left 값과 top 값을 없애면 부모의 위치를 기준으로 자신의 위치가 생김 */
+      /* 속성값을 absolute로 주면 그 요소는 더이상 부모의 소속이 아님 */
+      /* 부모의 링크가 끊기면서 부모의 크기를 가졌던 것이 자기 자신의 컨텐츠 크기만큼만 크기를 갖게 됨 */ 
+       /* absolute 요소의 부모 요소는 자식 요소와 링크가 끊겼기 떄문에 부모 요소의 크기는 자식 요소의 크기를 포함하지 않는다. */
+
+
+      /* 요소에 크기를 지정하고 싶다면 직접 지정해줌 */
+      /* width: 200px;
+      height: 20px; */
+      /* 요소에 크기를 지정하기 위해 입력한 속성 */
+
+      /* position에 absolute를 주면 static이 아닌 부모가 나타낼 때까지 올라가다가 static이 아닌 부모를 만나면 그 요소의 위치를 기준으로 오프셋값(left,right,top,bottom)을 주고 위치를 잡게 됨. */
+      /* 본 예제에서는 parent의 position 값 static (지정하지 않았으므로 기본값인 static), grandparent의 position값이 static값이 아닌 relative이므로 grandparent의 위치를 기준으로 잡고 오프셋값을 주어 자신의 위치를 잡음. */
+       
+
+    }
+  </style>
+</head>
+<body>
+  <div id="other">other</div>
+  <div id="grandparent">grandparent
+    <div id="parent">parent
+      <div id="me">me</div>
+    </div>
+  </div>
+  
+</body>
+</html>

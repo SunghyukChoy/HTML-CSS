@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1 {
+      border: 1px solid red;
+      margin: 100px;
+      /* 개발자 도구를 실행하여 확인 시 살구색 부분(margin)이 겹치게 됨. 위의 h1 태그 margin-bottom 부분과 아래 h1 태그의 margin-top 부분. */
+      /* 마진 겹침이 없다면 위 태그와 아래 태그의 간격은 200px이 되어야 함. */
+      /* 겹치는 마진 중에 더 큰 값의 마진을 따라감.  */
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello world</h1>
+  <h1>Hello world</h1>
+</body>
+</html>

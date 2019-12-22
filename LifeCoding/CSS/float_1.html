@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 300px;
+      float: left;
+      /* 플로트 효과를 주면 아래의 p태그가 변형되면서 왼쪽의 이미지를 피해서 흘러감. */
+      /* 플로팅 효과를 주면 이미지 뒤에 나타나는 요소들은 모두가 이미지를 피해가도록 되어있음 */
+      margin-right: 20px;
+      margin-bottom: 10px;
+      /* img와 p 태그 사이에 공간을 주어 자연스럽게 만듦 */
+    }
+
+    p {
+      border: 1px solid grey;      
+    }
+
+    #second {
+      /* p태그가 이미지를 피해 흘러가지 않고 자신의 위치를 고수했으면 좋겠다.라면?  */
+      clear: both;
+      /* clear 속성을 부여함. 속성값은 left,right,both가 있는데 float 값이 left일 떄에는 clear 값도 left를 써주어야 float 효과를 clear 할 수 있음. 구분하기 번거로우므로 범용적으로 쓸 수 있는 both를 씀.*/
+    }
+     
+     
+  </style>
+</head>
+<body>
+  <!-- 기본적으로 float는 본문이 이미지를 삽입하기 위해 고안된 기술 -->
+  <img src="./images/cats.jpg" alt="">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A reprehenderit ad alias at quam vel optio molestias! Voluptates dolores tenetur totam aut consequuntur enim, deserunt harum quo soluta blanditiis quae.</p>
+  <p id="second">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad libero aspernatur rem earum impedit pariatur odit ullam, consequatur sequi veniam vero, corporis iste atque officiis voluptate. Architecto a nihil laborum.</p>
+  
+</body>
+</html>

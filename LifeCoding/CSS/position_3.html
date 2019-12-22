@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent, #other {
+      border: 5px solid tomato;
+    }
+    #large {
+      height: 100000px;
+      /* 높이를 아주 많이 주어 브라우저에 상하 스크롤을 만들었다. */
+      background-color: tomato;
+    }
+    #me {
+      background-color: black;
+      color: white;
+      left: 0;
+      top: 0;
+      position: fixed;
+      /* position의 값을 fixed로 주면 브라우저의 스크롤과 상관없이 브라우저의 지정된 위치에 고정됨. */
+      /* fixed도 absolute와 같이 크기값(width, height)을 가지지 않게 되므로 자신의 컨텐츠만큼의 크기만 가짐. */ 
+      /* fixed 요소의 부모 요소는 자식 요소와 링크가 끊겼기 떄문에 부모 요소의 크기는 자식 요소의 크기를 포함하지 않는다. */
+      
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      /* 위와 같이 전체 다른 컨텐츠를 가릴 수 있는 크기를 갖게 될 경우 가려지는 부분을 비워줌으로써 문제를 해결할 수 있다. */ 
+    }
+    body {
+      margin-top: 30px;
+      /* 위에서 언급한 문제를 해결하기 위해 body 태그에 margin 값을 주어 가려지는 공간을 비웠다. 가리는 요소의 높이만큼 margin 값을 주었다. */
+    }
+  </style>
+</head>
+<body>
+  <div id="other">other</div>
+  <div id="parent">parent
+    <div id="me">me</div>
+  </div>
+  <div id="large">large</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1 {
+      border: 1px solid red;
+      /* 자신의 컨텐츠가 속한 줄을 다 쓰는 블록 요소 */
+      /* 제목 같은 경우 줄을 다 써야 하기 떄문에 블록 요소 */
+
+      display: inline;
+      /* 인라인 요소로 바꿀 수 있음. */
+    }
+
+    a {
+      border: 1px solid red;
+      /* 자신의 컨텐츠만큼만 공간을 쓰는 인라인 요소  */
+      /* 링크는 블록을 쓰면 공간이 낭비되기 떄문에 인라인 요소 */
+
+      display: block;
+      /* 블록 요소로 바꿀 수 있음. */
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello world</h1>
+  안녕하세요. <a href="#">생활코딩</a>입니다. 
+</body>
+</html>

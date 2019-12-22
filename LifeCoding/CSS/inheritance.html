@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+   li {color: red;}
+   h1 {color: red;}
+    */
+    html {
+      color: red;
+      /* 모든 요소는 color 속성을 상속받아 폰트 색상이 바뀜. */
+    }
+
+    #select {
+      color: black;
+    }
+
+    body {
+      border: 1px solid red;
+      /* 속성에 따라 상속되는 것과 상속되지 않는 속성이 있음. border는 자식 요소에 상속되지 않는 속성. */
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>수업내용</h1>
+  <ul>
+    <li>html</li>
+    <li>css</li>
+    <li id="select">javascript</li>
+  </ul>
+</body>
+
+</html>

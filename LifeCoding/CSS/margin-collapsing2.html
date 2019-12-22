@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent {
+      /* border: 1px solid tomato; */
+      /* 이 border를 주석처리 하면 child 요소가 parent 요소가 갖던 margin 값을 그대로 갖는 것처럼 보임. */
+      /* 부모 요소가 시각적인 요소가 없는 투명한 상태일 떄 부모의 margin 값과 자식의 margin 값 중 더 큰 값이 자식 요소의 margin 값으로 적용됨. */
+
+      margin-top: 200px;
+      /* 테두리 위쪽으로 100px의 margin이 생김.  */      
+    }
+    
+    #child {
+      background-color: powderblue;
+      margin-top: 50px;
+      /* 배경색 위쪽으로 50px의 margin이 생김.  */
+    }
+  </style>
+</head>
+<body>  
+  <div id="parent">
+    <div id="child">
+      Hello world
+    </div>
+  </div>
+</body> 
+</html>
