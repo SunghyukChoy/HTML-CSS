@@ -22,6 +22,8 @@
       /* position의 값을 fixed로 주면 브라우저의 스크롤과 상관없이 브라우저의 지정된 위치에 고정됨. */
       /* fixed도 absolute와 같이 크기값(width, height)을 가지지 않게 되므로 자신의 컨텐츠만큼의 크기만 가짐. */ 
       /* fixed 요소의 부모 요소는 자식 요소와 링크가 끊겼기 떄문에 부모 요소의 크기는 자식 요소의 크기를 포함하지 않는다. */
+       /* position에 fixed를 주면 static이 아닌 부모가 나타낼 때까지 올라가다가 static이 아닌 부모를 만나면 그 요소의 위치를 기준으로 오프셋값(left,right,top,bottom)을 주고 위치를 잡게 됨. */
+       /* 본 예제에서는 parent의 position 값 static (지정하지 않았으므로 기본값인 static)이므로 최상위 부모인 html의 위치를 기준으로 잡고 오프셋값을 주어 자신의 위치를 잡음. */
       
       width: 100%;
       height: 30px;

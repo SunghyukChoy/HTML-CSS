@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-image: url(http://wooreeweb.com/img/grid.gif);
+    }
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .wrap > div {
+      border: 1px solid grey;
+      width: 100px;
+      height: 100px;
+      /* margin: 10px; */
+      position: static;
+    }
+
+    .wrap > div:nth-child(1) {
+      border: 5px solid blue;
+      position: absolute;
+      /* absolute 값을 주면 붕 뜬 것처럼 움직임. position 값이 static이 아닌 부모의 위치를 기준으로 잡음. 본 예제에서는 wrap클래스의 position값이 static이르모 body 태그의 위치를 기준으로 잡음. 나머지 태그들은 그 공간을 차지하고 올라옴.  */
+      top: 200px;
+      left: 200px;
+    }
+
+    .wrap > div:nth-child(2) {
+      border: 5px solid red;
+      position: relative;
+      /* 자신이 원래 있던 위치에서 상대적으로 움직이게 됨 */
+      top: 0px;
+      left: 0px;
+    }
+    /* *****왜?****** */
+    .wrap > div:nth-child(3) {
+      border: 5px solid violet;
+      position: relative;    
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+  </div>
+</body>
+</html>

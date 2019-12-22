@@ -5,10 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    
+    #empty {
+      margin-top: 50px;
+      margin-bottom: 100px;
+      /* border: 1px solid tomato; */
+      /* 어떠한 태그에 시각적인 요소가 없다면 위쪽에 있는 margin값과 아래쪽에 있는 margin값 중 더 큰 것이 margin값이 된다.  */
+    }
+
+    #normal {
+      background-color: powderblue;
+      margin-top: 100px;
+    }
   </style>
 </head>
 <body>
-  
+  <div id="empty"></div>
+  <div id="normal">normal</div>
 </body>
 </html>
