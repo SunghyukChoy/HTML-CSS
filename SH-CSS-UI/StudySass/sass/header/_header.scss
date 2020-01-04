@@ -1,0 +1,70 @@
+#logo {
+  background-image: url(/CSS활용/실습예제/05-2_반응형메인페이지/images/logo1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -100px;
+}
+
+#gnb {
+  position: absolute;
+  top: 300px;
+  li a{
+    display: block;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  li a i{
+    margin-right: 1rem;
+  }
+  li a:hover{
+    color: skyblue;
+  }
+}
+.sns {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  bottom: 50px;
+  right: 50%;
+  margin-right: -60px;
+  a{
+    float: left;
+    display: block;
+  }
+  .stxt{
+    width: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+  }
+  .icon {
+    font-size: 30px;
+    width: 40px;
+  }
+}
+
+/* 퀵링크 */
+nav a {
+  position: absolute;
+  color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  top: 7px;
+  &:first-child{
+    left: 20px;
+  }
+  &:nth-child(2){
+    left: 100px;
+  }
+  &:nth-child(3){
+    right: 100px;
+  }
+  &:last-child{
+    right: 20px;
+  }
+}

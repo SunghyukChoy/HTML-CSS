@@ -1,0 +1,59 @@
+
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 헤더 */
+header {
+  background-color: red;
+  width: 100%;
+  position: relative;
+}
+/* 헤더 로고 */
+.logo {
+  position: relative;
+  left: 60px;
+  top: 40px;
+}
+/* 제품문의 */
+.p_ask {
+  background-color: blue;
+  display: block;
+  width: 100px;
+  height: 46px;
+  /* float: right; */
+  position: relative;
+}
+/* 언어선택 */
+.lang {
+  background-color: powderblue;  
+  width: 100px;
+  height: 46px;
+  /* float: right; */
+  position: relative;
+}
+/* 헤더 메뉴바 */
+.header_menu {
+  background-color: royalblue;
+  width: 36px;
+  height: 24px;
+  /* float: right; */
+  position: relative;
+  
+}
+.header_menu .fa-bars {
+  font-size: 2rem;
+}
+

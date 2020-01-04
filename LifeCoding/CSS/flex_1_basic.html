@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container { 
+      background-color: powderblue;
+
+      /* flex 사용의 출발점 : 부모에서 display:flex 값을 준다*/
+      display: flex;
+      /* flex를 주면 자식이 차지하는 공간이 달라짐 */   
+
+      flex-direction: row-reverse;
+      /* 기본값 row : 요소들을 왼쪽에서 오른쪽으로 정렬 */
+      /* row-reverse : 요소들을 오른쪾에서 왼쪽으로 정렬 */
+
+      flex-direction: column;
+      /* 너비 전체를 다 상요함 */
+      flex-direction: column-reverse;
+      /* column-reverse : 요소를 아래에서부터 정렬 */  
+      flex-direction: row;
+      /* 높이 전체를 다 사용함 */   
+
+      height: 200px;
+      /* 부모 요소에 flex 속성과 height를 주면 공간을 만들 수 있다.  */
+       
+
+    }
+    .item {
+      background-color: tomato;
+      color: white;
+      border: 1px solid white;
+      /* 라인 전체를 쓰는 블록 요소들 */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+  <!-- 반드시 div 태그일 필요는 없음. 부모-자식의 관계가 되면 됨. container-item -->
+</body>
+</html>

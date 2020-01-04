@@ -1,0 +1,11 @@
+/* 텍스트 모듈효과 */
+.txt,
+.txt strong {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.txt i {
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}

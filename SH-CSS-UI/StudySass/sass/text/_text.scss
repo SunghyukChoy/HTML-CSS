@@ -1,0 +1,21 @@
+/* 텍스트 모듈 공통 */
+.txt {
+  background-color: #fff;
+  color: #555;
+  padding: 40px 30px;
+  
+  strong{
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  i{
+    font-size: 20rem;
+    color: #210570;
+    position: absolute;
+    bottom: -70px;
+    right: -200px;
+    opacity: 0;
+  }
+}

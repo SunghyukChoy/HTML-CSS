@@ -1,0 +1,68 @@
+$w5 : 50%;
+$n : none;
+/* 화면너비 640px 이하에서 적용 -작은태블릿 */
+@media screen and (max-width: 640px) {
+  header {
+    height: 150px;
+  }
+  nav {
+    display: $n;
+  }
+  #logo {
+    width: 150px;
+    height: 50px;
+    position: relative;
+    top: 20px;
+    left: 0;
+    margin: 0 auto;
+  }
+  #gnb {
+    width: $w5 + $w5;
+    top: 90px;
+    left: 0;
+    height: 40px;
+    li{
+      width: 25%;
+      letter-spacing: -3.5px;
+    }
+  }
+  /* 모듈크기 재설정 */
+  .m1 {
+    width: $full;
+    height: 300px;
+  }
+  .m2 {
+    width: $w5 + $w5;
+  }
+  .m3 {
+    display: $n;
+  }
+  .m4 {
+    width: $w5
+  }
+  .m5 {
+    width: $w5
+  }
+  .m6 {
+    display: $n;
+  }
+  .m7 {
+    width: $w5
+  }
+  .m8 {
+    display: $n;
+  }
+  .m9 {
+    display: $n;
+  }
+  .m10 {
+    width: $w5
+  }
+  .m11 {
+    width: $w5
+  }
+  .m12 {
+    display: block;
+    width: $w5
+  }
+}

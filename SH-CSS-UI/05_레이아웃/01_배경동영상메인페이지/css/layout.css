@@ -1,0 +1,426 @@
+/*******************************
+  css/layout.css
+ ******************************/
+
+ /* font.css 불러오기 */
+ /* 스타일시트에서 또다른 스타일시트를 불러올 떄는 import 방식을 씀 */
+
+ @import url(font.css);
+
+ /* 초기화 */
+ * {
+   margin: 0;
+   padding: 0;   
+   box-sizing: border-box;
+ }
+ li {
+   list-style: none;
+ }
+ a {
+   text-decoration: none;
+   color: #333;
+ }
+
+ /* 전체 구조 -- FULL-WIDTH 방식 */
+ body {
+   height: 100%;
+   width: 100%;
+   background-color: #111;
+   position: fixed; 
+   /* position을 fixed로 하면 쉽게 짤 수는 있으나 컨텐츠들이 비디오 뒤로 숨어 제어하기 힘들어짐. 권장하지 않음. */
+ }
+
+ /* 배경 동영상 */
+ .vid {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+
+ }
+
+ .vid video {
+   min-width: 100%;
+   min-height: 100%;
+ }
+
+ /* 배경 레이어 - 패턴 */
+ .layer {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.3);
+   background-image: url(../images/ptn.png);
+   /* 반복하는 이미지이기에 반복 속성,크기 등 주지 않아도 됨 */
+ }
+
+ /* 로고 */
+ #logo {
+   position: fixed;
+   top: 50px;
+   left: 50px;
+   z-index: 9999;
+   /* 맨 앞으로 올려줌. */
+ }
+
+ #logo img {
+   width: 250px;
+
+ }
+
+ /* 헤더 */
+ header {
+   position: fixed;
+   width: 300px;
+   height: 100%;
+   z-index: 100;
+   background-color: #cf1;
+   background-image: linear-gradient(-45deg, #df6, #cf1, #ae5);
+ }
+
+ /* 네비게이션 */
+ #gnb {
+    position: absolute;
+    top: 200px;
+    right: 0;
+    width: 200px;
+ }
+
+ #gnb li {
+   position: relative;
+ }
+
+ /* 메인메뉴(1차) */
+ #gnb > li > a {
+   width: 100%;
+   height: 50px;
+   display: block;
+   color: #222;
+   text-align: right;
+   padding-right: 50px;
+   font-size: 20px;
+   line-height: 2.5;
+   font-weight: bold;
+ }
+
+ #gnb em {
+   display: block;
+ }
+
+ /* 호버 스타일 */
+ #gnb > li:hover > a {
+   background-color: #111;
+   color: #fff;
+ }
+
+ /* 서브메뉴(2차) */
+ #gnb > li > ul {
+   position: absolute;
+   top: 0;
+   left: 0;
+
+ }
+
+ #gnb > li > ul > li > a {
+   width: 150px;
+   height: 50px;
+   display: block;
+   background-color: #222;
+   color: #fff;
+   font-size: 20px;
+   line-height: 2.5;
+   padding-left: 20px;
+   font-weight: bold;
+   border-bottom: 1px solid #cf1;
+ }
+
+ /* 서브메뉴를 메인메뉴의 우측에 배치 */
+ #gnb > li > ul {
+   left: 100%;
+ }
+
+ /* 서브메뉴 숨기기 */
+ #gnb > li > ul {
+   width: 0;
+   opacity: 0;
+   visibility: hidden;
+ }
+
+ /* 메인메뉴 호버시 서브메뉴 보여기 */
+ #gnb > li:hover > ul {
+   visibility: visible;
+   opacity: 1;
+   width: auto;
+ }
+
+ /* 서브메뉴 전환 효과 */
+ #gnb > li > ul {
+   transition: all 0.6s;
+ }
+
+ /* 서브메뉴 호버 효과 */
+ #gnb ul a:hover {
+   background-color: #cf1;
+   color: #222;
+ }
+
+ /*  
+      SNS
+                */
+
+  #sns {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+  }
+
+  /* 아이콘 가로 배치 */
+  #sns li {
+    float: left;
+    margin-right: 30px;
+  }
+
+  /* 아이콘 스타일 */
+  #sns .fa {
+    font-size: 2rem;
+    color: #cf1;
+    opacity: 0.5;
+  }
+
+  #sns .fa:hover {
+    opacity: 1;
+  }
+
+  /* 
+      타이포그래피 슬로건
+                             */
+
+  .slogan {
+    position: fixed;
+    top: 250px;
+    right: 250px;
+    width: 350px;
+    height: 200px;
+  }
+
+  .slogan .tit {
+    color: #cf1;
+    text-align: right;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+
+  .slogan .tit em {
+    color: #fff;
+  }
+
+  .slogan .txt {
+    font-size: 2rem;
+    color: #ddd;
+    text-align: right;
+    letter-spacing: -1px;
+  }
+
+  .slogan .txt strong {
+    color: #cf1;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 1rem;
+  }
+
+  /* 
+        우측 사이드바
+                            */
+
+  #side {
+    background-color: #111;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 400px;
+    opacity: 0.5;
+  }
+
+  #side .con {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    bottom: 0;
+    left: 150px;
+    padding: 10px;
+
+  }
+
+  /* 사이드바 호버 시 배너 영역 이동 */
+  #side:hover .con {
+    left: 50px;
+  }
+  #side .con {
+    transition: all 0.6s;
+  }
+
+  /* 사이드바 내부 배너 */
+  #side .con p {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 50px;
+  }
+
+  #side .con p em {
+    color: #cf1;
+    display: inline-block;
+    line-height: 1.5;
+    
+  }
+
+  #side .con p img {
+    width: 100%;
+    height: 70px;
+    opacity: 0.3;
+  }
+
+  /* 겹쳐진 배너 이미지 재배치 */
+  #side .con p:nth-child(3) {
+    bottom: 50px;
+  }
+  #side .con p:nth-child(2) {
+    bottom: 160px;
+  }
+  #side .con p:nth-child(1) {
+    bottom: 270px;
+  }
+
+  /* 사이드바 배너 호버 시 효과 */
+  #side .con p img:hover {
+    opacity: 1;
+  }
+  #side .con p img {
+    transition: all 0.6s;
+  }
+
+  /* 모션 아이콘 (<<) */
+  #side .btn {
+    color: #cf1;
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    left: -50px;
+  }
+
+  #side .btn i {
+    font-size: 5rem;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  /* 사이드바 호버 시 아이콘 우측으로 내보내기 */
+  #side:hover .btn {
+    left: 100%;
+  }
+
+  #side .btn {
+    transition: all 0.6s;
+  }
+
+  /* 사이드바 우측으로 내보내기 */
+  #side {
+    right: -200px;
+  }
+
+  /* 사이드바 호버 시 좌측으로 들어오기 */
+  #side:hover {
+    right: 0;
+  }
+  #side {
+    transition: all 0.6s;
+  }
+
+  /* 배너 이미지 시간 차 등장 */
+  #side .con p {
+    transform: translateX(200px);
+  }
+  #side:hover .con p {
+    transform: translateX(0);
+  }
+
+  #side .con p:nth-child(1) {
+    transition: all 0.4s;
+  }
+  #side .con p:nth-child(2) {
+    transition: all 0.8s;
+  }
+  #side .con p:nth-child(3) {
+    transition: all 1.2s;
+  }
+
+  /* 아이콘 모션 */
+  @keyframes blink {
+    0% {
+      right: 0;
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      right: 100%;
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .btn i {
+    animation: blink 1.5s linear infinite;
+  }
+  .btn i:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .btn i:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .btn i:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+
+  /* 
+        구조 변경
+                     */
+
+/* 헤더 */                     
+header {
+  width: 700px;
+  transform: skewX(-40deg);
+  top: 0;
+  left: -450px;
+}
+
+/* 내비게이션 텍스트 원래 상태로 */
+#gnb em {
+  transform: skewX(40deg);
+  /* 헤더에서 40도 돌린 것을 다시 돌림 */
+}
+
+/* 우측 사이드바 */
+#side {
+  width: 800px;
+  transform: skewX(-40deg);
+  right: -800px;
+}
+
+#side:hover {
+  right: -600px;
+  opacity: 0.8;
+}
+
+/* 배너 텍스트 원래 상태로 변경 */
+#side .con p em {
+  transform: skewX(40deg);
+}
+
+/* 모션 아이콘 원래 상태로 변경 */
+#side .btn {
+  transform: skewX(40deg);
+}

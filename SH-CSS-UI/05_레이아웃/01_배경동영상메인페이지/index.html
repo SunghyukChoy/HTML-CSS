@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIKE AIR</title>
+  <!-- 웹폰트아이콘 라이브러리 -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'/>
+  <!-- CSS 연결 -->
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <!-- 웹페이지 맨 뒤에 동영상 보임
+  동영상에 사선 입힘. 영상 앞에 사선 패턴을 그림.
+그 위에 양쪽의 사이드바(로고와 네비게이션 영역), sns영역, 슬로건 영역 -->
+
+<!-- 배경 동영상 -->
+<div class="vid">
+  <!-- poster 속성은 썸네일이미지, 동영상 자동재생을 막았을 때 보여주는 이미지 -->
+  <video autoplay muted loop poster="images/poster.jpg">
+  <source src="media/nike.mp4">  
+  </video>
+</div>
+  <!-- 배경 패턴 -->
+  <div class="layer"></div>
+
+  <!-- 로고 -->
+  <div id="logo">
+    <img src="images/logo.png" alt="나이키 에어맥스">
+  </div>
+
+  <!-- 헤더(네비게이션) -->
+  <header>
+
+    <!-- ul#gnb>(li>a>em{메인메뉴 $})*5 -->
+    <ul id="gnb">
+      <li><a href="#"><em>메인메뉴 1</em></a></li>
+      <li><a href="#"><em>메인메뉴 2</em></a>
+        <!-- ul>(li>a>em{서브메뉴 $})*4 -->
+        <ul>
+          <li><a href="#"><em>서브메뉴 1</em></a></li>
+          <li><a href="#"><em>서브메뉴 2</em></a></li>
+          <li><a href="#"><em>서브메뉴 3</em></a></li>
+          <li><a href="#"><em>서브메뉴 4</em></a></li>
+        </ul>
+      </li>
+      <li><a href="#"><em>메인메뉴 3</em></a></li>
+      <li><a href="#"><em>메인메뉴 4</em></a></li>
+      <li><a href="#"><em>메인메뉴 5</em></a></li>
+    </ul>
+  </header>
+
+  <!-- SNS -->
+  <ul id="sns">
+    <!-- (li>a>i.fa.fa-)*3 -->
+    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+    <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
+    <li><a href="#"><i class="fa fa-youtube-square"></i></a></li>
+  </ul>
+
+  <!-- 타이포그래피 슬로건 -->
+  <div class="slogan">
+    <p class="tit">50<em>/24</em></p>
+    <p class="txt">Best Qualified<strong>AIR MAX</strong></p>
+  </div>
+
+  <!-- 우측 사이드 배너 -->
+  <div id="side">
+    <!-- 배너 -->
+    <div class="con">
+      <!-- (p>em{배너$}>a>img[src=images/ban$.png])*3 -->
+      <p><em>배너1<a href="#"><img src="images/ban1.png" alt=""></a></em></p>
+      <p><em>배너2<a href="#"><img src="images/ban2.png" alt=""></a></em></p>
+      <p><em>배너3<a href="#"><img src="images/ban3.png" alt=""></a></em></p>
+    </div>
+
+    <!-- 모션 아이콘(<< 모양) -->
+    <div class="btn">
+      <!-- i.fa.fa-angle-double-left*3 -->
+      <i class="fa fa-angle-double-left"></i>
+      <i class="fa fa-angle-double-left"></i>
+      <i class="fa fa-angle-double-left"></i>
+    </div>
+  </div>
+
+
+</body>
+</html>

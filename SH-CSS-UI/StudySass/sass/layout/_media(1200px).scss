@@ -1,0 +1,47 @@
+$w2 : 25%;
+/* 화면너비 1200px 이하에서 적용 */
+@media screen and (max-width: 1200px) {
+  .sns {
+    display: none;
+  }
+  #gnb {
+    right: 20px;
+  }
+  /* 모듈크기 재설정 */
+  .m1 {
+    width: $w2 + $w2 + $w2;
+  }
+  .m2 {
+    width: $w2;
+  }
+  .m3 {
+    width: $w2;
+  }
+  .m4 {
+    width: $w2;
+  }
+  .m5 {
+    width: $w2;
+  }
+  .m6 {
+    width: $w2 + $w2;
+  }
+  .m7 {
+    width: $w2 + $w2;
+  }
+  .m8 {
+    width: $w2;
+  }
+  .m9 {
+    width: $w2;
+  }
+  .m10 {
+    width: $w2;
+  }
+  .m11 {
+    width: $w2 + $w2;
+  }
+  .m12 {
+    width: $w2;
+  }
+}

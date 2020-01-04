@@ -1,0 +1,120 @@
+$fh : 100%;
+$w2 : 20%;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #444;
+}
+body *{
+  box-sizing: border-box;
+}
+/* 레이아웃 */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: $fh;
+  max-width: 200px;
+}
+nav{
+  width: 85%;
+  height: 35px;
+  background-color: black;
+  margin-left: 15%;
+  position: relative;
+}
+/* 모듈 */
+.container{
+  position: relative;
+  width: 85%;
+  margin-left: 15%;
+}
+
+.mo{
+  float: left;
+  height: 250px;
+  > div{
+    position: relative;
+    width: $fh;
+    height: $fh;
+    overflow: hidden;
+  }
+  &:hover span {
+    opacity: 1;
+  }
+  &:hover .txt{
+    background-color: skyblue;
+  }
+  &:hover .txt strong{
+    color: white;
+  }
+  &:hover .txt i{
+    right: 0;
+    opacity: 0.5;
+  }
+  &:nth-child(3) .txt{
+    background-color: #6fcbe7;
+  }
+  &:nth-child(3) .txt i{
+    bottom: -40px;
+    right: -20px;
+    opacity: 0.7;
+    color: #fff;
+    font-size: 15rem;
+  }
+  &:nth-child(11) .txt{
+    background-color: #eee;
+  }
+}
+
+
+/* 카드 UI 모듈 */
+/* 1행 */
+.m1{
+  width: $w2 * 3;
+  height: 500px;
+}
+.m2{
+  width: $w2 + $w2;
+}
+/* 2행 */
+.m3{
+  width: $w2;
+}
+.m4{
+  width: $w2;
+}
+/* 3행 */
+.m5{
+  width: $w2;
+}
+.m6{
+  width: $w2 + $w2;
+}
+.m7{
+  width: $w2;
+}
+.m8{
+  width: $w2;
+}
+/* 4행 */
+.m9{
+  width: $w2;
+}
+.m10{
+  width: $w2;
+}
+.m11{
+  width: $w2 + $w2;
+}
+.m12{
+  width: $w2;
+}

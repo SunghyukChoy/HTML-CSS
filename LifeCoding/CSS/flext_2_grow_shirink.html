@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: powderblue;
+      height: 200px;
+      display: flex;
+      flex-direction: row;
+    }
+    .item {
+      background-color: tomato;
+      color: white;
+      border: 1px solid white;
+
+      /* 자식 요소들이 부모 요소의 여백을 가득 채우고 싶다면? */
+      /* flex-grow: 1; */
+      /* 기본값 0. 각 요소들이 균등하게 부모의 여백을 채움*/
+    }
+    /* 두번쨰 아이템에 크기를 주고 싶다면? */
+    .item:nth-child(2) {
+      /* flex-basis: 200px; */
+
+      /* 기본 크기가 200px이 된다. */
+      /* flex-direction에 대한 크기 */
+      /* .container에서 flex-direction을 column으로 하게 되면 높이가 200px이 됨. */
+
+      /* 두 번쨰 요소가 더 많은 여백을 갖게 하고 싶다면? */
+      /* flex-grow: 2; */
+
+      /* 다른 요소들의 flex-grow 값과 비례하여 여백을 갖게 됨.*/
+      /* 위의 .item 클래스에서 flex-grow 값을 0을 주게 되면 나머지 두 번쨰 요소를 제외한 나머지 요소들은 여백을 갖지 않겠다는 뜻이 되고 두 번째 요소가 여백을 독식하게 됨. 여기서 두 번쨰 요소의 flex-grow값은 1을 주나 100을 주가 같은 여백을 갖게 됨.*/
+
+      flex-basis: 800px;
+
+      /* 브라우저의 크기가 줄어들게 되면 컨텐츠만큼의 크기만 갖는 나머지 요소들은 더 줄어들 수 없고 두 번쨰 요소가 갖고 있던 여백을 줄이면서 크기가 작아짐 */
+      flex-shrink: 0;
+      /* shrink의 사전적 의미 : 줄이다. 0을 주면 줄이지 않겠다라는 뜻 */
+      /* 0을 주면 브라우저 크기가 줄어들 때 해당 요소만 고통 분담을 하지 않겠다는 뜻. 3,4,5번 요소들이 잘려나감. */
+
+      flex-shrink: 1;
+
+    }
+
+    .item:nth-child(1) {
+      flex-basis: 800px;
+      flex-shrink: 2;
+      /* 2번 요소에 shrink값 1을 주고 1번 요소에 0을 주면 2번 요소는 줄어들지만 1번 요소는 줄어들지 않게 됨. 2번 요소가 다 줄어들었을 때 그때부터 줄어들게 됨 */
+      /* 2번 요소에 shrink값 1을 주고 1번 요소에 2를 주면 값에 비례하여 줄어들게 됨. 2번 요소는 1/3만큼 줄어들고 1번 요소는 2/3만큼 줄어들음. */
+    }
+     
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+</body>
+</html>

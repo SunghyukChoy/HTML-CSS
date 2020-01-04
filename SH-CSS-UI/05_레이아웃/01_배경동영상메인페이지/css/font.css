@@ -1,0 +1,21 @@
+/*******************************
+  css/font.css
+ ******************************/
+
+/* 구글 웹폰트 라이브러리  */
+@import url('https://fonts.googleapis.com/css?family=Monoton|Noto+Sans+KR|Play&display=swap');
+
+html {
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.slogan .tit em {
+  font-family: 'Play', sans-serif;
+  font-size: 4rem;
+}
+
+.slogan .tit {
+  font-family: 'Monoton', cursive;
+  font-size: 9rem;
+}

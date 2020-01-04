@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자료형</title>
+  <script>
+    //(1) 함수 정의(만들기)
+        // 객채 변수(함수형 변수) unitChange.
+    var unitChange = function (x) {      
+      var trans = x / 100;
+      document.write('<p>' + x + 'cm = ' + trans + 'm');
+    };
+    // 중괄호 뒤에 세미콜론이 붙는 이유는 function부터 중괄호까지가 unitChange의 값을 지정하는 정의하는 부분이기 때문에.
+
+    //(2)함수 호출(실행)
+    unitChange(1000);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

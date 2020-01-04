@@ -1,0 +1,37 @@
+$w5 : 50%;
+/* 화면너비 780ox 이하에서 적용 - 태블릿 */
+@media screen and (max-width: 780px) {
+  .m1 {
+    width: $w5 * 2;
+  }
+  .m2 {
+    width: $w5 * 2;
+  }
+  .m3 {
+    display: none;
+  }
+  .m4 {
+    width: $w5
+  }
+  .m5 {
+    width: $w5
+  }
+  .m6 {
+    display: none;
+  }
+  .m7 {
+    width: $w5
+  }
+  .m8 {
+    display: none;
+  }
+  .m9 {
+    display: none;
+  }
+  .m10 {
+    width: $w5
+  }
+  .m11 {
+    width: $w5 * 2;
+  }
+}

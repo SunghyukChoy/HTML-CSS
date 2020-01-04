@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자료형</title>
+  <script>
+    var boo1 = true;
+    var boo2 = false;
+
+    document.write('<p>boo1 = ' + boo1);
+    document.write('<p>boo2 = ' + boo2);
+
+    document.write('<p>boo1의 숫자형 : ' + Number(boo1));
+    //Number() : 숫자로 바꾸라는 함수.
+    //true는 숫자 변환 시 1, false는 0    
+    document.write('<p>boo2의 숫자형 : ' + Number(boo2));
+
+    var box3 = 1;
+    var box4 = 0;
+    var box5 = 3
+    var box6 = -2;
+
+    document.write('<p>box3의 논리형 : ' + Boolean(box3));
+    //Boolean() : 논리값으로 바꾸라는 함수.
+    document.write('<p>box4의 논리형 : ' + Boolean(box4));
+    document.write('<p>box5의 논리형 : ' + Boolean(box5));
+    //숫자를 논리값으로 바꿀 때는 0을 제외한 모든 숫자가 true
+    //Boolean() 함수 사용 시 false를 반환하는 값들 : 0, NaN, "", null, undefined
+    document.write('<p>box6의 논리형 : ' + Boolean(box6));
+
+      //String() : 문자열 자료형으로 변환하는 함수.
+      //숫자로 변환할 수 없는 문자열을 Number() 함수로 변환하면 'NaN' 출력. 
+      //NaN(Not a Number) : 숫자 자료형이지만 숫자가 아닌 것을 의미.
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
