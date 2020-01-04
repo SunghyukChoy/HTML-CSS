@@ -14,7 +14,7 @@
 
     num1--; //변수 num1 데이터 1 감소
 
-    //변수 num1에 변화된 데이터를 ㅜㅊㄹ력
+    //변수 num1에 변화된 데이터를 출력
     document.write("num1-- 결과 : " + num1, "<br>");
 
     num1++; //변수 num1에 데이터 1 증가
@@ -28,9 +28,19 @@
 
     //변수 result에 저장된 값 20 출력
     document.write("result = num2++ 결과 result에 저장된 값 : ");
+    document.write(result, "<br>");
+    document.write("result = ++num2 결과 num2에 저장된 값 : ");
+    document.write(num2, "<br><br>");   
+
+    //증가 연산자가 먼저 발생되고, 대입 연산자가 실행
+    //num2 = num2 + 1
+    result = ++num2;
+
+    //변수 result에 저자오딘 값 22 출력
+    document.write("result = ++num2 결과 result에 저장된 값 : ");
     document.write(num2, "<br>");
     document.write("result = ++num2 결과 num2에 저장된 값 : ");
-    document.write(result, "<br>");    
+    document.write(result, "<br>");
   </script>
 </head>
 <body>

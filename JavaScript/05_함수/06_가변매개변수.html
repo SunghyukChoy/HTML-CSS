@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>연산자</title>
+  <title>함수</title>
   <script>
-   var x = 10;
+    function vp () {
+      document.write(arguments[1]);
+      document.write('<br>');
+      document.write(arguments[0]);
+    } 
 
-   x += 5; // x = x + 5
-   document.write('<p>x += 5 결과 : x = ' , x);
+    vp('jQuery', 'Javascript')
   </script>
 </head>
 <body>

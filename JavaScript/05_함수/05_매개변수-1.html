@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>연산자</title>
+  <title>함수</title>
   <script>
-   var x = 10;
+    function subject(x) {
+      document.write('<h3> x : ' + x);
+    }
 
-   x += 5; // x = x + 5
-   document.write('<p>x += 5 결과 : x = ' , x);
+    subject('javascript');
+    subject('jQuery');
   </script>
 </head>
 <body>
