@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+      
+      $('html, body').mousemove(function(e) {
+                                        //형식 매개변수
+        var x = e.pageX;
+        var y = e.pageY;
+
+        $('body').html('<h2>' + x + ' x ' + y);
+      });
+    } );
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

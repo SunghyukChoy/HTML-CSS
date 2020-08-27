@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06_mouseenter()-mouseleave()</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+      
+      $('p').mouseenter(function() {
+        //마우스가 해당 영역에 들어가면 발생하는 이벤트
+        $(this).css('background-color', 'crimson');
+      });
+
+      $('p').mouseleave(function() {
+        //마우스가 해당 영역에서 나가면 발생하는 이벤트
+        $(this).css('color', 'white').text('BYE!');
+          //.text() : 컨텐츠를 바꿔주는 이벤트
+      });
+      //자식 영역에서는 이벤트가 발생하지 않는다
+      
+    } );
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.mouseenter() / .mouseleave()</h2>
+  <hr>
+  <p class="pa">p.pa</p>
+  <p id="pa">p#pa</p>
+  <p class="pb">p.pb</p>
+  <hr>
+  <button>위 요소에 마우스 호버</button>
+</body>
+</html>

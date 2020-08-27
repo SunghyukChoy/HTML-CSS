@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/output.js"></script>
+  <script>
+    prn(`<h1> 가위, 바위 보 맞추기</h1>`);
+
+    var select = prompt(`가위, 바위, 보 중 선택하세요, 가위`);
+    var sel;
+    switch (select){
+      case '가위' : 
+      sel = 1;
+      break;
+      case '바위' : 
+      sel = 2;
+      break;
+      case '보' : 
+      sel = 3;
+      break;
+      default : 
+      alert(`잘못 입력하셧습닌다`);
+      location.reload();
+      //브라우저를 자동으로 새로고침 해줌.
+      //while문 대체로 쓰는 기법.
+    }
+    var com = Math.floor(Math.random()*3)+1; //1부터 3까지 정수
+
+    // 난수를 이용해 컴퓨터 가위 바위 보 이미지 출력
+    prn(`<img src=http://wooreeweb.com/img/gbb-l-${com}.png alt=가위,바위,보>`);
+    // 일치여부 검사
+    if(sel == com){
+      prn(`정답입니다!`);
+    }else{
+      prn(`다음기회에`);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

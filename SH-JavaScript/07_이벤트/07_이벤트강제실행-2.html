@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07_이벤트강제실행-2</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+    window.onroad = function() {
+      var bt = document.querySelector('#btn');
+      var con = document.querySelector('#content');
+      var check = false;
+        //판단변수. 스위치 같은 것.
+
+      bt.onclick = function() {
+        if(!check) {  //!
+          con.style.display = 'none';
+          //con.style.display : con 변수의 css 속성 중 display 속성
+          check = true;
+        } else {
+          con.style.display = 'block';
+          check = false;
+        }  
+      }
+      bt.onclick();
+      //브라우저 로딩 시 강제실행(클릭)
+    }
+  </script>
+</head>
+<body>
+  <div id="btn">클릭</div>
+  <p id="content">내용</p>
+
+  <style>
+    p {
+      height: 300px;
+      background-color: gold;
+    }
+  </style>
+</body>
+</html>

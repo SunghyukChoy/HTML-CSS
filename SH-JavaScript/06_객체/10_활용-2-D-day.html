@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/output.js"></script>
+  <script>
+    var today = new Date();
+    var result = '';
+    
+    var yy = today.getFullYear();
+    var mm = prompt(`태어날 월을 입력하세요`, '1-12') - 1;
+    
+    var dd = prompt(`태어난 일을 입력하세요`, '1-31');
+    
+    var birth = new Date(yy,mm,dd);
+    // 날짜계산
+    var diffday = birth.getTime() - today.getTime();
+    var dDay = Math.ceil(diffday/1000/60/60/24);
+    
+    if(dDay > 0){
+      result =`생일이 ${dDay}일 남았습니다`;
+    }else if(dDay == 0){
+      result =`<h2>생일을 축하합니다</h2>`;
+    }else{
+      result = `생일이 ${Math.abs(dDay)}일 지났습니다`;
+      //abs() : 음수값을 절대값으로 처리
+    }
+    prn(result);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

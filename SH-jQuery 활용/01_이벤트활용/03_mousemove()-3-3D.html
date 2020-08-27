@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+      
+      var $fr = $('#frame');        
+      var $img = $fr.find('img');   //프레임 내부 이미지
+              //.find() : 자손을 찾는 메소드
+              //.children() : 자식을 찾는 메소드
+              //$fr을 기준으로 해서. $fr의 자손인 img 태그를 찾아라.
+      var frw = $fr.width();       //프레임 너비(width)
+      var frhw = frw / 2;          //프레임 너비의 1/2
+      var ww = $(window).width();   //브라우저 너비
+      var imgCnt = 90;              //이미지 개수 - 1
+
+      $fr.mousemove(function(e) {
+        //$fr 안에서 마우스가 움직이면.
+        var startX = ww / 2 - frhw;   //프레임 시작 X좌표
+        var endX = startX + frw;
+
+        var n = Math.ceil(imgCnt / frw * (e.pageX - startX) + 1);
+        console.log('■ n = ' + n);
+
+        $img.attr('src', 'images/pig/' + n + '.jpg');
+      });
+      
+    } );
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #111;
+    }
+    #frame {
+      width: 550px;
+      height: 400px;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="frame">
+    <img src="images/pig/1.jpg" alt="">
+  </div>
+</body>
+</html>

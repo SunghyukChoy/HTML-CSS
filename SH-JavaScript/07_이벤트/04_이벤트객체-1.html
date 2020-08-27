@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_이벤트객체-1</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+    window.onload = function () {
+      //브라우저 로딩이 완료되면 함수를 실행하라
+
+      var bt = document.querySelector('#btn');
+      bt.onclick = function () {
+        var str = 'target : ' + event.target + '\n';
+        //target : 이벤트가 발생된 객체
+        str += 'type : ' + event.type + '\n';
+        // 이벤트 타입. 클릭했으므로 click
+        str += 'clientX : ' + event.clientX + '\n';
+        str += 'clientY : ' + event.clientY + '\n';
+        //client X,Y : 내가 만든 버튼을 기준으로 마우스가 클릭된 위치.
+        str += 'screenX : ' + event.screenX + '\n';
+        str += 'screenY : ' + event.screenY + '\n';
+        //screen X,Y : 모니터를 기준으로 마우스가 클릭된 위치.
+        str += 'Mouse Button : ' + event.button;
+        // 마우스 위치 : 좌:0, 우:1
+        alert(str);
+
+      }
+
+      var txt = document.getElementById('txt');
+      txt.onkeydown = function (event) {  
+                                //event : 매개변수명. 임의 지정
+        if (event.keyCode == 9) { //아스키코드값.
+          alert('TAB 키를 눌렀습니다.');
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="btn">클릭</div>
+  <input type="text" id="txt" placeholder="TAB키를 눌러보세요">
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    body {
+      background: url(http://wooreeweb.com/img/grid.gif);
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      position: static;
+      text-align: center;
+      line-height: 100px;
+      /* 세로 가운데 정렬은 height 속성값과 line-height 속성값을 같게 만들어 줌. 디자인 패턴 */
+    }
+
+    #a { left: 0px; top: 0px; background-color: #fc0;}
+    #b { left: 30px; top: 30px; background-color: #c9f;}
+    #c { left: 60px; top: 60px; background-color: #0af;}
+  </style>
+</head>
+<body>
+  <div class="box" id="a">box-a</div>
+  <div class="box" id="b">box-b</div>
+  <div class="box" id="c">box-c</div>
+  <hr>
+  <p>[주의] position 속성이 명시되지 않거나 position='static'인 경우 top/bottom/left/right 등의 위치 변경 속성은 적용되지 않는다.</p>
+</body>
+</html>

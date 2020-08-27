@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lotto</title>
+  <script>
+    var lotto = [];
+
+    for (let i = 0; i < 6; i++) {
+      var temp = parseInt(Math.random() * 45) + 1;
+      for (let j = 0; j < i; j++) {
+
+        if(temp == lotto[j]) {
+          i--;
+          break;
+
+        }
+
+        
+
+        
+        
+      }
+      lotto[i] = temp;
+      document.write(lotto[i] + " ");
+
+      
+    }
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

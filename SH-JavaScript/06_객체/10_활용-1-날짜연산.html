@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/output.js"></script>
+  <script>
+    var t = new Date();
+    var nowYear = t.getFullYear(); //오늘 연도 정보
+
+    var theDate = new Date(nowYear, 11, 31); //현재년도 + 12(11+1)월 31일 객체를 생성한다
+    var diffDate = theDate -t; //연말까지 남은기간 = 연말날짜 - 현재날짜
+    // 뺀 값은 밀리초로 나오는듯
+    //밀리초를(ms) 일로 계산 후 소수점은 정수로
+    var result = Math.ceil(diffDate/(24*60*60*1000));
+    //날짜에서는 소수점을 올림하여 처리. 1.1일은 2일. 0.8일은 1일과 마찬가지.
+    prn(`<h1> ${nowYear} 년도 앞으로 ${result}일 남았습니다 </h1>`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

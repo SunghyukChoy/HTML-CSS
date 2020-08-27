@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #frame {
+      width: 400px;
+      height: 300px;
+    }
+    .wrap {
+      width: 800px;
+      height: 100%;
+      margin: 0;
+    }
+    .wrap img {
+      width: 400px;
+      float: left;      
+    }
+    #frame {
+      overflow: hidden;
+    }
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+      
+      var w = $('img').width();
+        //.width() : 너비를 가져오는 메소드
+        //.width(n) : 너비를 지정하는 메소드
+
+      $('.wrap img:first-child').click(function() {
+        $('.wrap').stop().animate({marginLeft: -w}, 1000, 'linear');
+        //.stop() : 애니매이션 진행 중 다른 모션이 들어가면 애니메이션이 중단됨. 이미지 변경 중 클릭 시 원래 사진으로 돌아감. 보통 애니메이션 메서드와 같이 사용함.
+        //.animate({할 일}, 시간, 이징속성)
+      });
+
+      $('.wrap img:last-child').click(function() {
+        $('.wrap').stop().animate({marginLeft: 0}, 1000, 'linear');
+      });
+
+    } );
+  </script>
+</head>
+<body>
+  <div id="frame">
+    <div class="wrap">
+      <img src="http://wooreeweb.com/img/s05.jpg" alt="">
+      <img src="http://wooreeweb.com/img/s07.jpg" alt="">
+    </div>
+  </div>
+  <hr>
+  <button>위 이미지 클릭</button>
+</body>
+</html>

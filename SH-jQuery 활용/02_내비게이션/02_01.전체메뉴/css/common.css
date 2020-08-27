@@ -1,0 +1,53 @@
+/* css/common.css */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #222;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+img {
+  outline: none;  
+  /* 구형 익스에서 외곽선 없애는 속성 */
+}
+html {
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* 모바일에서 텍스트가 깨지는 것을 막아줌.또렷하게 */
+}
+body * {
+  box-sizing: border-box;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 전체 영역 */
+.wrap {
+  position: relative;
+  /* 자손 중의 누군가 absolute나 relative 속성값을 줄 떄 */
+  /* 자기 자신을 이동하고자 할 떄 */
+  /* 그냥  */
+  width: 980px;
+  /* 국제 표준 960px 글자 16px*/
+  /* 국내 표준 1200px 글자 14px */
+  margin: 0 auto;
+  /* position 속성값이 absolute나 fixed인 경우, 너비가 
+  명확하지 않은 경우 0 auto 값 적용 안 됨 */
+}
+
+/* 컨텐츠 영역 */
+.container {
+  background-color: #eee;
+  color: #333;
+  padding: 300px;
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: gold;
+      margin: 10px;
+      display: none;
+      float: left;
+    }
+    .clear::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+      
+      $('#fIn').click(function() {
+        $('.box').fadeIn(1000, function() {
+          var dis = $(this).css('display');
+          var opa = $(this).css('opacity');
+          alert('display:' + dis + '\nopacity: ' + opa);
+            // \n : 개행
+        });          
+      });
+
+      $('#fOut').click(function() {
+        $('.box').fadeOut(1000, function() {
+          var dis = $(this).css('display');
+          var opa = $(this).css('opacity');
+          alert('display:' + dis + '\nopacity: ' + opa);
+          //opa가 1로 나오는 이유 : dispaly 속성값이 none으로 바뀌어 보이지 않게 되므로 opacity는 
+        });          
+      });
+      
+    });
+  </script>
+</head>
+<body>
+  <button id="fIn">.fadeIn()</button>
+  <button id="fOut">.fadeOut()</button>
+  <hr>
+  <div class="clear">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

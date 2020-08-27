@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+
+      $('.box:nth-child(1)').text('<em>em</em>');
+      //.text() : 태그를 인식하지 않고 글자 자체를 적용함
+      $('.box:nth-child(2)').html('<em>em</em>');
+      //.html() : 태그를 인식하여 적용해줌.
+      
+    } );
+   
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.html()</h2>
+  <hr>
+  <div class="clear">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/output.js"></script>
+  <script>
+    var ary = new Array(); //배열 객체 생성
+    ary[0] = ['j', 'a', 'v', 'a'];
+    ary[1] = ['s', 'c', 'r'];
+    ary[2] = ['i', 'p', 't'];
+    //배열안에 배열을 만들어 2차원 배열
+    var idx = [0, 1, 2, 3];
+
+    prn(`index 번호 : ${idx}`);
+    prn(`ary[0]의 값 : ${ary[0]}`);
+    prn(`ary[1]의 값 : ${ary[1]}`);
+    prn(`ary[2]의 값 : ${ary[2]}`);
+    line();
+
+    
+    prn(`ary[0][1]의 값 : ${ary[0][0]}`);
+    prn(`ary[0][2]의 값 : ${ary[0][1]}`);
+    prn(`ary[0][3]의 값 : ${ary[0][2]}`);
+    prn(`ary[0][4]의 값 : ${ary[0][3]}`);
+    line();
+
+    prn(`ary[1][0]의 값 : ${ary[1][0]}`);
+    prn(`ary[1][1]의 값 : ${ary[1][1]}`);
+    prn(`ary[1][2]의 값 : ${ary[1][2]}`);
+    line();
+
+    prn(`ary[2][0]의 값 : ${ary[2][0]}`);
+    prn(`ary[2][1]의 값 : ${ary[2][1]}`);
+    prn(`ary[2][2]의 값 : ${ary[2][2]}`);
+    line();
+
+    prn(`<h3>배열 객체 변수 ary에 저장된 값 : ${ary} </h3>`)
+    //그냥 호출하면 다나옴
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

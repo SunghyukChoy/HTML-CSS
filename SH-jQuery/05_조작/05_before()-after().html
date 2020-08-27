@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+
+      $('.box:first').before('<div class=box>앞에</div>'); 
+                            //태그를 인식함.
+      $('.box:last').after('<div class=box>뒤에</div>'); 
+      
+      //형제 요소에서 다른 형제들을 만드는 것.
+      
+    } );
+   
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.before() / .after()</h2>
+  <hr>
+  <div class="clear">
+    <div class="box"><strong>1</strong></div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/output.js"></script>
+  <script>
+    window.onload = function(){
+      clock();
+      fitSize();
+    }
+    function clock() {
+      var today = new Date();
+      var todayHour = doubleDight(conver24to12(today.getHours()));
+      var todayMin = doubleDight(today.getMinutes());
+      var todaySec = doubleDight(today.getSeconds());
+      // 오전 오후 변수 추가
+      var todayAmPM = ap(today.getHours());
+
+      document.getElementById(`watch`).innerHTML = `<span style=font-size:30%>${todayAmPM}</span>${todayHour}:${todayMin}:${todaySec}`
+      // 1c초단위로 clock()호출
+      window.setInterval(`clock()`, 1000);       // ms 단위
+      // 오전 오후 판단 함수
+    }
+      function ap(h){
+        var ampm = Math.floor(h/12)
+        if(ampm){
+          return `AM`;
+        }else{
+          return `PM`;
+        }
+      }
+      // 12시간제로 변환하는 함수
+      function conver24to12 (h){
+        var hour_12 = h%12;
+        if(hour_12==0){
+          hour_12+=12;
+        }
+        return hour_12;
+      }
+      //두자리수 표시 함수
+      function doubleDight (int){
+        if (int > 9){
+          return int;
+        }else{
+          return `0${int.toString()}`
+        }
+      }
+      // 브라우저 화면에 맞춰 시간표시
+      function fitSize() {
+        var minH = window.innerHeight * 0.2;
+                      //브라우저의 높이
+        var minW = window.innerWidth * 0.2;
+                      //브라우저의 너비
+        document.getElementById(`watch`).style.fontSize = Math.min(minH, minW)+'px';
+        //높이와 너비 중 더 작은 것을 가저욤.
+      }
+  </script>
+  <style>
+  *{margin: 0; padding: 0;}
+  body{font-family: Arial; background-color: #000; color: #fff;}
+  .container{width: 100%; height: 100%; position: absolute; display: table;}
+  #watch{
+    font-weight: bold; text-align: center; display: table-cell; vertical-align: middle;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="watch">00:00:00</div>
+  </div>
+</body>
+</html>

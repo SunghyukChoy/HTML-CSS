@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- mousewheel 플러그인 추가 -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <script>
+    $( function () {
+      
+      $('html, body').mousewheel(function(e, d) {
+        this.scrollLeft -= (d * 100);
+        e.preventDefault(); //스크롤 다운 방지
+      });
+    } );
+
+    // 휠을 내리면 매개변수 d 값은 -, 올리면 + 
+    // 브라우저의 좌측을 기준으로 d가 - 값이면 이미지는 좌측 화면으로 넘어감. + 값이면 좌측으로부터 멀어지므로 이미지는 우측으로 나타남.
+    //d*100 : 수치를 많이 줄수록 빠르게 움직임.
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body * {
+      box-sizing: border-box;
+    }
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .page {
+      float: left;
+      width: 25%;
+    }
+    .page img {
+      width: 100%;
+    }
+    .wrap { 
+      width: 400%;
+      height: 100%;
+      overflow-y: hidden;
+    }
+    html, body {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap clearfix">
+    <div class="page page1">
+      <img src="http://wooreeweb.com/img/bg-1.jpg" alt="">
+    </div>
+    <div class="page page2">
+      <img src="http://wooreeweb.com/img/bg-2.jpg" alt="">
+    </div>
+    <div class="page page3">
+      <img src="http://wooreeweb.com/img/bg-3.jpg" alt="">
+    </div>
+    <div class="page page4">
+      <img src="http://wooreeweb.com/img/bg-4.jpg" alt="">
+    </div>
+  </div>
+</body>
+</html>
+

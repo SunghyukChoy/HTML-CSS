@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      background: url(http://wooreeweb.com/img/grid.gif);
+    }
+
+    .outer {
+      width: 200px;
+      /* 자식의 부피만큼 높이를 갖음 */
+      margin: 0 auto;
+      border: 5px solid red;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      /* position: static; */
+    }
+
+    #a {
+      left: 0px;
+      top: 0px;
+      background-color: #fc0;
+    }
+
+    #b {
+      left: 30px;
+      top: 30px;
+      background-color: #c9f;
+    }
+
+    #c {
+      left: 60px;
+      top: 60px;
+      background-color: #0af;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="box" id="a">box-a</div>
+    <div class="box" id="b">box-b</div>
+    <div class="box" id="c">box-c</div>
+  </div>
+
+
+</body>
+
+</html>

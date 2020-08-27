@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_cleearInterval()</title>
+  <script>
+    window.onload = function() {
+      var bg = document.querySelector('body');
+      var color = ['red', 'green', 'blue'];
+      var i = 0;
+
+      var changeBG = setInterval(function() {
+        if(i > color.length - 1) {
+          clearInterval(changeBG);
+          //setInterval을 제거.
+          //배열에 있는 값만 가지고 반복
+        }
+
+        
+        bg.style.backgroundColor = color[i];
+        i++;
+      }, 2000);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

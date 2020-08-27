@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_filter()-1</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  
+  <script>
+    $(function() {
+      $('.box').filter(':even').css({
+        //$('.box:even')과 같음.
+        //중괄호 : 자바스크립트 기법. 객체의 리터럴 선언 방식.
+        backgroundColor: 'red'
+        //하이푼 쓸 수 없음. 카멜케이스 방식
+        //filter : 깔대기의 개념. 조건에 맞는 것들을 걸러냄. 
+        // 많이 쓸수록 적은 범위를 갖게 됨.
+        //제이쿼리의 특징 : 메소드를 연속해서 쓸 수 있음.메소드체이닝 기법. 범위가 작아짐.
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.filter(':even')</h2>
+  <hr>
+
+  <div class="clear">
+    <!-- .box{$}*5 -->
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+  </div>
+</body>
+</html>

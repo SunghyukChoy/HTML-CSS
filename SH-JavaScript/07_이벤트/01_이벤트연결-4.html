@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_이벤트연결-4</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+    window.onload = function() {
+      var bt = document.querySelector('#btn');
+                /* querySelector : 아이디든, 클래스든, 태그든 가져올 수 있는 선택자.  */
+      function view() {
+        alert('버튼을 클릭했습니다.');
+      }
+
+      bt.onclick = function() {
+        view();
+        //일종의 캡슐화 기법
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <div id="btn">클릭</div>
+</body>
+</html>

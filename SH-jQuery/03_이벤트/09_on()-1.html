@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06_mouseenter()-mouseleave()</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {      
+      
+      //.on('이벤트명', function() {실행문});
+      $('p').on('click', function() {
+        //이벤트가 2개 이상 걸렸을 때 쓰는 함수
+        //.on('이벤트명', 함수) : 본 예제에서는 p 태그에 click 이벤트가 발생하면 함수를 실행하라
+        //$('p').on('click mouseover')
+        //이벤트명 다수 기재 시 띄어쓰기로 구분
+        $(this).css('background-color', 'crimson');
+        });
+      
+    } );
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.on()</h2>
+  <hr>
+  <p class="pa">p.pa</p>
+  <p id="pa">p#pa</p>
+  <p class="pb">p.pb</p>
+  <hr>
+  <button>위 요소 클릭</button>
+</body>
+</html>

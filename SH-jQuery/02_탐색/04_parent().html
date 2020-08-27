@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_parent()-1</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  
+  <script>
+    $(function() {
+      $('.box').parent().css('border', '5px solid black');
+        backgroundColor: 'red'
+        //css에서는 아래에서 위로 올라가지 못했음.top-down 방식
+        //자바스크립트와 제이쿼리는 자식을 기준으로 요소를 찾을 수 있음. bottom-up 방식.
+        //.parents(x) : x속성(태그,클래스,아이디)을 가진 상위 부모를 찾음.
+      });    
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.parent()</h2>
+  <hr>
+
+  <div class="clear">
+    <!-- .box{$}*5 -->
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비교 연산자</title>
+  <script>
+    var a = 10; //변수 a의 값 10
+    var b = 20; //변수 b의 값 20
+    var c = 10; //변수 c의 값 10
+    var d = "20"; //변수 d의 값 문자형 "20"
+    var result;
+
+    document.write("변수 a에 저장된 값 : " + a + "<br>");
+    document.write("변수 b에 저장된 값 : " + b + "<br>");
+    document.write("변수 c에 저장된 값 : " + c + "<br>");
+    document.write("변수 d에 저장된 값 : " + d + "(문자)<br>");
+
+    result = a > b; //거짓
+    document.write("result = a > b 결과 result에 저장된 값 : ");
+    document.write(result, "<br>");
+
+    result = a < b; //참
+    document.write("result = a < b 결과 result에 저장된 값 : ");
+    document.write(result, "<br>");
+
+    result = a <= b; //참
+    document.write("result = a <= b 결과 result에 저장된 값 : ");
+    document.write(result, "<br>");
+
+    result = b == d; //데이터형 상관없이 데이터가 같으므로 참
+    document.write("result = b == d 결과 result에 저장된 값 : ");
+    document.write(result, "<br>");
+
+    result = a != b; //데이터가 다르므로 참
+    document.write("result = a != b 결과 result에 저장된 값 : ");
+    document.write(result, "<br>");
+
+    result = b === d; //데이터형이 일치하지 않으므로 거짓
+    // 값과 자료형을 모두 비교하는 연산자.
+    document.write("result = b === d 결과 result에 저장된 값 : ");
+    document.write(result, "<br>");
+
+    //비교식에서 좌변이 주격. a가 b보다 크니? : a > b
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

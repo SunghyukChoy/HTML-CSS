@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>relative</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    body {
+      background: url(http://wooreeweb.com/img/grid.gif);
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      
+    }
+
+    #a { left: 0px; top: 0px; background-color: #fc0;}
+    #b { right: 30px; bottom: 30px; background-color: #c9f;
+    /* 원래 있어야 하는 위치에서부터의 offset 값 적용.  */}
+
+    #c { left: 60px; top: 60px; background-color: #0af;}
+  </style>
+</head>
+<body>
+  <div class="box" id="a">box-a</div>
+  <div class="box" id="b">box-b</div>
+  <div class="box" id="c">box-c</div>
+  
+</body>
+</html>

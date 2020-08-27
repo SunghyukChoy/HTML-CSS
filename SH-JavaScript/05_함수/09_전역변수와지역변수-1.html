@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <script>
+    var x = 10;
+
+    function gv() {
+      x += 50;
+      document.write('<h3>x = ' + x);
+    }
+
+    function lv() {
+      var y = 20;
+      y += x;
+      document.write('<h3>y = ' + y);
+    }
+
+    gv();
+    lv();
+
+    document.write('<hr>');
+    document.write('<h2>x = ' + x);
+    document.write('<h2>y = ' + y);
+    //y는 지역변수로 lv() 호출이 끝나는 순간 사라지기 떄문에 위의 출력문은 출력되지 않는다.
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

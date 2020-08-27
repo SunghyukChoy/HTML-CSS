@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>논리연산자</title>
+  <script>
+    var a = 10;
+    var b = 20;
+    var m = 30;
+    var n = 40;
+    var result;
+
+    document.write("변수 a에 저장된 값 : " + a + "<br>");
+    document.write("변수 b에 저장된 값 : " + b + "<br>");
+    document.write("변수 m에 저장된 값 : " + m + "<br>");
+    document.write("변수 n에 저장된 값 : " + n + "<br>");
+
+    //false || false || false
+    result = a > b || b >= m || m > n;
+    document.write("result = a > b || b >= m || m > n 결과 : ");
+    document.write(result, "<br>"); //false
+
+    //false || false || ture    
+    document.write("result = a > b || b >= m || m > n 결과 : ");
+    result = a > b || b >= m || m <= n;
+    document.write(result, "<br>"); //true
+
+    //true && false && true
+    result = a <= b && b >= m && m <= n;
+    document.write("result = a <= b && b >= m && m <= n 결과 : ");
+    document.write(result, "<br>"); //false
+
+    //true && true && true
+    result = a <= b && b <= m && m <= n;
+    document.write("result = a <= b && b <= m && m <= n 결과 : ");
+    document.write(result, "<br>"); //true
+
+    result = !(a > b);  //!false
+    document.write("result = !(a > b) 결과 : ");
+    document.write(result, "<br>"); //true
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

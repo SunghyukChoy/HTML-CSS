@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+
+      $('.box:nth-child(3)').prependTo('.clear');
+      // 객채를 ('content') .clear 요소 안에서 앞으로 이동시켜라.
+      $('.box:nth-child(2)').appendTo('.clear');
+      // 객채를 ('content') .clear 요소 안에서 뒤로 이동시켜라.
+    } );
+   
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.prependTo() / .appendTo()</h2>
+  <hr>
+  <div class="clear">
+    <div class="box"><strong>1</strong></div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>

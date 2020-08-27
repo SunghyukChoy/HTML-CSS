@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블록 요소의 특징 - display : block</title>
+  <style>
+    
+    legend {
+      color: crimson;
+    }
+
+    div {
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background: yellow;
+      border: 1px solid gold;
+      margin: 10px;
+    }
+  </style>
+  <style>
+    /* 대표적인 블록 요소 : h(n), p, div...  */
+
+    /* 블록 요소에 margin 부여(상하좌우 모두 적용) */
+    h2, h3, h4, p, div {
+      margin: 20px;
+    }
+
+    /* 블록 요소를 인라인 요소로 바꾸기(좌우 여백 적용, 상하 여백 무시) */
+    h2, h3, h4, p, div {
+      /* display: inline; */
+      /* 인라인 요소로 변경 시 width, height 속성 무시. */
+      /* 상하 여백(margin) 속성 무시. 그러나 line-height 속성 때문에 여백이 있는 것처럼 보임. */
+    }
+  </style>
+</head>
+<body>
+  <h3>대표적인 블록 요소(element)</h3>  
+  <fieldset>
+    <legend>< hn ></a</legend>
+    <h2>[h2 태그]</h2>
+    <h3>[h3 태그]</h3>
+    <h4>[h4 태그]</h4>    
+  </fieldset>
+  <hr>
+  <fieldset>
+    <legend>< p ></legend>
+    <P>[p 태그1]</P>
+    <P>[p 태그2]</P>
+  </fieldset>
+  <hr>  
+  <fieldset>
+    <legend>< div ></legend>
+    <div>[div 태그1]</div>
+    <div>[div 태그2]</div>
+    <div>[div 태그3]</div>
+  </fieldset> 
+</body>
+</html>

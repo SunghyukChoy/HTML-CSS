@@ -1,0 +1,29 @@
+<!-- 중요 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_setInterval()-1</title>
+  <script>
+    window.onload = function() {
+      var bg = document.querySelector('body');
+      var color = ['red', 'green', 'blue'];
+      var i = 0;
+
+      setInterval(function() {  
+        if(i > color.length - 1) {
+          i = 0;
+        } // i 값이 2가 넘으면 i를 0으로 해라
+
+        //그렇지 않으면 
+        bg.style.backgroundColor = color[i];
+        i++;
+      }, 2000); //2초에 한 번씩 실행
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

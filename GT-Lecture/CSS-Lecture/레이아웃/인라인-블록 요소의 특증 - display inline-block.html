@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인라인-블록 요소의 특징 - display : inline-block</title>
+  <style>
+    fieldset {
+      width: 550px;
+      margin-bottom: 20px;
+      border-color: #333;
+    }
+
+    legend {
+      color: crimson;
+    }
+
+    div {
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: 1px solid gold;
+    }
+
+    /* 외부 여백(margin) 부여 */
+    a, span, p, div {
+      background: yellow;
+      margin: 20px;
+      /* 외부여백 부여 시 인라인 요소는 상하 여백 무시. 블록 요소는 적용 */      
+    }
+
+    /* 인라인 요소를 inline-block으로 변경 */
+    a, span {
+      display: inline-block;
+      /* 속성 적용 시 인라인 속성처럼 옆으로 배치(컨텐츠의 부피만큼 공간 차지)는 되면서 상하좌우 외부여백(margin) 값도 갖게 됨. 서로에게 안 되는 것들을 가져와 특징으로 가짐.*/
+    }
+
+    /* 블록 요소를 inline-block으로 변경 */
+    p, div {
+      display: block; 
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>< a ></legend>
+    <a href="#">[하이퍼링크 a 태그1]</a>
+    <a href="#">[하이퍼링크 a 태그2]</a>
+    <a href="#">[하이퍼링크 a 태그3]</a>
+  </fieldset>
+  <hr>
+  <fieldset>
+    <legend>< span ></legend>
+    <span>[span 태그1]</span>
+    <span>[span 태그2]</span>
+    <span>[span 태그3]</span>
+  </fieldset>
+  <hr>
+  <fieldset>
+    <legend>< p ></legend>
+    <P>[p 태그1]</P>
+    <P>[p 태그2]</P>
+  </fieldset>
+  <hr>  
+  <fieldset>
+    <legend>< div ></legend>
+    <div>[div 태그1]</div>
+    <div>[div 태그2]</div>
+    <div>[div 태그3]</div>
+  </fieldset> 
+</body>
+</html>

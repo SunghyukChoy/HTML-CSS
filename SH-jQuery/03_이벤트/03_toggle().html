@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_toggle()</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+
+      //.toggle(function() {}, function() {});
+      $('p').toggle(function() {
+        //.toggle() : 똑딱이 스위치의 기능. toggle 안에 함수 2개가 들어감. 이벤트 발생 시 함수를 교차로 실행
+        $(this).css('background-color', 'crimson');
+      }, function() {
+        $(this).css('background-color', 'gold');
+      });
+      
+    } );
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>toggle()</h2>
+  <hr>
+  <p class="pa">p.pa</p>
+  <p id="pa">p#pa</p>
+  <p class="pb">p.pb</p>
+  <hr>
+  <button>위 요소 클릭</button>
+</body>
+</html>

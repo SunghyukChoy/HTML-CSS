@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>relative-2</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      background: url(http://wooreeweb.com/img/grid.gif);
+    }
+
+    .outer {
+      width: 200px;
+      /* height: 200px; */
+      /* outer의 높이는 자식의 position 속성값이 static이었을 때의 위치를 기준으로 갖게 됨. 하지만 위의 높이값 주석 해제 시 지정한 높이값 가짐*/
+      /* relative 속성값을 갖는 자식들을 다 포함하여 높이값을 가지고 싶다면 자식의 position 속성값이 static일 떄의 위치 + offset 값을 하여 줌.본 예제에서는 box-c가 마지막 자식이므로 static일 떄의 위치에 box-c의 offset 값을 더한 360px을 하면 모두 테두리 안에 있게 됨. */
+        /* height: 360px; */
+      margin: 0 auto;
+      border: 5px solid red;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
+
+    #a {
+      left: 0px;
+      top: 0px;
+      background-color: #fc0;
+    }
+
+    #b {
+      right: 30px;
+      top: 30px;
+      background-color: #c9f;
+    }
+
+    #c {
+      left: 60px;
+      top: 60px;
+      background-color: #0af;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="box" id="a">box-a</div>
+    <div class="box" id="b">box-b</div>
+    <div class="box" id="c">box-c</div>
+  </div>
+
+
+</body>
+
+</html>

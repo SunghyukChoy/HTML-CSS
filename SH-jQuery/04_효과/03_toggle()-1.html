@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: gold;
+      margin: 10px;
+      display: none;
+    }
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $( function () {
+      
+      $('button').click(function() {
+        $('.box').toggle(1000, function() {
+          //.toggle() : show()와 hide()를 번갈아 가면서 실행.
+          // 디스플레이 속성값을 바꾼 후 오퍼서티 속성을 바꿈.
+          alert('display : ' + $(this).css('display'));
+        });
+      });
+    } );
+  </script>
+</head>
+<body>
+  <button>.toggle()</button>
+  <hr>
+  <div class="clear">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

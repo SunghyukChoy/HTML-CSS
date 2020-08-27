@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_이벤트실행방지</title>
+  <script>
+    window.onload = function() {
+      var a = document.querySelector('a');
+      a.onclick = function(e) {
+        alert('하이퍼링크 클릭!');
+
+        //하이퍼링크 경로로 자동 링크되는 것을 방지
+        e.preventDefault(); //모던 브라우저
+          //preventDefault : 기본 이벤트를 막아라.
+
+        //구 IE 호환
+        //if(window.event) {
+        // window.event.returnValue = false;
+        // } else {
+        //   e.preventDefault();
+        // }
+      }
+    }
+  </script>
+</head>
+<body>
+  <a href="http://naver.com" target="new">하이퍼링크</a>
+    <!-- 앵커 태그 자체가 이벤트를 가지고 있음. -->
+</body>
+</html>

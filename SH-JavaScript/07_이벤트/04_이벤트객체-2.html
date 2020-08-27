@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_이벤트객체-2</title>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+    window.onload = function() {
+      var btn = document.querySelector('#btn');
+
+      btn.onclick = function(e) {
+        //window.event : 구 IE
+        var eve = e || window.event;
+        document.body.innerHTML = '<h3>이벤트 객체 모두 보기</h3><hr>';
+
+        //이벤트(e) 객체의 모든 요소를 화면에 출력
+        //현재 지원되는 이벤트 목록을 알 수 있음.
+        for(var key in eve) {
+            //key : 0번부터 순회하는 index
+          document.body.innerHTML += '<p>■ ' + key + ' : ' + eve[key];
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="button" id="btn" value="이벤트 객체 모두 보기">
+</body>
+</html>

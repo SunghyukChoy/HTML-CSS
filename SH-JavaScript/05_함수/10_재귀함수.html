@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <script>
+    //재귀함수 : 함수 내애세 자기 자신을 다시 호출하는 함수.
+    function fact(n) {
+      if(n < 1) {
+        document.write('<h3>종료되었습니다.');
+      } else {
+        document.write(n + '<br>');
+
+        // fact(n - 1);
+        arguments.callee(n - 1);
+        //arguements : 매개변수
+        // .callee() : 다시 호출하라.
+      }
+    }
+
+    var count = prompt('카운트할 숫자', 10);
+    fact(count);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/output.js"></script>
+  <script>
+    // 9~17현재 날짜와 현재 달에 1일의 날짜 객체 생성
+    var date = new Date(); //날짜 객체 생성
+    var y = date.getFullYear(); //현재 년도
+    var m = date.getMonth(); //현재 월
+    var d = date.getDate(); //현재 일
+
+    // 현재 월의 1일에 해당하는 요일 구하기 -> 해당 월 첫번째 줄의 빈칸 개수 구하기
+    var theDate = new Date(y, m, 1);
+    var theDay = theDate.getDay();
+    // 20~26 현재월에 마지막 일 구하기
+    // 1월 1월부터 12월까지의 마지막 일을 배열로 저장
+    var last = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    // 현재 연도가 윤년(4년주기 100년 제외또는 400년 주기) 2월 마지막 날 29
+    if(y%4 && y% 100 !=0 || y%400 ==0){
+      lastDate = last[1] = 29;//29를 last[1]에 대입 후 다시 lastDate에 대입      
+    }
+    var lastDate = last[m]; //현재월의 마지막 날
+    var row = Math.ceil((theDay+lastDate)/7); //필한 행수
+    // 달력 년도 월 표시
+    prn(`<div><h4>${y}년</h4>`);
+    prn(`<h1>${(m+1)}월</h1></div>`);
+    // 문자결합 연산자로 요일 행 생성
+     calendar = `<table border=1>`;
+     calendar += `<tr>`;
+     calendar += `<th>일</th>`;
+     calendar += `<th>월</th>`;
+     calendar += `<th>화</th>`;
+     calendar += `<th>수</th>`;
+     calendar += `<th>목</th>`;
+     calendar += `<th>금</th>`;
+     calendar += `<th>토</th>`;
+     calendar += `</tr>`;
+
+    var dNum=1;
+    // 달력 테이블 생성
+    for(var i=1; i<=row; i++){ //행 생성 tr
+      calendar += `<tr>`;
+      for(var j=1; j<=7; j++){ //열 생성 td
+        // 행이 첫줄이고 현재 월이ㅡ 1일의 요일 이전과 날짜가 마지막 일보다 크면 빈 열로 표시
+        if(i==1 && j<=theDay || dNum >lastDate){
+          calendar += "<td> &nbsp; </td>"; 
+        }else{
+          calendar+=`<td>${dNum}</td>`
+          dNum++;
+        }
+      }
+      calendar +=`</tr>`;
+    }
+    prn(calendar);
+  </script>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  table,
+  tr,
+  th,
+  td{
+    border-collapse: collapse;
+  }
+  th,
+  td{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+  }
+  div{
+    width: 350px;
+  }
+  h1,
+  h4{
+    display: inline-block;
+  }
+  h1{
+    margin-left: 90px;
+  }
+  th:first-child,
+  td:first-child{
+    color: crimson;
+  }
+  th:last-child,
+  td:last-child{
+    color: deepskyblue;
+  }
+  div,
+  table{
+    margin: 10px auto;
+  }
+  </style>
+</head>
+<body>
+  
+</body>
+</html>

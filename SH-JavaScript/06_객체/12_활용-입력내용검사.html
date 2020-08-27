@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/output.js"></script>
+  <script>
+    var userName = prompt(`이름을 입력하세요`);
+    reg1 = /^[가-힣]{2,5}$/;
+    //^[가-힣] : 가부터 힣까지. 한글로 표한 가능한 식
+    //{2,5} : 2~5자리까지
+    while(true){
+      if(reg1.test(userName)){
+        break;
+      }
+      alert(`이름 입력 형식이 잘못되었습니다!`);
+      userName = prompt(`이름을 입력하세요`);
+    }
+    var userCell = prompt(`휴대폰 번호를 입력하세요`);
+    reg2=/^(010|016|011)\d{3,4}\d{4}$/;
+    //^(010|016|011) : 010이거나 016이거나 011
+    //\d : 10진수을 입력 받음.
+    //{3, 4} : 3~4자리
+    while(true){
+      if(reg2.test(userCell)){
+        break;
+      }
+      alert(`휴대폰 입력 형식이 잘못되었습니다!`);
+      userCell = prompt(`휴대폰번호를 입력하세요`);
+    }
+    var userEmail = prompt(`이메일 주소를 입력하세요`);
+    reg3 = /^\w{5,12}@{a-z}{2,10}[\.][a-z]{2,3}[\.]?[a-z]{0,2}$/;
+    //이메일 검사식.
+    //정규 표현식 검색하여 참고.
+    while(true){
+      if(reg3.test(userEmail)){
+        break;
+      }
+      alert(`이메일 입력 형식이 잘못되었습니다!`);
+      userEmail = prompt(`이메일 주소를 입력하세요`);
+    }
+    prn(userName);
+    prn(userCell);
+    prn(userEmail);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

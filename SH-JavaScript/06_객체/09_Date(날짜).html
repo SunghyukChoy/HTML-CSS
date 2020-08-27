@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/output.js"></script>
+  <script>
+    var date = new Date();
+    //Date()객체 생성 시 현재 시간 정보를 불러옴.
+
+    prn(`객체변수 date = ${date}`);
+    line();
+
+    prn(`연도 : ${date.getFullYear()}`);
+    prn(`월 : ${date.getMonth()}`);
+    //index 번호로 추출하기 때문에 실제 1월은 0으로 나온다.
+    //사용자에게 월을 입력 받는 경우 -1을 해야 정상적으로 출력됨.
+    prn(`월(실제) : ${(date.getMonth())+1}`);
+    prn(`일 : ${date.getDate()}`);
+    prn(`요일(요일번호) : ${date.getDay()}`);
+    var day=date.getDay();
+    prn(`실제 요일로 변경하면 -->`);
+    switch(date.getDay){
+      case 0:
+      day = `일`;
+      break;
+      
+      case 1:
+      day = `월`;
+      break;
+      
+      case 2:
+      day = `화`;
+      break;
+
+      case 3:
+      day = `수`;
+      break;
+
+      case 4:
+      day = `목`;
+      break;
+
+      case 5:
+      day = `금`;
+      break;
+
+      case 6:
+      day = `토`;
+      break;
+    }
+    prn(day);
+    line();
+
+    prn(`시 ${date.getHours()}`);
+    prn(`분 ${date.getMinutes()}`);
+    prn(`초 ${date.getSeconds()}`);
+    prn(`밀리초 ${date.getMilliseconds()}`);
+    line();
+
+    prn(`지역 날짜 전체 표시 :  ${date.toLocaleString()}`);
+    prn(`지역 날짜만표시 :  ${date.toLocaleDateString()}`);
+    prn(`지역 시간만 표시 :  ${date.toLocaleTimeString()}`);
+    line();
+
+    prn(`1970년 1월1일 자정 이후부터 현재까지 경과한 누적시간(ms) : ${date.getTime()}`);
+    //날짜의 연산을 할 떄 사용.
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

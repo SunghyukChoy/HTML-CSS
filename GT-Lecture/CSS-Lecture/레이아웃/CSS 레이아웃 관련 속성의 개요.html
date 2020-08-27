@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 레이아웃 관련 속성의 개요</title>
+  <style>
+     /* 많이 쓰는 블록 요소 : p, div, li 
+      1) 여백을 가짐
+      2) 한 줄을 차지하려고 함*/
+    /* 많이 쓰는 인라인 요소: span, img, a, b
+      1) 컨텐츠의 크기만큼 자리를 차지
+      2) 여백을 가지지 못함.  */
+
+    .display {
+      /* 요소(element)의 표시 형식 변경 */
+      display: inherit; /* 부모 노드와 같은 속성으로 표시 */
+      display: none;  /* 요소를 표시하지 않음 */
+      display: block; /* 블록 방식으로 표시 */
+      display: inline;  /* 인라인 방식으로 표시 */
+      display: inline-block;  /* 인라인 블록 방식으로 표시, 컨텐츠의 크기만큼 공간을 사용하며, 여백을 가짐. */      
+    }  
+    
+    .position {
+      /* 공간 구성 시 위치 설정 */
+      position: static; /* 기본값, 요소 위치 기준. top/left 속성 적용 불가. 요소가 원래 있어야 하는 위치. 블록 요소라면 한 줄의 위치 자지. 인라인 요소라면 들어갈 수 있는 빈 공간으로. */
+      position: fixed;  /* 스크롤을 내려도 위치는 항상 고정. 나머지는 absolute와 동일. 해당 위치에 고정되어 움직일 수 없는 속성. */
+      position: absolute; /* static 속성이 아닌 부모 요소의 좌측 상단이 기준 위치가 되며, 부모 요소가 없다면 원점(0, 0)이 기준. 부모 요소를 먼저 찾고 부모 요소의 position 값이 static이거나 속성값이 없다면 상위로 올라가면서 부모 요소가 relative인가를 찾음. 부모 요소가 없다면 body가 기준이 됨. */
+      position: relative; /* static 기준으로 상대적인 위치. 원하는 곳으로 위치 가능하게 함. */
+
+      /* position 속성과 같이 쓸 수 있는 속성(top, bottom, left, right) 속성은 static 속성값을 제외하고 모두 사용 가능. */
+      /* static -> relative -> absolute -> fixed 순으로 나옴. 그 순서로 이해하면 좋음. */
+    }
+
+    .float {
+      /* box 또는 요소의 부유(띄움. 요소 혹은 공간을 띄워서 붙임.) 여부를 지정하며, 절대 위치 요소(position : absolute)의 경우 float 속성은 무시됨. */
+
+      float: left;  /* 태그를 왼쪽부터 정렬 */
+      float: right; /* 태그를 오른쪽부터 정렬 */
+
+      /* float은 형제 요소에도 적용이 되는데 이는 요소가 플로팅이 되면 형제 요소들은 해당 요소를 없다라고 취급을 함. 따라서 형제 요소들이 그 자리로 찾아들어가 겹침 현상이 발생할 수 있음. 그래서 플로팅을 할 경우 clear 속성을 함께 씀. */
+    }
+
+    .clear {
+      /* 앞에서 지정한 float 속성을 해제(초기화) */
+
+      clear: left;  /* float : left 요소를 해제함 */
+      clear: right; /* float : right 요소를 해제함 */
+      clear: both;  /* 기본적으로 가장 많이 사용. 형제 요소에 대해 플로팅 된 것을 전부 해제  */
+    }
+
+    .overflow {
+      /* 영역을 벗어나는 경우(지정한 영역 < 내용). 공간보다 컨텐츠의 내용이 많아질 때를 대비해서 컨텐츠를 어떻게 처리할지에 대한 속성 */
+
+      overflow: hidden; /* 숨김. 넘치는 컨텐츠 또는 스크롤바를 숨김. 가장 많이 쓰는 속성. 한정된 공간에서 컨텐츠가 많아지게 되면 레이아웃이 깨짐.*/
+      overflow: scroll; /* 스크롤 바 생성. 무조건 스크롤 바 생성. */
+      overflow: auto; /* 브라우저 의존(자동 스크롤 바). 컨텐츠의 양에 따라 브라우저가 판단 */
+      overflow: visible;  /* 무조건 보임 */
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="display">display</div>
+  <div class="position">position</div>
+  <div class="float">float</div>
+  <div class="clear">clear</div>
+  <div class="overflow">overflow</div>
+</body>
+</html>
