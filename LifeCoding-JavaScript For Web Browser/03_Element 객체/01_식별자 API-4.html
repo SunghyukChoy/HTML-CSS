@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>식별자 API-4</title>
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <!-- classList는 className에 비해서 훨씬 편리한 사용성을 제공한다 -->
+  <ul>
+    <li>html</li>
+    <li>css</li>
+    <li id="active" class="important current">JavaScript</li>
+  </ul>
+  <script>
+    function loop() {
+      for (var i = 0; i < active.classList.length; i++) {
+        console.log(i, active.classList[i]);
+      }
+    }
+  </script>
+  <input type="button" value="DOMTokenList" onclick="console.log(active.classList);" />
+  <!-- classList API는 id를 통해 조회한 객체만 사용할 수 있으므로 변수 선언 없이 아이디명.classList라고 작성하여도 작동한다. -->
+  <!-- 다음은 MDN 참조 :
+  Element.classList는 엘리먼트의 클래스 속성의 컬렉션인 활성 DOMTokenList를 반환하는 읽기 전용 프로퍼티이다.
+  classList 사용은 공백으로 구분된 문자열인 element.className을 통해 엘리먼트의 클래스 목록에 접근하는 방식을 대체하는 간편한 방법이다.  
+  element.classList 그 자체는 읽기 전용 프로퍼티지만 add()와 remove() 메서드를 이용하여 변형할 수 있다.
+  -->
+  <!-- 다음은 devdic.com 참조 :
+    DOMTokenList : 공백으로 구분된 문자열로 표현된 데이터를 정렬하여 토큰 집합으로 만들어 집합을 조작하기 위한 메소드를 제공하는 유사배열 인터페이스이다.
+   -->
+
+  <!-- 클래스명 조회 -->
+  <input type="button" value="조회" onclick="loop();" />
+  <!-- 클래스명 추가 -->
+  <input type="button" value="추가" onclick="active.classList.add('marked');" />
+  <!-- 클래스명 제거 -->
+  <input type="button" value="제거" onclick="active.classList.remove('important');" />
+  <!-- 클래스명 토글(on/off) 존재하면 제거, 존재하지 않으면 추가 -->
+  <input type="button" value="토글" onclick="active.classList.toggle('current');" />
+
+  <!-- 이러한 기능은 여러개의 DOM을 한번에 제어한다거다 클래스명을 통해 디자인 제어 시 유용하게 사용할 수 있다. -->
+</body>
+
+</html>

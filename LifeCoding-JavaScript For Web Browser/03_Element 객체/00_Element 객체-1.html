@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>00_Element 객체-1</title>
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+  </ul>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    var t = document.getElementById('active');
+    // t는 li 태그의 특성을 반영하기 위한 HTMLLIElement 객체
+    // 모든 엘리먼트(태그)들은 공통적인 기능을 정의하는 HTMLElement 객체의 자식
+    // HTMLElement 객체는 모든 엘리먼트(태그)들은 공통적인 기능을 정의하는 Element 객체의 자식    
+    // 왜 Element 객체와 HTMLElement 객체를 구분할까
+    // DOM 구격은 HTML뿐만이 아닌 마크업 언어(XML, SVG, XUL, ..)들을 제어하기 위한 규격
+    // 각각 언어의 엘리먼트에 적용할 수 있는 기능을 정의한 것이 Element 객체
+    // HTML 언어가 부가적으로 가져야 할 기능을 정의한 것이 HTMLElement 객체    
+    console.dir(document.body);
+    // console.dir(엘리먼트)로 엘리먼트의 프로퍼티, 메서드, 상속관계 등의 DOM 정보를 확인할 수 있다.
+  </script>
+</body>
+
+</html>

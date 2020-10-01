@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 객체-1</title>
+
+</head>
+
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+  <h2>Hello World</h2>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    var li = $('li');
+    // jQuery 함수의 리턴값으로 jQuery 함수를 이용해서 선택한 엘리먼트들에 대해서 처리할 작업을 프로퍼티로 가지고 있는 객체
+    li.css('text-decoration', 'underline');
+    // jQuery 객체의 가장 중요한 특성은 암시적인 반복을 수행한다는 것이다. DOM과 다르게 jQuery 객체의 메소드를 실행하면 선택된 엘리먼트 전체에 대해서 동시에 작업이 처리된다.    
+    // 포로퍼티에 값을 설정하지 않으면 프로퍼티의 값을 읽어온다.
+    console.log(li.css('text-decoration')); // underline solid rgb(0, 0, 0)
+    // 암시적 반복은 값을 설정할 때만 동작한다. 값을 가져올 때는 선택된 엘리먼트 중 첫번째 엘리먼트에 대한 값만을 반환한다. 
+
+    var h2 = $('h2');
+    h2.css('text-decoration', 'underline').css('color', 'blue');
+    // chainig이란 선택된 엘리먼트에 대해서 연속적으로 작업을 처리할 수 있는 방법이다. 
+  </script>
+</body>
+
+</html>

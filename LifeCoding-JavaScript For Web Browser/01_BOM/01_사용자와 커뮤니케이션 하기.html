@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자와 커뮤니케이션 하기</title>
+  <script>
+
+  </script>
+</head>
+
+<body>
+
+  <input type="button" value="alert" onclick="func_alert()" />
+  <input type="button" value="confirm" onclick="func_confirm()" />
+  <input type="button" value="prompt" onclick="func_prompt()" />
+  <script>
+    function func_alert() {
+      alert(1);
+      alert(2);
+      alert(3);
+      // '확인'을 누르기 전까지는 다른 코드 실행되지 않음.
+    }
+
+    function func_confirm() {
+      if (confirm("OK?")) { // confirm의 매개변수 : 보여줄 메세지. 리턴타입 boolean
+        alert("It's OK"); // '확인' 버튼을 누르면 true 리턴
+      } else { // '취소' 버튼을 누르면 false 리턴
+        alert("It's canceled");
+      }
+    }
+    // 사용자의 응답에 따라 로직을 분기시킬 수 있다.
+
+    function func_prompt() {
+      if (prompt("id?") === "likeaglow") { // 리턴값 : 입력받은 정보
+        alert("환영합니다.");
+      } else {
+        alert("나가주세요");
+      }
+    }
+    // 사용자에게 정보를 입력받을 수 있다.
+  </script>
+
+
+</body>
+
+</html>

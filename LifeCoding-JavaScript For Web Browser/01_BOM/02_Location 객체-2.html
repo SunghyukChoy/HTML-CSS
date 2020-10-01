@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location 객체-2</title>
+  <script>
+    // 아래의 코드는 현재 문서를 구글로 이동한다. 리다이렉션
+    location.href = "https://www.google.com/";
+
+    // 아래와 같은 방법도 같은 효과를 낸다.
+    location = "https://www.google.com/";
+
+    // location.href = location.href;
+    // 아래는 현재 문서를 리로드하는 간편한 방법.
+    // 정보가 갱신됐거나 사용자에게 웹페이지를 다시 보여주는 경우 사용.    
+    // location.reload();
+    // 무한 새로고침 됨. 개발자 도구에서 한 번만 실행해볼 것
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

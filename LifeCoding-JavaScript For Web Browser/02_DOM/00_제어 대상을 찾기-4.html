@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제어 대상을 찾기-4</title>
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <!-- id 값을 기준으로 객체를 조회한다. 성능면에서 가장 우수하다. -->
+  <ul>
+    <li>HTML</li>
+    <li id="active">CSS</li>
+    <li>JavaScript</li>
+  </ul>
+  <script>
+    var li = document.getElementById('active');
+    li.style.color = 'red';
+    
+  </script>
+</body>
+
+</html>

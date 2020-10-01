@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>식별자 API-2</title>
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li>html</li>
+    <li>css</li>
+    <li id="active">JavaScript</li>
+  </ul>
+  <script>
+    var active = document.getElementById('active');
+    /* 문서에서 id는 단 하나만 등장할 수 있는 식별자다. */
+    console.log(active.id);
+    active.id = 'deactive';
+    console.log(active.id);
+  </script>
+</body>
+
+</html>

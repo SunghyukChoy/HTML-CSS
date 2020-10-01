@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location 객체-1</title>
+  <script>
+    /* Location 객체는 문서의 주소와 관련된 객체로 Window 객체의 프로퍼티다. 이 객체를 이용해서 윈도우의 문서 URL을 변경할 수 있고, 문서의 위치와 관련해서 다양한 정보를 얻을 수 있다. */
+
+    // 현재 윈도우의 url 알아내기, .href가 더 많이 쓰임.
+    console.log(location.toString(), location.href);
+
+    console.log(location);
+    // locaation 객체의 정보(객체의 프로퍼티들)를 출력함
+
+    alert(location);
+    // location 객체의 정보가 아닌 url 출력됨. alert()의 매개변수가 문자열이어야 하므로 js가 매개변수를 문자화 시킴
+    alert(location.toString());
+    // 위 두 코드는 같은 코드
+
+    // location 객체는 URL을 의미에 따라서 별도의 프로퍼티로 제공하고 있다. 
+    console.log(location.protocol);
+    console.log(location.host);
+    console.log(location.port);
+    console.log(location.pathname);
+    console.log(location.search);
+    console.log(location.hash);
+        
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

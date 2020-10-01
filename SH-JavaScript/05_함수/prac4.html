@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>prac4</title>
+  <script>
+    var x = parseInt(prompt("x값 입력"));
+    var y = parseInt(prompt("y값 입력"));
+    var z = parseInt(prompt("z값 입력"));
+
+    function add(x, y, z) {
+      return x + y + z;
+    }
+
+    function avg(x, y, z) {
+      return add(x, y, z) / 3;
+    }
+
+    document.write("<p>" + x + " + " + y + " + " + z + " = " + add(x, y, z));
+    document.write("<p>" + x + ", " + y + ", " + z + "의 평균은 " + avg(x, y, z));
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

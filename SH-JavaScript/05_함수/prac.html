@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function show() {
+      document.write("show() 함수 호출 성공");
+    }
+
+    show();
+    document.write("<br>")
+    var funcShow = show;
+
+    funcShow();
+  </script>
+  <script>
+    var annon = function () {
+      document.write("<p><h1> 익명함수 호출 성공")
+    }
+
+    annon();
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

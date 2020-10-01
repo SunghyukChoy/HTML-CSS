@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>
-    var obj = null;
-    document.write("<p> obj : " + obj);
-    //주소값은 있으나 값이 없는 상태.
-    document.write("<p> obj의 논리값 : " + Boolean(obj));
+    for (let i = 2; i <= 9; i++) {
+      document.write("<p> ========== " + i + " 단 ==========");
+      for (let j = 1; j <= 9; j++) {
+        document.write("<p>" + i + " x " + j + " = " + i * j);
+      }
+    }
   </script>
 </head>
 

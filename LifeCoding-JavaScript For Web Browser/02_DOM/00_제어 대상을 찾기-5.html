@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제어 대상을 찾기-5</title>
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <!-- css 선택자의 문법을 이용해서 객체를 조회할수도 있다. -->
+  <ul>
+    <li>HTML</li>
+    <li class="active">CSS</li>
+    <li>JavaScript</li>
+    <li class="active">jQuery</li>
+  </ul>
+  <ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+  </ol>
+  <script>
+    var li = document.querySelector("li");
+    // 첫 번째 li 태그만을 리턴
+    li.style.color = 'red';
+    var li = document.querySelector('.active');
+    // 클래스명이 active인 첫 번째 태그를 리턴
+    var li = document.querySelector('#active');
+    // id명이 active인 태그를 리턴
+    li.style.color = 'orange';
+  </script>
+</body>
+
+</html>

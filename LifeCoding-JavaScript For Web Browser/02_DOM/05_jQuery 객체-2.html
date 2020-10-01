@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 객체-2</title>
+
+</head>
+
+<body>
+  <ul>
+    <li id="target">HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    var li = $('li');
+    console.log(li[0]);
+    console.log(li[1]);
+    console.log(li[2]);
+    console.log(li.length);
+    // jQuery 함수를 이용하여 가져온 jQuery 객체는 유사배열로 배열과 같은 방법으로 제어할 수 있다.
+
+    for (var i = 0; i < li.length; i++) {
+      // li[i].css('color','red');
+      // Uncaught TypeError: li[i].css is not a function
+
+      console.log(li[i].constructor);
+      // jQuery 객체가 아니기에 jQuery 메서드를 사용할 수 없다.
+      // 변수 li에 담긴 값은 jQuery Object이지만 li에 담긴 각각에 객체는 DOM 객체이다
+    }
+
+    for (var i = 0; i < li.length; i++) {
+      $(li[i]).css('color', 'blue');
+      // $(li[i]) : jQuery 함수를 이용하여 jQuery 객체를 리턴하였고 jQuery 메서드 사용할 수 있다
+    }
+
+    console.log($('li')); // jQuery 객체의 정보 확인
+
+    var target = document.getElementById('target');
+    console.log(target.constructor); // HTMLLIElement. DOM 객체
+
+    var li = $(target); // DOM 객체를 jQuery 함수에 인자로 전달하면 jQuery 객체를 만들 수 있다.    
+  </script>
+</body>
+
+</html>

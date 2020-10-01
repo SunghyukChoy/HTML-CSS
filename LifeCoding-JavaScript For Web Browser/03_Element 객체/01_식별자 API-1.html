@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>식별자 API-1</title>
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active" class="important current">JavaScript</li>
+  </ul>
+  <script>
+    console.log(document.getElementById('active').tagName);
+    // HTMLLIElement 객체는 HTMLElement 객체를 상속받고
+    // HTMLElement 객체는 Element 객체를 상속받는다.
+    // Element 객체에는 tagName이라는 프로퍼티가 있는데 이 프로퍼티로 tag name을 알아낼 수 있다.
+    
+    // document.getElementById('active').tagName = 'a' 라는 식의 코드는 실행되지 않는다. tagName 속성은 읽기 전용 속성이기 때문이다.
+  </script>
+</body>
+
+</html>

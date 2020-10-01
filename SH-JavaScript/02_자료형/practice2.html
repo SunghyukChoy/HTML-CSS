@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var obj = {
+      menu: "아메리카노",
+      price: 2000
+    };
+    document.write("<p> obj : " + obj);
+    document.write("<p> 메뉴 : " + obj.menu);
+    document.write("<p> 가격 : " + obj.price);
+
+    var person = {
+      name: "최성혁",
+      gender: "male"
+    }
+    document.write("<p> person : " + person)
+    document.write("<p> 이름 : " + person.name)
+    document.write("<p> 성별 : " + person.gender)
+
+
+    var addCalculator = function (num1, num2) {
+      var value = num1 + num2;
+      document.write("<p>" + num1 + " + " + num2 + " = " + value);
+    }
+    addCalculator(100, 200);
+
+    var devideCalculator = function (num1, num2) {
+      var value = num1 / num2;
+      document.write("<p>" + num1 + " / " + num2 + " = " + value);
+    }
+    devideCalculator(1, 3);
+    devideCalculator(100, 5);
+
+    var obj2;
+    document.write("<p> obj2 : " + obj2);
+    document.write("<p> obj2의 boolean 값 : " + Boolean(obj2));
+
+    var obj3 = null;
+    document.write("<p> obj3 : " + obj3);
+    document.write("<p> obj3의 논리값 : " + Boolean(obj3));
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

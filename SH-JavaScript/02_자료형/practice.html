@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let x = 10;
+    let y = 12.5;
+
+    document.write("<p> x : " + x);
+    document.write("<p> y : " + y + "</p>");
+    document.write("<p> x + y : " + x + y);
+    document.write("<p> x + y : " + (x + y));
+    document.write("<br>");
+    document.write("" + (x + y) + x + y);
+    document.write("<br>");
+    document.write("<br>");
+
+    var str = "\"자바스크립트\"";
+    document.write("str : " + str);
+
+    var boo1 = true;
+
+    document.write("<br><br> boolean : " + boo1);
+    document.write("<br>");
+    document.write("<br>");
+    document.write("10 > 1 : " + 10 > 1); // false
+    document.write("<br>");
+    document.write(10 > 1);
+    document.write("<br>");
+    document.write("10 > 1 : " + (10 > 1)); // true
+
+    document.write("<p> 논리값 : " + Boolean(Number("abc"))); // NaN // false
+    document.write("<p> 논리값 : " + Boolean(0)); // false
+    document.write("<p> 논리값 : " + Boolean(1)); // true
+    document.write("<p> 논리값 : " + Boolean("")); // false
+    document.write("<p> 논리값 : " + Boolean(null)); // false
+    document.write("<p> 논리값 : " + Boolean(undefined)); //false
+
+    document.write("<p> isNaN : " + Number("123a")); // NaN
+    document.write("<p> isNaN : " + Number("123 ")); // 123
+    document.write("<br>");
+    document.write(false);
+    document.write("<br>")
+    document.write(Number("123") === 123);
+
+
+    var arr = ["java", "javascript", "html", "css", "jquery"];
+    document.write("<p> arr[0] : " + arr[0]);
+    document.write("<p> arr[0] : " + arr[4]);
+    document.write("<p> arr의 길이 : " + arr.length);
+
+    var str2 = "apple";
+    document.write("<p> str2의 길이 : " + str2.length);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

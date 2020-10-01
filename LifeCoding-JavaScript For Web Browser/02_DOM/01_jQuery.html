@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+  <script>
+    /* 라이브러리 : 자주 사용하는 로직을 재사용할 수 있도록 고안된 소프트웨어를 라이브러리라고 한다 */
+    /* jQuery : jQuery는 DOM을 내부에 감추고 보다 쉽게 웹페이지를 조작할 수 있도록 돕는 도구이다. */
+  </script>
+</head>
+
+<body>
+  <!-- HTML 문서에 jQuery 로드하는 방법 -->
+  <!-- 1) jQuery CDN : jQuery cdn 검색하여 cdn의 주소를 기입-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- 2) 파일을 직접 다운로드 받아 로드. jQuery 웹페이지에서 파일을 연 후 ctrl + s 하여 js 파일을 저장 -->
+  <script src="../lib/jQuery/jquery-3.5.1.min.js"></script>
+  <script>
+    jQuery(document).ready(function ($) {
+      $('body').prepend('<h1>Hello world</h1>');
+      // $('body') : 태그의 이름이 'body'인 태그를 선택
+      // .prepend('<h1>Hello world</h1>') : 선택한 태그의 아래쪽에 '<h1>Hello world</h1>'를 추가
+      $('body').prepend('<h1>prepend 메서드로 추가한 태그의 위치</h1>');
+      $('body').append('<h1>append 메서드로 추가한 태그의 위치</h1>');
+    });
+    // body 태그 하에 <h1>Hello world</h1> 코드가 만들어짐
+    // jQuery( document ).ready(function( $ ) {}로 감싸는 것이 이상적
+
+    // 아래와 같이 코드를 줄일 수 있다.
+    $('body').prepend('<h1>Hello JavaScript</h1>');
+  </script>
+</body>
+
+</html>

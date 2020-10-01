@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table</title>
+  <script>
+    var tbl;
+    tbl = "<table>";
+
+    for (let i = 0; i <= 4; i++) {
+      tbl += "<tr>";
+      for (let j = 0; j <= 1; j++) {
+        tbl += "<td>" + (i + 1) + "열" + (j + 1) + "행" + "</td>";
+      }
+      tbl += "</tr>";
+    }
+
+    /*  tbl += "<tr>";
+
+     for (var i = 0; i <= 2; i++) {
+       tbl += "<td>" + i + "</td>";
+     }
+     tbl += "</tr>"; */
+
+    tbl += "</table>";
+
+    document.write(tbl);
+  </script>
+  <style>
+    table,
+    tr,
+    td {
+      border: 1px solid crimson;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

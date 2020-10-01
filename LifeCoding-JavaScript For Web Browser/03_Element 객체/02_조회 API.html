@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조회 API</title>
+  <script>
+    /* 지금까지 document.getElementsBy* 메소드를 통해서 엘리먼트를 조회했다. document 객체는 문서 전체를 의미하는 엘리먼트이기 때문에 document의 조회 메소드는 문서 전체를 대상으로 엘리먼트를 조회한다. Element 객체 역시도 getElementsBy* 엘리먼트를 가지고 있는데 Element 객체의 조회 메소드는 해당 엘리먼트의 하위 엘리먼트를 대상으로 조회를 수행한다.  */
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li class="marked">html</li>
+    <li>css</li>
+    <li id="active">JavaScript
+      <ul>
+        <li>JavaScript Core</li>
+        <li class="marked">DOM</li>
+        <li class="marked">BOM</li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+    var list = document.getElementsByClassName('marked');
+    // document 객체의 getElementsByClassName() 메서드    
+    console.group('document');
+    for (var i = 0; i < list.length; i++) {
+      console.log(list[i].textContent);
+    }
+    console.groupEnd();
+
+    console.group('active');
+    var active = document.getElementById('active');    
+    var list = active.getElementsByClassName('marked');
+    // Element 객체의 getElementsByClassName() 메서드. 해당 엘리먼트(active)의 하위 엘리먼트를 조회
+    for (var i = 0; i < list.length; i++) {
+      console.log(list[i].textContent);
+    }
+    console.groupEnd();
+  </script>
+</body>
+
+</html>
