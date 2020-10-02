@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 속성 제어 API-2</title>
+</head>
+
+<body>
+  <a id="t1" href="./demo1.html">opentutorials</a>
+  <input id="t2" type="checkbox" checked="checked" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    /* DOM과 마찬가지로 jQuery도 속성(attribute)과 프로퍼티를 구분한다. 속성은 attr, 프로퍼티는 prop 메소드를 사용한다. */
+    // 현재 문서의 URL이 아래와 같다고 했을 때
+    // http://localhost/jQuery_attribute_api/demo2.html
+    var t1 = $('#t1');
+    console.log(t1.attr('href')); // ./demo.html 
+    console.log(t1.prop('href')); // http://localhost/jQuery_attribute_api/demo.html 
+
+    var t2 = $('#t2');
+    console.log(t2.attr('checked')); // checked
+    console.log(t2.prop('checked')); // true
+  </script>
+  <script>
+    /* jQuery를 이용하면 프로퍼티의 이름으로 어떤 것을 사용하건 올바른 것으로 교정해준다. 이런 것이 라이브러리를 사용하는 의의라고 할 수 있다. */
+    $('#t1').prop('className', 'important');
+    $('#t2').prop('class', 'current');
+  </script>
+</body>
+
+</html>

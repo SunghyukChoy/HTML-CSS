@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_속성 API-2</title>
+</head>
+
+<body>
+  <p id="target">
+    Hello world
+  </p>
+  <script>
+    var target = document.getElementById('target');
+
+    // attribute 방식
+    target.setAttribute('class', 'important');
+    // property 방식
+    target.className = 'important';
+    /* setAttribute('class', 'important')와 className = 'important'는 같은 결과를 만든다. 하지만 전자는 attribute 방식(속성이라고 부르겠다)이고 후자는 property 방식이다. property 방식은 좀 더 간편하고 속도도 빠르지만 실제 html 속성의 이름과 다른 이름을 갖는 경우가 있다. 그것은 자바스크립트의 이름 규칙 때문이다. */
+    /* class className
+    readonly readOnly
+    rowspan rowSpan
+    colspan colSpan
+    usemap userMap
+    frameborder frameBorder
+    for htmlFor
+    maxlength maxLength */
+    /* 심지어 속성과 프로퍼티는 값이 다를수도 있다. 아래 코드를 실행한 결과는 속성과 프로퍼티의 값이 꼭 같은 것은 아니라는 것을 보여준다. */
+  </script>
+  <a id="new_target" href="./demo1.html">ot</a>
+  <script>
+    //현재 웹페이지가 http://127.0.0.1:54000/LifeCoding-JavaScript%20For%20Web%20Browser/03_Element%20%EA%B0%9D%EC%B2%B4/03_%EC%86%8D%EC%84%B1%20API-2.html 일 때 
+    var new_target = document.getElementById('new_target');
+
+
+    // console.log('new_target.href', new_target.href);
+    // http://127.0.0.1:54000/LifeCoding-JavaScript%20For%20Web%20Browser/03_Element%20%EA%B0%9D%EC%B2%B4/demo1.html
+
+    // console.log('new_target.getAttribute("href")', new_target.getAttribute("href"));
+    // ./demo1.html 
+  </script>
+</body>
+
+</html>
