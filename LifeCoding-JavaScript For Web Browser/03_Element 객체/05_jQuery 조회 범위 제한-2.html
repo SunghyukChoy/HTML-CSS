@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_jQuery 조회 범위 제한-2</title>
+</head>
+
+<body>
+  <ul>
+    <li class="marked">html</li>
+    <li>css</li>
+    <li id="active">JavaScript
+      <ul>
+        <li>JavaScript Core</li>
+        <li class="marked">DOM</li>
+        <li class="marked">BOM</li>
+      </ul>
+    </li>
+  </ul>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    // $("#active").find('.marked').css("background-color", "red");
+    // find는 jQuery 객체 내에서 엘리먼트를 조회하는 기능을 제공한다. 위의 코드는 1의 예제와 효과가 같다.
+
+    // find를 쓰는 이유는 체인을 끊지 않고 작업의 대상을 변경하고 싶을 때 사용한다.
+    $('#active').css('color', 'blue').find('.marked').css("background-color", "red");
+
+    // find를 너무 복잡하게 사용하면 코드를 유지보수하기 어렵게 된다. 
+  </script>
+</body>
+
+</html>

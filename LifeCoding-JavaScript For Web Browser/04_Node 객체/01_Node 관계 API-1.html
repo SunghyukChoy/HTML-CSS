@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_Node 관계 API-1</title>
+</head>
+
+<body id="start">
+  <ul>
+    <li><a href="./532">html</a></li>
+    <li><a href="./533">css</a></li>
+    <li><a href="./534">JavaScript</a>
+      <ul>
+        <li><a href="./535">JavaScript Core</a></li>
+        <li><a href="./536">DOM</a></li>
+        <li><a href="./537">BOM</a></li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+    var start = document.getElementById('start');
+    console.log(start); // body 엘리먼트
+    // body 엘리먼트가 포함하고 있는 자식 엘리먼트 : ul, script
+    console.log(start.firstChild);
+    // body 엘리먼트의 첫 번째 자식인 ul 엘리먼트를 가져올까?
+    // 아님. #text를 출력함. ul은 body 엘리먼트의 첫 번째 자식이 아님.
+    // #text는 text 엘리먼트를 의미하는 것이 아닌 일반적인 text 정보를 의미함
+    // <body>와 <ul>사이에 아무것도 없어 보이지만 공백이나 줄바꿈 등의 text 정보가 들어감
+    // 이 객체는 Node 객체의 또다른 하위 객체인 Text 객체임. 하위 객체이므로 Node 객체의 메서드를 가지고 있음.
+    // 문자로 이루어진 객체 : Text 객체. Node 타입 : Text
+    // <body>와 <ul>사이의 줄바꿈을 없애고 붙여서 적으면 첫 번째 자식 객체로 ul 엘리먼트를 출력
+
+    console.log(start.firstChild.nextSibling);
+    // ul 엘리먼트. ul 엘리먼트는 #text와 같은 레벨의 형제 노드
+    console.log(start.firstChild.nextSibling.nextSibling);
+    // #text. ul 엘리먼트와 script 엘리먼트 사이의 공백 문자
+    console.log(start.firstChild.nextSibling.nextSibling.nextSibling);
+    // script 엘리먼트
+    console.log(start.firstChild.nextSibling.nextSibling.nextSibling.previousSibling);
+    // #text. ul 엘리먼트와 script 엘리먼트 사이의 공백 문자
+    console.log(start.firstChild.nextSibling.nextSibling.nextSibling.previousSibling.previousSibling);
+    // ul 엘리먼트. 
+    start.firstChild.nextSibling.nextSibling.nextSibling.previousSibling.previousSibling.style.color = 'red';
+    console.log(start.firstChild.nextSibling.nextSibling.nextSibling.previousSibling.previousSibling.firstChild
+      .nextSibling.parentNode);
+    // ul 엘리먼트. 
+    console.log(start.firstChild.nextSibling.nextSibling.nextSibling.previousSibling.previousSibling.firstChild
+      .nextSibling.parentNode.parentNode);
+    // body 엘리먼트
+
+    console.log(start.childNodes);
+    // [#text, ul 엘리먼트, #text, script 엘리먼트, #text]
+    // body 엘리먼트의 자식 엘리먼트들. 유사배열 형태로 리턴
+    console.log(start.childNodes[0]);
+    // #text
+    console.log(start.childNodes[1]);
+    // ul 엘리먼트
+    console.log(start.childNodes[3]);
+    // script 엘리먼트
+    console.log(start.childNodes.length);
+    // 4
+    for (var i = 0; i < start.childNodes.length; i++) {
+      start.childNodes[i].style.color = 'blue';
+    }
+    // 안 됨. Text 객체 style 프로퍼티 적용 안 됨
+  </script>
+</body>
+
+</html>
