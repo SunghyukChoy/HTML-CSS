@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_jQuery 노드 변경 API-4</title>
+</head>
+
+<body>
+  <!-- 다음은 노드를 복사하는 방법이다. -->
+  <div class="target" id="target1">
+    target 1
+  </div>
+
+  <div class="target" id="target2">
+    target 2
+  </div>
+
+  <div id="source">source</div>
+
+  <input type="button" value="clone replaceAll target 1" id="btn1" />
+  <input type="button" value="clone replaceWith target 2" id="btn2" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('#btn1').click(function () {
+      $('#source').clone().replaceAll('#target1');
+      // $('#source').replaceAll('#target1');
+      // 이렇게 하면 id가 target1인 엘리먼트는 id가 source인 엘리먼트로 교체되고 원래 있던 id가 source인 엘리먼트도 사라짐.. 
+    })
+    $('#btn2').click(function () {
+      $('#target2').replaceWith($('#source').clone());
+    })
+  </script>
+</body>
+
+</html>

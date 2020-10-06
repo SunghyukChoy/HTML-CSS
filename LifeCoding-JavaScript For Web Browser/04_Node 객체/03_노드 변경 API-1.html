@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노드 변경 API-1</title>
+</head>
+
+<body>
+  <!-- 노드의 추가와 관련된 API들은 아래와 같다.
+
+    appendChild(child)
+    노드의 마지막 자식으로 주어진 엘리먼트 추가
+    insertBefore(newElement, referenceElement)
+    appendChild와 동작방법은 같으나 두번째 인자로 엘리먼트를 전달 했을 때 이것 앞에 엘리먼트가 추가된다.
+
+    노드를 추가하기 위해서는 추가할 엘리먼트를 생성해야 하는데 이것은 document 객체의 기능이다. 아래 API는 노드를 생성하는 API이다.
+
+    document.createElement(tagname)
+    엘리먼트 노드를 추가한다.
+    document.createTextNode(data)
+    텍스트 노드를 추가한다. 
+ -->
+
+  <ul id="target">
+    <li>HTML</li>
+    <li>CSS</li>
+  </ul>
+  <input type="button" onclick="callAppendChild();" value="appendChild()" />
+  <input type="button" onclick="callInsertBefore();" value="insertBefore()" />
+  <script>
+    function callAppendChild() {
+      var target = document.getElementById('target');
+      var li = document.createElement('li');
+      // Element를 생성하는 것은 문서 안에 들어갈 요소를 만드는 것이므로 그 역할을 document 객체가 한다고 이해하면 좋음.
+      var text = document.createTextNode('JavaScript');
+      // <li>   </li> <li>와 </li>사이에 들어갈 Text 객체 생성
+      li.appendChild(text);
+      // text가 li의 자식으로 추가됨
+      target.appendChild(li);
+      // li가 target의 자식으로 추가됨
+    }
+
+    function callInsertBefore() {
+      var target = document.getElementById('target');
+      var li = document.createElement('li');
+      var text = document.createTextNode('jQuery');
+      li.appendChild(text);
+      target.insertBefore(li, target.firstChild);
+      // target의 firstChild 앞에 li를 삽입함.
+      // target의 firstChild : #text
+      // target.insertBefore(li, target.firstChild.nextSibling); 결과 같음.
+    }
+  </script>
+</body>
+
+</html>

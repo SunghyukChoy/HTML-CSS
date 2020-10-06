@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_jQuery 노드 변경 API-2</title>
+</head>
+
+<body>
+  <!-- 제거와 관련된 API는 remove와 empty가 있다. remove는 선택된 엘리먼트를 제거하는 것이고 empty는 선택된 엘리먼트의 텍스트 노드를 제거하는 것이다 -->
+  <div class="target" id="target1">
+    target 1
+  </div>
+
+  <div class="target" id="target2">
+    target 2
+  </div>
+
+  <input type="button" value="remove target 1" id="btn1" />
+  <input type="button" value="empty target 2" id="btn2" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('#btn1').click(function () {
+      $('#target1').remove();
+      // 엘리먼트 사라짐
+    })
+    $('#btn2').click(function () {
+      $('#target2').empty();
+      // 텍스트 노드 제거. 엘리먼트는 남아있음
+    })
+  </script>
+</body>
+
+</html>

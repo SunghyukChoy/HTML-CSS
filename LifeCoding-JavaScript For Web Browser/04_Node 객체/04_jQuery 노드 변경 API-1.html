@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 노드 변경 API-1</title>
+</head>
+<!--  jQuery에서 노드를 제어하는 기능은 주로 Manipulation 카테고리에 속해 있다. 
+http://api.jquery.com/category/manipulation/ -->
+
+<body>
+  추가와 관련된 주요한 메소드는 4가지다. 각각의 관계를 그림으로 나타내면 아래와 같다.<br>
+  <img src="../img/jQuery 노드 추가.png" alt="" />
+
+  <div class="target">
+    content1
+  </div>
+
+  <div class="target">
+    content2
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    // 개발자 도구 열어 확인해 볼 것
+
+    $('.target').before('<div>before</div>');
+    // 엘리먼트의 앞에 추가
+    $('.target').after('<div>after</div>');
+    // 엘리먼트의 뒤에 추가
+    $('.target').prepend('<div>prepend</div>');
+    // 엘리먼트의 자식으로 추가되는데 #text (content) 앞에 추가
+    $('.target').append('<div>append</div>');
+    // 엘리먼트의 자식으로 추가되는데 #text (content) 뒤에 추가
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_jQuery 노드 변경 API-3</title>
+</head>
+
+<body>
+  <!-- replaceAll과 replaceWith는 모두 노드의 내용을 교체하는 API이다. replaceWith가 제어 대상을 먼저 지정하는 것에 반해서 replaceAll은 제어 대상을 인자로 전달한다 -->
+  <div class="target" id="target1">
+    target 1
+  </div>
+
+  <div class="target" id="target2">
+    target 2
+  </div>
+
+  <input type="button" value="replaceAll target 1" id="btn1" />
+  <input type="button" value="replaceWith target 2" id="btn2" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('#btn1').click(function () {
+      $('<div>replaceAll</div>').replaceAll('#target1');
+    })
+    $('#btn2').click(function () {
+      $('#target2').replaceWith('<div>replaceWith</div>');
+    })
+  </script>
+
+</body>
+
+</html>

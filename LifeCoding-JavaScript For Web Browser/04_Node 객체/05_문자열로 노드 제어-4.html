@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_문자열로 노드 제어-4</title>
+</head>
+
+<body>
+  <!-- 좀 더 정교하게 문자열을 이용해서 노드를 변경하고 싶을 때 사용한다. -->
+  <ul id="target">
+    <li>CSS</li>
+  </ul>
+  <input type="button" onclick="beforebegin();" value="beforebegin" />
+  <input type="button" onclick="afterbegin();" value="afterbegin" />
+  <input type="button" onclick="beforeend();" value="beforeend" />
+  <input type="button" onclick="afterend();" value="afterend" />
+  <script>
+    function beforebegin() {
+      var target = document.getElementById('target');
+      target.insertAdjacentHTML('beforebegin', '<h1>Client Side</h1>');
+      //insertAdjacentHTML(추가할 위치, 추가할 코드)
+      // ul 엘리먼트가 시작하기 이전에 코드를 추가한다. ul 엘리먼트의 바깥
+    }
+
+    function afterbegin() {
+      var target = document.getElementById('target');
+      target.insertAdjacentHTML('afterbegin', '<li>HTML</li>');
+      // ul 엘리먼트가 시작한 이후에 코드를 추가한다. ul 엘리먼트의 첫 번째 자식으로 추가
+    }
+
+    function beforeend() {
+      var target = document.getElementById('target');
+      target.insertAdjacentHTML('beforeend', '<li>JavaScript</li>');
+      // ul 엘리먼트가 끝나기 이전에 코드를 추가한다. ul 엘리먼트의 마지막 자식으로 추가
+    }
+
+    function afterend() {
+      var target = document.getElementById('target');
+      target.insertAdjacentHTML('afterend', '<h1>Server Side</h1>');
+      // ul 엘리먼트가 끝난 이후에 코드를 추가한다. ul 엘리먼트의 바깥
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노드 종류 API-1</title>
+</head>
+<script>
+  /* 노드 작업을 하게 되면 현재 선택된 노드가 어떤 타입인지를 판단해야 하는 경우가 있다. 이런 경우에 사용할 수 있는 API가 nodeType, nodeName이다. */
+  /* 노드의 종류에 따라서 정해진 상수가 존재한다. 아래는 모든 노드의 종류와 종류에 따른 값을 출력하는 예제다. */
+  for (var name in Node) {
+    console.log(name, Node[name]);
+    // Node 가 가지고 있는 Type들의 리스트 출력
+    // ELEMENT_NODE 1
+    // TEXT_NODE 3
+    // 어떠한 객체가 Element 객체라면 Node Type은 1이고 그의 상수는 ELEMENT_NODE이다.
+  }
+</script>
+
+<body id="start">
+  <ul>
+    <li><a href="./532">html</a></li>
+    <li><a href="./533">css</a></li>
+    <li><a href="./534">JavaScript</a>
+      <ul>
+        <li><a href="./535">JavaScript Core</a></li>
+        <li><a href="./536">DOM</a></li>
+        <li><a href="./537">BOM</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    var body = document.getElementById('start');
+    console.log(body.firstChild); // #text
+    console.log(body.firstChild.nodeType); // 3
+    console.log(body.firstChild.nodeType === 3); // true
+    console.log(body.firstChild.nodeType === Node.TEXT_NODE); // true
+
+    console.log(body.nodeName); // BODY
+    console.log(body.firstChild.nodeName) // #text
+    console.log(body.firstChild.nextSibling.nodeName) // UL
+
+    // nodeType은 해당되는 노드가 Element인지 또는 Text인지 또는 Attr인지 등을 알려주는 포로퍼티이고
+    // nodeName은 저 자세한 정보, 태그의 이름이라든지 text 정보임을 알리는 등의 프로퍼티이다.
+  </script>
+</body>
+
+</html>

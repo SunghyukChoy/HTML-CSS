@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_노드 변경 API-3</title>
+</head>
+
+<body>
+  <!-- 노드 바꾸기에는 아래 API가 사용된다.
+
+    replaceChild(newChild, oldChild)
+ -->
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="target">JavaScript</li>
+  </ul>
+  <input type="button" onclick="callReplaceChild();" value="replaceChild()" />
+  <script>
+    function callReplaceChild() {
+      var a = document.createElement('a');
+      a.setAttribute('href', 'http://opentutorials.org/module/904/6701');
+      a.appendChild(document.createTextNode('Web browser JavaScript'));
+
+      var target = document.getElementById('target');
+      target.replaceChild(a, target.firstChild);
+      // target의 firstChild : #text // 'JavaScript'
+      // target.firstChild를 a로 교체함
+    }
+  </script>
+</body>
+
+</html>
