@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document 객체</title>
+</head>
+
+<body>
+  <img src="../img/Document.png" alt="" />
+
+  <!-- Document 객체는 DOM의 스팩이고 이것이 웹브라우저에서는 HTMLDocument 객체로 사용된다. HTMLDocument 객체는 문서 전체를 대표하는 객체, 대표하는 노드라고 할 수 있다. 아래 코드는 이를 보여준다. -->
+  <script>
+    //document 객체는 window 객체의 소속이다.
+    console.log(window.document);
+    //document 객체의 자식으로는 Doctype과 html이 있다. 
+    console.log(window.document.childNodes);
+    console.log(window.document.childNodes[0]); // 문서의 형식을 가르키는 객체
+    console.log(window.document.childNodes[1]); // html 문서 전체
+    // 이 모든 것의 상위 객체가 document 객체
+  </script>
+
+  <!--
+  노드 생성 API
+
+  document  객체의 주요 임무는 새로운 노드를 생성해주는 역할이다. 이에 대한 내용은 노드 변경 API에서 학습했기 때문에 여기서는 언급하지 않는다.
+
+    createElement()
+    createTextNode()
+
+  문서 정보 API
+
+    title
+    URL
+    referrer
+    lastModified
+ -->
+<script>
+  console.log(document.title);
+</script>
+</body>
+
+</html>

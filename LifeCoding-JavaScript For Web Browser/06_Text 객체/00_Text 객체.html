@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text 객체</title>
+</head>
+
+<body>
+  <img src="../img/Text.png" alt="" />
+
+  <!-- <p>Hello world</p> 에서 <p></p>는 Element 객체, "Hello world"는 Text 객체이다 -->
+  <!-- 텍스트 객체는 텍스트 노드에 대한 DOM 객체로 CharcterData를 상속 받는다. 
+    아래는 텍스트 노드를 찾는 예제다. 주목할 것은 DOM에서는 공백이나 줄바꿈도 텍스트 노드라는 점이다. -->
+  <p id="target1"><span>Hello world</span></p>
+  <p id="target2">
+    <span>Hello world</span>
+  </p>
+  <script>
+    var t1 = document.getElementById('target1').firstChild;
+    console.log("t1 : " + t1.nodeName); // SPAN
+    var t2 = document.getElementById('target2').firstChild;
+    console.log("t2 : " + t2.nodeName); // #text
+
+    console.log(t1.firstChild.nodeValue); // "Hello world" // Text 객체의 text 정보 가져옴
+    try {
+      console.log(t2.firstChild.nodeValue); // t2(Text 객체)는 자식을 가지고 있지 않음.
+    } catch (e) {
+      console.log(e);
+    }
+    console.log(t2.nextSibling); // span
+    console.log(t2.nextSibling.firstChild.nodeValue); // "Hello world"
+  </script>
+
+  <p>값</p>
+
+  <p>텍스트 노드의 값을 가져오는 API</p>
+
+  <p> data</p>
+  <p> nodeValue</p>
+
+  <p>조작</p>
+
+  <p> appendData()</p>
+  <p> deleteData()</p>
+  <p> insertData()</p>
+  <p> replaceData()</p>
+  <p> subStringData()</p>
+
+  <p>생성</p>
+
+  <p> docuemnt.createTextNode()</p>
+
+</body>
+
+</html>
