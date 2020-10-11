@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서의 기하학적 특성-1</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    #target {
+      width: 100px;
+      height: 100px;
+      border: 50px solid #1065e6;
+      padding: 50px;
+      margin: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 요소의 크기와 위치 -->
+  <div id="target">
+    Coding
+  </div>
+  <script>
+    var t = document.getElementById('target');
+    console.log(t.getBoundingClientRect());
+    // 엘리먼트의 크기와 문서에서의 위치(문서의 좌측면과 상단으로부터의 위치, body로부터의 거리)를 출력
+  </script>
+
+  <p>화면에 표시된 모습은 아래와 같다.</p>
+  <img src="../img/rect1.png" alt="" />
+  <p>즉 엘리먼트의 테두리와 body 태그 사이의 거리가 50px이다. 그리고 테두리를 포함한 엘리먼트의 크기는 300px이다. 이 값을 알아내고 싶을 때 사용하는 API가
+    getBoundingClientRect이다. 이를 콘솔에서 실행한 결과는 아래와 같다.</p>
+  bottom: 350<br />
+  height: 300<br />
+  left: 50<br />
+  right: 350<br />
+  top: 50<br />
+  width: 300<br />
+  <p>즉 엘리먼트의 크기와 위치를 알고 싶을 때는 getBoundingClientRect를 사용하면 된다는 것을 알 수 있다. </p>
+  <p>getBoundingClientRect의 width, height 값을 IE는 제공하지 않는다.</p>
+</body>
+
+</html>

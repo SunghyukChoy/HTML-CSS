@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>00_문서의 기하학적 특성-4</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div {
+      border: 50px solid #1065e6;
+      padding: 50px;
+      margin: 50px;
+    }
+
+    #target {
+      width: 100px;
+      height: 2000px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 그럼 문서의 스크롤 값을 변경하는 것은 어떻게 하는 것일까? scrollLeft와 scrollTop 프로퍼티를 이용하면 된다. -->
+  <input type="button" id="scrollBtn" value="scroll(0, 1000)" />
+  <script>
+    document.getElementById('scrollBtn').addEventListener('click', function () {
+      window.scrollTo(0, 1000);
+      // scrollTo(x좌표값, y좌표값) : pageYOffset 기준으로 1000만큼 움직여라
+    })
+  </script>
+  <div>
+    <div id="target">
+      Coding
+    </div>
+  </div>
+</body>
+
+</html>
