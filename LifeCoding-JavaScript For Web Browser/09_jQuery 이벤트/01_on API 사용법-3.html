@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>on API 사용법-3</title>
+</head>
+
+<body>
+  <!-- 하나의 엘리먼트에 여러 개의 이벤트 타입을 동시에 등록하는 방법 -->
+  <input type="text" id="target" />
+  <p id="status"></p>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('#target').on('focus blur', function (e) {
+      // on API의 첫 번째 인자로 '이벤트타입 이벤트타입 이벤트타입....'
+      // 여러 개의 이벤트에 대해 같은 이벤트 핸들러를 공유
+      $('#status').html(e.type);
+      // e : 이벤트 객체
+      // .type : 이벤트 타입 반환
+      // .html() : 인자를 선택된 엘리먼트의 text 값으로 넣음
+    })
+  </script>
+  <!-- 한번에 여러개의 이벤트 타입을 선택했다. 만약 이벤트에 따라서 다른 핸들러를 실행하고 싶다면 아래와 같이 코드를 변경한다 -->
+  <input type="text" id="target2" />
+  <p id="status2"></p>
+  <script>
+    var handler = function (e) {
+      $('#status2').html(e.type);
+    }
+
+    /* $('#target2').on({ // 인자를 객체로 넘김
+      'focus': function (e) {
+        $('#status2').html(e.type)
+      },
+      'blur': function (e) {
+        $('#status2').html(e.type)
+      }
+    })
+
+    $('#target2').on({
+      'focus': handler,
+      'blur': handler
+      // '프로퍼티의 이름' : 프로퍼티의 값
+    }) */
+
+    $('#target2').on('focus', handler).on('blur', handler);
+
+    // 셋 다 같은 코드
+  </script>
+
+</body>
+
+</html>

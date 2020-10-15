@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>on API 사용법-4</title>
+</head>
+
+<body>
+  <!-- 이벤트를 제거할 때는 off를 사용한다.  -->
+  <input type="text" id="target">
+  <input id="remove" type="button" value="remove" />
+  <p id="status"></p>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    var handler = function (e) {
+      $('#status').text(e.type + Math.random());
+    };
+
+    $('#target').on('focus blur', handler)
+    $('#target').on('focus', function (e) {
+      console.log(e.type + Math.random())
+    })
+
+    $('#remove').on('click', function (e) { // id가 remove인 엘리먼트를 'click' 했을 때 이벤트 발생
+      $('#target').off('focus blur', handler);
+      // off API : 등록한 이벤트를 제거
+      // .off('제거할 이벤트 타입', 제거할 이벤트 핸들러)
+      // focus, blur 이벤트 타입에 등록된 handler 제거
+      // focus 이벤트 타입에 등록된 다른 이벤트 핸들러는 남아있음.
+
+      // $('#target').off('focus blur')
+      // focus, blur 이벤트 타입에 등록된 모든 이벤트 핸들러 제거
+      $('#status').html('이벤트 제거됨')
+    })
+  </script>
+</body>
+
+</html>

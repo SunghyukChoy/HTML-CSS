@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 전파(버블링과 캡처링)-1</title>
+  <style>
+    html {
+      border: 5px solid red;
+      padding: 30px;
+    }
+
+    body {
+      border: 5px solid green;
+      padding: 30px;
+    }
+
+    fieldset {
+      border: 5px solid blue;
+      padding: 30px;
+    }
+
+    input {
+      border: 5px solid black;
+      padding: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HTML 태그는 중첩되어 있다. 따라서 특정한 태그에서 발생하는 이벤트는 중첩되어 있는 태그들 모두가 대상이 될 수 있다. 이런 경우 중첩된 태그들에 이벤트가 등록 되어 있다면 어떻게 처리 될까 -->
+  <fieldset>
+    <legend>event propagation</legend>
+    <input type="button" id="target" value="target">
+  </fieldset>
+  <script>
+    function handler(event) {
+      var phases = ['capturing', 'target', 'bubbling']
+      console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase - 1]);
+      // event.target : 실제 클릭을 한 타겟(영역). 가장 안 쪽의 타겟. fieldset 영역을 클릭하면 fieldset으로, body를 클릭하면 body로 바뀜
+      // this : 클릭이 일어나 이벤트 핸들러가 호출된 이벤트 타겟
+      /* 출력 결과 : 
+         INPUT HTML capturing
+         INPUT BODY capturing
+         INPUT FIELDSET capturing
+         INPUT INPUT target */
+    }
+    // 버튼을 클릭하는 것은 input 영억을 클릭한 것이며 fieldset의 영역, body의 영역, html의 영역을 누른 것이기도 하다. 이런 상황에서 이벤트는 어떠한 순서로 발생할까
+    document.getElementById('target').addEventListener('click', handler, true);
+    document.querySelector('fieldset').addEventListener('click', handler, true);
+    document.querySelector('body').addEventListener('click', handler, true);
+    document.querySelector('html').addEventListener('click', handler, true);
+    /* 이벤트가 부모에서부터 발생해서 자식으로 전파되고 있다. 이러한 방식을 capturing이라고 한다. ie 낮은 버전에서는 작동하지 않기 때문에 많이 사용하지는 않는다. */
+    /* addEventListener의 세 번째 인자 값을 true로 지정하는 것은 capturing 방식을 사용하겠다는 의미이다 */
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    #target {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+      margin: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 10px;
+      float: left;
+      width: 200px;
+    }
+
+    td,
+    th {
+      padding: 10px;
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    이벤트 타입 : 웹브라우저는 마우스와 관련해서 다양한 이벤트 타입을 지원한다.<br />
+    <br />
+    click<br />
+    클릭했을 때 발생하는 이벤트.<br />
+    dblclick<br />
+    더블클릭을 했을 때 발생하는 이벤트<br />
+    mousedown<br />
+    마우스를 누를 때 발생<br />
+    mouseup<br />
+    마우스버튼을 땔 때 발생<br />
+    mousemove<br />
+    마우스를 움직일 때<br />
+    mouseover<br />
+    마우스가 엘리먼트에 진입할 때 발생<br />
+    mouseout<br />
+    마우스가 엘리먼트에서 빠져나갈 때 발생<br />
+    contextmenu<br />
+    컨텍스트 메뉴가 실행될 때 발생<br />
+  </p>
+
+  <p>
+    키보드 조합 : 마우스 이벤트가 호출될 때 특수키(alt, ctrl, shift)가 눌려진 상태를 감지해야 한다면 이벤트 객체의 프로퍼티를 사용한다. 이 때 사용하는 프로퍼티는 아래와 같다.<br />
+    <br />
+    event.shiftKey<br />
+    event.altKey<br />
+    event.ctrlKey<br />
+  </p>
+
+  <p>
+    마우스 포인터 위치 :
+
+    마우스 이벤트와 관련한 작업에서는 마우스 포인터의 위치를 알아내는 것이 중요할 때가 있는데 이런 경우 이벤트 객체의 clientX와 clientY를 사용한다.
+  </p>
+  <div id="target">
+
+  </div>
+  <table>
+    <tr>
+      <th>event type</th>
+      <th>info</th>
+    </tr>
+    <tr>
+      <td>click</td>
+      <td id="elmclick"></td>
+    </tr>
+    <tr>
+      <td>dblclick</td>
+      <td id="elmdblclick"></td>
+    </tr>
+    <tr>
+      <td>mousedown</td>
+      <td id="elmmousedown"></td>
+    </tr>
+    <tr>
+      <td>mouseup</td>
+      <td id="elmmouseup"></td>
+    </tr>
+    <tr>
+      <td>mousemove</td>
+      <td id="elmmousemove"></td>
+    </tr>
+    <tr>
+      <td>mouseover</td>
+      <td id="elmmouseover"></td>
+    </tr>
+    <tr>
+      <td>mouseout</td>
+      <td id="elmmouseout"></td>
+    </tr>
+    <tr>
+      <td>contextmenu</td>
+      <td id="elmcontextmenu"></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>key</th>
+      <th>info</th>
+    </tr>
+    <tr>
+      <td>event.altKey</td>
+      <td id="elmaltkey"></td>
+    </tr>
+    <tr>
+      <td>event.ctrlKey</td>
+      <td id="elmctrlkey"></td>
+    </tr>
+    <tr>
+      <td>event.shiftKey</td>
+      <td id="elmshiftKey"></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>position</th>
+      <th>info</th>
+    </tr>
+    <tr>
+      <td>event.clientX</td>
+      <td id="elemclientx"></td>
+    </tr>
+    <tr>
+      <td>event.clientY</td>
+      <td id="elemclienty"></td>
+    </tr>
+  </table>
+  <script>
+    var t = document.getElementById('target');
+
+    function handler(event) {
+      var info = document.getElementById('elm' + event.type);
+      // eveent.type : handler(이벤트 핸들러) 호출 당시에 어떤 이벤트에 의해 핸들러가 호출되었는지 알려주는 이벤트 객체의 프로퍼티
+      var time = new Date(); // Date 객체 생성
+      var timestr = time.getMilliseconds(); // 현재 시간의 milisec 값 리턴
+      info.innerHTML = (timestr);
+      if (event.altKey) {
+        // 이벤트 객체가 가지고 있는 프로퍼티. altKey, ctrlKey, shiftKey
+        // 사용자가 키는 누그로 있다면 true 반환
+        document.getElementById('elmaltkey').innerHTML = timestr;
+      }
+      if (event.ctrlKey) {
+        document.getElementById('elmctrlkey').innerHTML = timestr;
+      }
+      if (event.shiftKey) {
+        document.getElementById('elmshiftKey').innerHTML = timestr;
+      }
+      document.getElementById('elemclientx').innerHTML = event.clientX;
+      // 이벤트 객체가 가지고 있는 프로퍼티. clientX, clientY
+      // 현재의 마우스 위치 반환
+      document.getElementById('elemclienty').innerHTML = event.clientY;
+    }
+    t.addEventListener('click', handler);
+    t.addEventListener('dblclick', handler);
+    t.addEventListener('mousedown', handler);
+    t.addEventListener('mouseup', handler);
+    t.addEventListener('mousemove', handler);
+    t.addEventListener('mouseover', handler);
+    t.addEventListener('mouseout', handler);
+    t.addEventListener('contextmenu', handler);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery 이벤트</title>
+
+</head>
+
+<body>
+  <!-- jQuery는 이벤트와 관련해서 편리한 기능을 제공한다.  아래 예제는 직접 이벤트 프로그래밍을 하는 것과 jQuery를 이용하는 것의 차이점을 보여준다 -->
+
+  <input type="button" id="pure" value="pure" />
+  <input type="button" id="jquery" value="jQuery" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    // 순수하게 구현했을 때
+    var target = document.getElementById('pure');
+    if (target.addEventListener) {
+      target.addEventListener('click', function (event) {
+        alert('pure');
+      });
+    } else {
+      target.attachEvent('onclick', function (event) {
+        alert('pure');
+      });
+    }
+
+    // jQuery를 사용했을 때
+    $('#jquery').on('click', function (event) {
+      // .on() : 이벤트 설치 api. 브라우저에 따라 적절하게 동작함
+      alert('jQuery');
+    })
+  </script>
+  <!-- 코드 분량에 큰차이가 있다. jQuery는 크로스 브라우징을 알아서 처리해주고, 이벤트를 보다 적은 코드로 구현할 수 있도록 해준다. 이런 이유 때문에 jQuery와 같은 라이브러리를 사용하는 것이다.  -->
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addEventListener()</title>
+</head>
+
+<body>
+  <!-- addEventListener은 이벤트를 등록하는 가장 권장되는 방식이다. 이 방식을 이용하면 여러개의 이벤트 핸들러를 등록할 수 있다. -->
+  <input type="button" id="target1" value="button1" />
+  <script>
+    // var t = document.getElementById('target');
+    // t.addEventListener('click', function (event) {
+    //   alert('Hello world, ' + event.target.value);
+    // });
+    // 이 방식은 ie8이하에서는 호환되지 않는다. ie에서는 attachEvent 메소드를 사용해야 한다.
+
+    var t = document.getElementById('target1');
+    if (t.addEventListener) {
+      // 기능테스트. if문 안에 메소드 존재 유무를 체크
+      // 메소드가 없다면 undefined를 반환하고 undefined는 boolean false를 반환하므로 else if문 실행      
+      t.addEventListener('click', function (event) {
+        // addEventListener('이벤트 타입', 리스너(이벤트 핸들러, 이벤트를 구현하는 함수))
+        alert('Hello world, ' + event.target.value);
+      });
+    } else if (t.attachEvent) {
+      t.attachEvent('onclick', function (event) {
+        alert('Hello world, ' + event.target.value);
+      })
+    }
+  </script>
+
+  <!-- 이 방식의 중요한 장점은 하나의 이벤트 대상에 복수의 동일 이벤트 타입 리스너를 등록할 수 있다는 점이다.  -->
+  <!-- 프로퍼티 리스너 방식은 리스너를 하나만 설치할 수 있으므로 리스너를 재정의하면 이전의 리스너는 사라짐 -->
+  <input type="button" id="target2" value="button2" />
+  <script>
+    var t = document.getElementById('target2');
+    t.addEventListener('click', function (event) {
+      alert(1);
+    });
+    t.addEventListener('click', function (event) {
+      alert(2);
+    });
+  </script>
+
+  <!-- 이벤트 객체를 이용하면 복수의 엘리먼트에 하나의 리스너를 등록해서 재사용할 수 있다.  -->
+  <input type="button" id="target3" value="button3" />
+  <input type="button" id="target4" value="button4" />
+  <script>
+    var t1 = document.getElementById('target3');
+    var t2 = document.getElementById('target4');
+
+    function btn_listener(event) {
+      // 이벤트가 어느 이벤트에서 발생했는지 확인할 수 있는 코드
+      switch (event.target.id) {
+        case 'target3':
+          alert(1);
+          break;
+        case 'target4':
+          alert(2);
+          break;
+      }
+    }
+    t1.addEventListener('click', btn_listener);
+    t2.addEventListener('click', btn_listener);
+  </script>
+
+</body>
+
+</html>
