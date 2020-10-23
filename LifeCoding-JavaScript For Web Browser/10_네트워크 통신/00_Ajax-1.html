@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax-1</title>
+</head>
+
+<!-- 웹브라우저는 대단히 정적인 시스템이었다. 내용이 바뀌면 페이지 새로고침을 해서 내용을 새롭게 변경해야 했다. 이것은 웹이 전자 문서를 염두에 두고 고안된 시스템이기 때문에 당연하게 생각 되었다. 
+
+그러다 Ajax 개념이 도입되면서 모든 것이 바뀌었다. Ajax는 웹브라우저와 웹서버가 내부적으로 데이터 통신을 하게 된다. 그리고 변경된 결과를 웹페이지에 프로그래밍적으로 반영함으로써 웹페이지의 로딩 없이 서비스를 사용할 수 있게 한다. 
+
+Ajax는 Asynchronous JavaScript and XML의 약자다. 한국어로는 비동기적 자바스크립트와 XML 정도로 직역할 수 있는데 자바스크립트를 이용해서 비동기적으로 서버와 브라우저가 데이터를 주고 받는 방식을 의미한다. 이 때 사용하는 API가 XMLHttpRequest이다. 그렇다고 꼭 XML을 사용해서 통신해야 하는 것은 아니다. 사실 XML 보다는 JSON을 더 많이 사용한다. -->
+
+<!-- IE5,6 에서는 XMLHttpRequest 객체 대신 ActiveXObject("Msxml2.XMLHTTP.6.0")을 사용해야 한다. -->
+
+<body>
+  <p>time : <span id="time"></span></p>
+  <input type="button" id="execute" value="execute" />
+  <!-- 버튼을 클릭할 때마다 개발자 도구의 Network 탭에서 전송되는 정보를 확인할 수 있다. -->
+  <script>
+    document.querySelector('input').addEventListener('click', function (event) {
+      var xhr = new XMLHttpRequest();
+      // XMLHttpRequest 객체를 생성한다.      
+      xhr.open('GET', './time.php');
+      // 접속하려는 대상을 지정한다. 첫번째 인자는 form 태그의 method에 대응하는 것으로 GET/POST 방식을 주로 사용한다. 두번째 인자는 접속하고자 하는 서버쪽 리소스의 주소로 form 태그의 action에 해당한다.
+      // open 먼저 한 후에 send. 정해진 순서임.
+      xhr.onreadystatechange = function () {
+        // 서버와 통신하는 단계에서 각각의 내부 단계가 존재하는데(HTTP 헤더를 전송받았다, 응답 본문을 전송 받는 중이다, 응답이 완료되었다 등), 그 단계마다 onreadystatechange 이벤트 핸들러가 호출된다. 대부분의 경우 통신이 끝났다는 이벤트가 제일 중요하므로 통신이 끝난 경우에만 구현하는 경우가 많다
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.querySelector('#time').innerHTML = xhr.responseText;
+        }
+      }
+      // onreadystatechange 이벤트는 서버와의 통신이 끝났을 때 호출되는 이벤트이다. readyState는 통신의 현재 상태를 알려준다. 4는 통신이 완료되었음을 의미한다. status는 HTTP 통신의 결과를 의미하는데 200은 통신이 성공했음을 의미한다. responseText 프로퍼티는 서버에서 전송한 데이터를 담고 있다. 이것을 id가 time 엘리먼트의 하위로 삽입한다. 이를 통해서 현재 서버에서 가져온 현재시간을 페이지 리로딩 없이 가져올 수 있다.
+      xhr.send();
+      // send() 메서드가 호출될 떄 XMLHttpRequest 객체가 설정한 주소('./time.php')와 설정한 방식('GET')으로 통신을 시작함.
+    });
+  </script>
+</body>
+
+</html>

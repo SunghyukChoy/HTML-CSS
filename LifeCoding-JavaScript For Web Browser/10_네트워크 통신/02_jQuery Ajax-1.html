@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_jQuery Ajax-1</title>
+</head>
+<!-- Query이용해서 Ajax를 사용하게 되면 많은 이점이 있는데 그 중의 하나가 크로스브라우징의 문제를 jQuery가 알아서 해결해준다는 것이다. 뿐만 아니라 여러가지 편리한 기능들을 제공한다. jQuery를 이용해서 Ajax 통신을 하는 법을 알아보자.
+
+  jQuery는 Ajax와 관련해서 많은 API를 제공한다. 
+
+  http://api.jquery.com/category/ajax/
+
+  그 중에서 가장 중요한 API는 $.ajax이다. -->
+
+<!--
+    $.ajax의 문법은 아래와 같다.
+    jQuery.ajax( [settings ] )
+    setting는 Ajax 통신을 위한 옵션을 담고 있는 객체가 들어간다. 주요한 옵션을 열거해보면 아래와 같다.
+
+    data
+    서버로 데이터를 전송할 때 이 옵션을 사용한다. 
+
+    dataType
+    서버측에서 전송한 데이터를 어떤 형식의 데이터로 해석할 것인가를 지정한다. 값으로 올 수 있는 것은 xml, json, script, html이다. 형식을 지정하지 않으면 jQuery가 알아서 판단한다.
+
+    success
+    성공했을 때 호출할 콜백을 지정한다.
+    Function( PlainObject data, String textStatus, jqXHR jqXHR )
+
+    type
+    데이터를 전송하는 방법을 지정한다. get, post를 사용할 수 있다.
+ -->
+
+<body>
+  <p>time : <span id="time"></span></p>
+  <input type="button" id="execute" value="execute" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('#execute').click(function () {
+      $.ajax({
+        url: './time6.php',
+        success: function (data) {
+          $('#time').append(data);
+        }
+      }) // 여기까지의 대괄호가 settings 객체
+      // 객체 안에 ajax 통신을 할 때의 설정이 프로퍼티로 들어간다
+    })
+  </script>
+</body>
+
+</html>

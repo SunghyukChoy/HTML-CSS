@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_jQuery Ajax-3</title>
+</head>
+<!-- $.ajax를 이용해서 JSON을 처리하는 방법을 알아보자. -->
+
+<body>
+  <p id="timezones"></p>
+  <input type="button" id="execute" value="execute" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('#execute').click(function () {
+      $.ajax({
+        url: './time8.php',
+        dataType: 'json', // time8.php가 리턴한 데이터가 json 형식임을 명시
+        // json의 형식을 갖고 있음을 명시해줬기 때문에 아래에서 success가 호출됐을 때 전달되는 data는 JSON.parse()를 이용해서 자바 스크립트 객체로 전환된 data가 인자로 전달된다.
+        // 따라서 아래의 함수 아래서 JSON.parse() 호출을 통한 자바 스크립트 객체 변환 과정을 하지 않아도 된다. 
+        success: function (data) {
+          var str = '';
+          for (var name in data) {
+            str += '<li>' + data[name] + '</li>';
+          }
+          $('#timezones').html('<ul>' + str + '</ul>');
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

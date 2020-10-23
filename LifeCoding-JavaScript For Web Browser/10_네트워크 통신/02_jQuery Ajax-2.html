@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_jQuery Ajax-2</title>
+</head>
+
+<!-- POST 방식으로 통신을 할 때는 아래와 같이 처리한다.  -->
+
+<body>
+  <p>time : <span id="time"></span></p>
+  <form>
+    <select name="timezone">
+      <option value="Asia/Seoul">asia/seoul</option>
+      <option value="America/New_York">America/New_York</option>
+    </select>
+    <select name="format">
+      <option value="Y-m-d H:i:s">Y-m-d H:i:s</option>
+      <option value="Y-m-d">Y-m-d</option>
+    </select>
+  </form>
+  <input type="button" id="execute" value="execute" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('#execute').click(function () {
+      $.ajax({
+        url: './time7.php', // 여기에 접속을 하겠다
+        type: 'post', // post 방식으로 접속 시 기재, 기본값이 get이므로 생략하면 get
+        data: $('form').serialize(), // 서버 쪽으로 전송할 데이터
+        // 위의 코드는 form 태그의 정보를 값의이름=값의내용&값의이름=값의내용의 형식으로 바꿔준다.
+        // 태그 이름이 form인 태그, form 태그를 찾아서 태그 안의 value 속성의 값을 전송함
+        // timezone 셀렉트 박스에서 asia/seoul을 선택했다면 value(값)는 Asia/Seoul이 되고 format 셀렉트 박스에서 Y-m-d를 선택했다면 value(값)는 Y-m-d가 됨
+        // 이러한 값들을 값의이름=값의내용&값의이름=값의내용의 형식으로 바꿔줌
+        // "timezone=Asia%2FSeoul&format=Y-m-d"
+        // 정보를 갖는 태그들 : input, textarea, select 등
+        success: function (data) {
+          $('#time').text(data);
+          // 성공 시 리턴값을 id가 time은 태그의 text로 추가
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

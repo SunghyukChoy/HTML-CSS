@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_JSON-1</title>
+</head>
+<!-- JSON(JavaScript Object Notation)의 약자로 JavaScript에서 객체를 만들 때 사용하는 표현식을 의미한다. 이 표현식은 사람도 이해하기 쉽고 기계도 이해하기 쉬우면서 데이터의 용량이 작다. 이런 이유로 최근에는 JSON이 XML을 대체해서 설정의 저장이나 데이터를 전송등에 많이 사용된다. JSON에 대한 자세한 내용은 아래 JSON의 공식홈페이지를 참조한다. http://www.json.org/json-ko.html -->
+
+<body>
+  <script>
+    // 객체 생성
+    /* var info = {
+      "font_face": "Inconsolata",
+      "font_size": 36,
+      "ignored_packages":
+      [
+      ],
+      "line_numbers": true
+    } */
+
+    // 문자열 변수 생성
+    var info = '{\
+      "font_face": "Inconsolata",\
+      "font_size": 36,\
+      "ignored_packages":\
+      [\
+      ],\
+      "line_numbers": true\
+    }';
+
+    var infoobj = JSON.parse(info);
+    // JSON 포맷의 문자열을 인자로 받아 자바 스크립트 객체로 리턴. 이 객체를 프로그래밍적으로 제어 가능
+    console.log(infoobj);
+
+    for (var name in infoobj) {
+      console.log(name, infoobj[name]);
+      // 각각의 값들 열거
+    }
+
+    var infostr = JSON.stringify(infoobj);
+    // js 객체를 인자로 받아 JSON 포맷의 문자열로 리턴
+    console.log(infostr);
+  </script>
+</body>
+
+</html>
